@@ -6,7 +6,7 @@
 #
 # Route class based on martmists' work on the ram.moe wrapper
 #
-# Last updated Nov 15, 2017
+# Last updated Jan 14, 2018
 
 import discord
 import os
@@ -48,8 +48,13 @@ class GarPR:
         since the last time it checked.
 
         If so, it invalidates the cache and updates players/match records data."""
-        actualTournies = len(Route(base_url=self.data_url, path=self.tournaments_uri).sync_query()["tournaments"])
-        if( actualTournies != self.settings["tournaments on record"] ):
+        try:
+            actualTournies = len(Route(base_url=self.data_url, path=self.tournaments_uri).sync_query()["tournaments"])
+        except ResponseError as e:
+            print("GarPR may be down. Try refreshing later.")
+            print(e)
+            return False 
+        if ( actualTournies != self.settings["tournaments on record"] ):
             # Invalidate cached resources
             self._refresh_cog()
             self.matchup_cache = {}
@@ -75,14 +80,15 @@ class GarPR:
             return deepcopy(self.rankings_cache["ranking"])
         except:
             print("Helper.py: something went wrong when copying self.rankings_cache")
+            return {}
 
     async def _get_player_stats(self, playerid : str):
-        """Do the http call to garpr for some playerdata."""
+        """Check the cache or do an http call to garpr to get playerdata."""
         match_records = deepcopy(self.matchup_cache)
         # If player match data exists in the in-memory cache, return it
         if playerid in match_records:
             return match_records[playerid]
-        # Otherwise, get it, store it in the cache
+        # Otherwise, get it, store it in the cache, and return it
         playerdata = Route(base_url=self.data_url,path=self.matches_uri+playerid).sync_query()
         self.matchup_cache[playerid] = playerdata
         dataIO.save_json(self.resources+"garpr_match_records.json", self.matchup_cache)
@@ -141,6 +147,10 @@ class GarPR:
             except KeyError as e:
                 print(e)
                 return
+            except ResponseError as e:
+                print("GarPR may be down!")
+                print(e)
+                return
             message = p1+" is ("+str(matchup.wins)+"-"+str(matchup.losses)+") vs "+p2+", since "+str(matchup.since)+"."
             if matchup.last_tournament:
                 message += "\nThey last played at "+matchup.last_tournament+" ("+matchup.last_played+")."
@@ -160,6 +170,9 @@ class GarPR:
             "and "+str(stats["losses"])+" losses ("+ratio+")")
         except KeyError as e:
             print(e)
+        except ResponseError as e:
+            print("GarPR may be down!")
+            print(e)
 
     @commands.command(pass_context=True, no_pm=True)
     async def garpr(self, ctx, *, player : str=None):
@@ -169,10 +182,14 @@ class GarPR:
         else:
             try:
                 playerinfo = self._get_playerid( player )
+                stats = await self._get_player_stats( playerinfo["id"] )
             except KeyError as e:
                 print(e)
                 return
-            stats = await self._get_player_stats( playerinfo["id"] )
+            except ResponseError as e:
+                print("GarPR may be down!")
+                print(e)
+                return
             rating = playerinfo["ratings"][self.settings["region"]]["mu"]
             sigma = playerinfo["ratings"][self.settings["region"]]["sigma"]
             data = discord.Embed(title=playerinfo["name"], url=self.url+self.players_uri+"/"+playerinfo["id"])
