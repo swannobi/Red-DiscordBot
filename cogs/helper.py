@@ -98,7 +98,7 @@ class Helper:
             notes='\n'.join(data["Notes"])
             embed.add_field(name="Notes", value='\n'.join(data["Notes"]), inline=False)
         embed.colour=discord.Colour(0xffffff)
-        embed.set_footer(text="Plugin by Swann, data by Stratocaster and SDM with thanks to Skytch, Eviox, Savestate.")
+        embed.set_footer(text="Plugin by Swann, data by Stratocaster and SDM with thanks to NC Melee.")
         return embed
 
     async def _show_menu(self, ctx, message, messages):
@@ -184,7 +184,7 @@ class Helper:
                 return
             print(e)
         # Check for multi-faceted moves
-        if "Total frames" not in atk_data and "Hits" not in atk_data:
+        if "Total" not in atk_data:
             embeds = []
             for state in atk_data:
                 embeds.append(self._form_frame_data_embed(atk_data[state], char, move, state))
@@ -215,11 +215,10 @@ class Helper:
                 print(e)
                 return
             print(e)
-        if "Total frames" in char_data[atk]:
-            if "Hits" in atk_data:
-                char_data[atk]["URL"] = URL
-                self._save_char(char, char_data)
-                await self.bot.say("Saved")
+        if "Total" in char_data[atk]:
+            char_data[atk]["URL"] = URL
+            self._save_char(char, char_data)
+            await self.bot.say("Saved")
         else:
             await self.bot.say("This move has complex attributes, pick one of the following:")
             choices = ""
