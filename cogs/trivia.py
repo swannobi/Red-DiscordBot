@@ -205,12 +205,12 @@ class Trivia:
 class TriviaSession():
     def __init__(self, bot, trivia_list, message, settings):
         self.bot = bot
-        self.reveal_messages = ("I know this one! {}!",
-                                "Easy: {}.",
-                                "Oh really? It's {} of course.")
-        self.fail_messages = ("To the next one I guess...",
+        self.reveal_messages = ("Answer: {}.",
+                                "The right answer was {}.",
+                                "{} would have been correct.")
+        self.fail_messages = ("To the next question...",
                               "Moving on...",
-                              "I'm sure you'll know the answer of the next one.",
+                              "Maybe you'll know the next one.",
                               "\N{PENSIVE FACE} Next one.")
         self.current_line = None # {"QUESTION" : "String", "ANSWERS" : []}
         self.question_list = trivia_list

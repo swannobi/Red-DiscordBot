@@ -6,7 +6,7 @@
 #
 # Route class based on martmists' work on the ram.moe wrapper
 #
-# Last updated Jan 11, 2018
+# Last updated Jan 14, 2018
 
 import discord
 import os
@@ -80,14 +80,15 @@ class GarPR:
             return deepcopy(self.rankings_cache["ranking"])
         except:
             print("Helper.py: something went wrong when copying self.rankings_cache")
+            return {}
 
     async def _get_player_stats(self, playerid : str):
-        """Do the http call to garpr for some playerdata."""
+        """Check the cache or do an http call to garpr to get playerdata."""
         match_records = deepcopy(self.matchup_cache)
         # If player match data exists in the in-memory cache, return it
         if playerid in match_records:
             return match_records[playerid]
-        # Otherwise, get it, store it in the cache
+        # Otherwise, get it, store it in the cache, and return it
         playerdata = Route(base_url=self.data_url,path=self.matches_uri+playerid).sync_query()
         self.matchup_cache[playerid] = playerdata
         dataIO.save_json(self.resources+"garpr_match_records.json", self.matchup_cache)

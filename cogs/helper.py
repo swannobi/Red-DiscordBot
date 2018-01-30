@@ -98,7 +98,7 @@ class Helper:
             notes='\n'.join(data["Notes"])
             embed.add_field(name="Notes", value='\n'.join(data["Notes"]), inline=False)
         embed.colour=discord.Colour(0xffffff)
-        embed.set_footer(text="Plugin by Swann, data by Stratocaster and SDM with thanks to Skytch, Eviox, Savestate, Doggo.")
+        embed.set_footer(text="Plugin by Swann, data by Stratocaster and SDM with thanks to NC Melee.")
         return embed
 
     async def _show_menu(self, ctx, message, messages):
