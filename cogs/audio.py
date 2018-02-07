@@ -432,14 +432,11 @@ class Audio:
 
         use_avconv = self.settings["AVCONV"]
         options = '-b:a 64k -bufsize 64k'
-#        if(voice_client.channel.bitrate == 128000):
-#            print("Detected partnered channel with 128k bitrate, setting ffmpeg to match.")
-#            options = '-b:a 128k -bufsize 128k'
-#        elif(voice_client.channel.bitrate == 96000):
-#            print("Detected high bitrate channel, setting ffmpeg bitrate/buffer to 96k.")
-#            options = '-b:a 96k -bufsize 96k'
-#        else:
-#            options = '-b:a 64k -bufsize 64k'
+        if(voice_client.channel.bitrate == 128000):
+            options = '-b:a 128k -bufsize 128k'
+        elif(voice_client.channel.bitrate == 96000):
+            options = '-b:a 96k -bufsize 96k'
+        print("using: "+options)
         before_options = ''
 
         if start_time:
