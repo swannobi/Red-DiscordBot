@@ -19,6 +19,12 @@ class Memes:
         with open('data/memes/doenst.png', 'rb') as f:
             await self.bot.send_file(ctx.message.channel, f)
 
+    @commands.command(name="lex", pass_context=True)
+    async def lex(self, ctx):
+        """Trunks"""
+        with open('data/memes/lex.png', 'rb') as f:
+            await self.bot.send_file(ctx.message.channel, f)
+
     @commands.group(name="smith", pass_context=True)
     async def smith(self, ctx):
         """Smiff"""
