@@ -6,15 +6,14 @@ import json
 import traceback
 import discord
 import asyncio
+import os
+from collections import defaultdict
+from .utils import checks
+from .utils.dataIO import dataIO
 from concurrent.futures import CancelledError
 from html import unescape
 from time import sleep, time, strftime
 from discord.ext import commands
-
-REFRESH_EMOJI = '🔄'
-POLL_LENGTH = 60.0
-POLL_REACT_TIME = 1800.0 #30 minutes
-BAR_LENGTH = 30
 
 def _get_poll(poll_id):
     # https://strawpoll.me/api/v2/polls/{poll_id}
@@ -61,8 +60,9 @@ def _post_poll(title, options, multi):
 class _Poll:
     """Internal poll class for Strawpoll cog"""
     
-    def __init__(self, bot, message, author, poll_id, poll_length):
+    def __init__(self, bot, settings, message, author, poll_id, poll_length):
         self.bot = bot
+        self.settings = settings
         self.message = message
         self.author = author
         self.poll_id = poll_id
@@ -71,13 +71,14 @@ class _Poll:
 
     def _bar_creator(self, data, option):
         display_bar = " :: "
-        for y in range(BAR_LENGTH):
+        bar_length = self.settings['bar_length']
+        for y in range(bar_length):
             if (max(data['votes']) > 0):
                 pct = float(
                     data['votes'][option])/float(max(data['votes']))
             else:
                 continue
-            if (pct != 0 and pct >= float(y)/float(BAR_LENGTH-1)):
+            if (pct != 0 and pct >= float(y)/float(bar_length-1)):
                 display_bar += '|'
         return display_bar
 
@@ -105,16 +106,33 @@ class _Poll:
                 str(time_left), '' if (time_left == 1) else 's'))
         else: 
             embed.set_footer(text="as of {}".format(
-                strftime('%A %B %-m, %Y // %I:%M:%S%p ').lower()))
+                strftime('%A %B %-m, %Y @ %I:%M:%S%p ')))
         await self.bot.edit_message(self.message, embed=embed)
 
 class Strawpoll:
     """Create, link, and update live results for a Strawpoll within Discord"""
     
-    def __init__(self, bot):
+    def __init__(self, bot, settings_path):
         self.bot = bot
+        self.settings_path = settings_path
         self.poll_sessions = []
         self.poll_session_tasks = {}
+        try:
+            if not dataIO.is_valid_json(settings_path):
+                raise FileNotFoundError("JSON file not valid")
+            settings = dataIO.load_json(settings_path)
+            self.settings = defaultdict(dict, settings)
+        except FileNotFoundError:
+            self.settings = {
+                'refresh_emoji': '🔄',
+                'poll_length': 60.0,
+                'poll_react_time': 1800.0, # 30 minutes
+                'bar_length': 30
+            }
+            if not os.path.exists(os.path.dirname(settings_path)):
+                print("Creating strawpoll data folder...")
+                os.makedirs(os.path.dirname(settings_path))
+            dataIO.save_json(settings_path, self.settings)
 
     async def _say_usage(self):
         await self.bot.say(
@@ -122,6 +140,7 @@ class Strawpoll:
         "strawpoll m question;option1;option2 (...)")
 
     async def check_polls(self):
+        poll_react_time = self.settings['poll_react_time']
         while self is self.bot.get_cog("Strawpoll"):
             current_time = time()
             for poll in self.poll_sessions:
@@ -129,11 +148,11 @@ class Strawpoll:
                     self.poll_session_tasks[poll] = asyncio.ensure_future(
                         self._check_reacts(poll))
             for poll in self.poll_session_tasks.keys():
-                if current_time-poll.start_time > POLL_REACT_TIME:
+                if current_time-poll.start_time > poll_react_time:
                     self.poll_session_tasks[poll].cancel()
             self.poll_sessions[:] = [
-                poll for poll in self.poll_sessions 
-                if current_time-poll.start_time < POLL_REACT_TIME]
+                poll for poll in self.poll_sessions
+                if current_time-poll.start_time < poll_react_time]
             self.poll_session_tasks = { 
                 poll:task for poll,task in self.poll_session_tasks.items() 
                 if not task.done()}
@@ -142,32 +161,35 @@ class Strawpoll:
             self.poll_session_tasks[poll].cancel()
         
     async def _check_reacts(self, poll):
+        refresh_emoji = self.settings['refresh_emoji']
         try:
             while True:
-                react = await self.bot.wait_for_reaction(REFRESH_EMOJI, 
+                react = await self.bot.wait_for_reaction(refresh_emoji, 
                     message=poll.message)
                 await poll.update_results()
                 await asyncio.sleep(0.5) # don't remove reaction too fast
                 await self.bot.remove_reaction(
-                    poll.message, REFRESH_EMOJI, react.user)
+                    poll.message, refresh_emoji, react.user)
         except CancelledError:
             await self.bot.clear_reactions(poll.message)
             raise CancelledError("Poll cancelled")
             
     async def _create_poll(self, message, channel, author, poll_id):
-        poll = _Poll(self.bot, message, author, 
-            poll_id, POLL_LENGTH)
-        while time()-poll.start_time < POLL_LENGTH:
+        refresh_emoji = self.settings['refresh_emoji']
+        poll_length = self.settings['poll_length']
+        poll = _Poll(self.bot, self.settings, message, author, 
+            poll_id, poll_length)
+        while time()-poll.start_time < poll_length:
             await poll.update_results()
             await asyncio.sleep(1)
         await self.bot.delete_message(poll.message)
         poll.message = await self.bot.send_message(channel,
             embed=discord.Embed(title="Loading results..."))
         await poll.update_results()
-        await self.bot.add_reaction(poll.message, REFRESH_EMOJI)
+        await self.bot.add_reaction(poll.message, refresh_emoji)
         self.poll_sessions.append(poll)
-            
-    @commands.command(pass_context=True)
+    
+    @commands.command(pass_context=True, no_pm=True)
     async def strawpoll(self, ctx, *text):
         multi = False
         if len(text) <= 0:
@@ -181,14 +203,12 @@ class Strawpoll:
             await self._say_usage()
             return
         options = poll[1].split(';')
-        for i in range(len(options)):
-            options[i] = options[i].strip()
         # ~ fancy way of removing empty strings ~
         # if a string is empty, it evaluates to false.
         # so, if an option from options has content, then
         # assign that option for itself, otherwise it wont get
         # included in the splice. (took me a sec to parse it lol)
-        options[:] = [option for option in options if option]
+        options[:] = [option for option in options if option.strip()]
         response = _post_poll(poll[0], options, multi)
         if not response:
             await self.bot.send_message(ctx.message.channel, 
@@ -206,11 +226,30 @@ class Strawpoll:
         await self._create_poll(
             results_message, ctx.message.channel, 
             ctx.message.author, response['id'])
+    
+    @commands.command(name="strawpollset", pass_context=True)
+    @checks.mod_or_permissions(manage_server=True)
+    async def settings(self, ctx, *text):
+        if len(text) < 2:
+            for setting, value in self.settings.items():
+                await self.bot.say("`{}: {}`".format(setting, value))
+            return
+        setting = text[0]
+        value = text[1]
+        if setting not in self.settings:
+            await self.bot.say("`{}` is not a valid setting!".format(setting))
+            return
+        if isinstance(self.settings[setting], int):
+            self.settings[setting] = int(float(value))
+        if isinstance(self.settings[setting], float):
+            self.settings[setting] = float(value)
+        if isinstance(self.settings[setting], str):
+            self.settings[setting] = str(value)
+        dataIO.save_json(self.settings_path, self.settings)
+        self.bot.say("Setting updated")
 
 def setup(bot):
-    cog = Strawpoll(bot)
+    cog = Strawpoll(bot, "data/strawpoll/settings.json")
     loop = asyncio.get_event_loop()
     loop.create_task(cog.check_polls())
     bot.add_cog(cog)
-
-    
