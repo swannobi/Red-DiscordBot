@@ -123,45 +123,68 @@ class Strawpoll:
             settings = dataIO.load_json(settings_path)
             self.settings = defaultdict(dict, settings)
         except FileNotFoundError:
-            self.settings = {
-                'refresh_emoji': '🔄',
-                'poll_length': 60.0,
-                'poll_react_time': 1800.0, # 30 minutes
-                'bar_length': 30
-            }
+            self.settings = {}
             if not os.path.exists(os.path.dirname(settings_path)):
                 print("Creating strawpoll data folder...")
                 os.makedirs(os.path.dirname(settings_path))
             dataIO.save_json(settings_path, self.settings)
 
+    def _new_server_settings(self, server_id):
+        default_settings = {
+            'refresh_emoji': '🔄',
+            'poll_length': 60.0,
+            'poll_react_time': 1800.0, # 30 minutes
+            'bar_length': 30
+        }
+        self.settings[server_id] = default_settings
+        dataIO.save_json(self.settings_path, self.settings)
+
     async def _say_usage(self):
         await self.bot.say(
-        "strawpoll question;option1;option2 (...)\n"
-        "strawpoll m question;option1;option2 (...)")
+        "```strawpoll question;option1;option2 (...)\n"
+        "strawpoll m question;option1;option2 (...)```")
+
+    def _check_new_poll_tasks(self):
+        for poll in self.poll_sessions:
+            if poll not in self.poll_session_tasks:
+                self.poll_session_tasks[poll] = asyncio.ensure_future(
+                    self._check_reacts(poll))
+
+    def _cancel_expired_poll_tasks(self, current_time):
+        for poll in self.poll_session_tasks.keys():
+            server_id = poll.message.server.id
+            poll_react_time = self.settings[server_id]['poll_react_time']
+            if current_time-poll.start_time > poll_react_time:
+                self.poll_session_tasks[poll].cancel()
+ 
+    def _delete_expired_poll_sessions(self, current_time):
+        trimmed_poll_sessions = []
+        for poll in self.poll_sessions:
+            server_id = poll.message.server.id
+            poll_react_time = self.settings[server_id]['poll_react_time']
+            if current_time-poll.start_time < poll_react_time:
+                trimmed_poll_sessions.append(poll)
+        self.poll_sessions = trimmed_poll_sessions
+
+    def _remove_done_poll_tasks(self):
+        self.poll_session_tasks = { 
+            poll:task for poll,task in self.poll_session_tasks.items() 
+            if not task.done()}
 
     async def check_polls(self):
-        poll_react_time = self.settings['poll_react_time']
         while self is self.bot.get_cog("Strawpoll"):
             current_time = time()
-            for poll in self.poll_sessions:
-                if poll not in self.poll_session_tasks:
-                    self.poll_session_tasks[poll] = asyncio.ensure_future(
-                        self._check_reacts(poll))
-            for poll in self.poll_session_tasks.keys():
-                if current_time-poll.start_time > poll_react_time:
-                    self.poll_session_tasks[poll].cancel()
-            self.poll_sessions[:] = [
-                poll for poll in self.poll_sessions
-                if current_time-poll.start_time < poll_react_time]
-            self.poll_session_tasks = { 
-                poll:task for poll,task in self.poll_session_tasks.items() 
-                if not task.done()}
+            self._check_new_poll_tasks()
+            self._cancel_expired_poll_tasks(current_time)
+            self._delete_expired_poll_sessions(current_time)
+            self._remove_done_poll_tasks()
             await asyncio.sleep(5)
         for poll in self.poll_session_tasks.keys():
             self.poll_session_tasks[poll].cancel()
         
     async def _check_reacts(self, poll):
-        refresh_emoji = self.settings['refresh_emoji']
+        settings = self.settings[poll.message.server.id]
+        refresh_emoji = settings['refresh_emoji']
         try:
             while True:
                 react = await self.bot.wait_for_reaction(refresh_emoji, 
@@ -175,10 +198,11 @@ class Strawpoll:
             raise CancelledError("Poll cancelled")
             
     async def _create_poll(self, message, channel, author, poll_id):
-        refresh_emoji = self.settings['refresh_emoji']
-        poll_length = self.settings['poll_length']
-        poll = _Poll(self.bot, self.settings, message, author, 
-            poll_id, poll_length)
+        settings = self.settings[message.server.id]
+        refresh_emoji = settings['refresh_emoji']
+        poll_length = settings['poll_length']
+        poll = _Poll(self.bot, settings, 
+                message, author, poll_id, poll_length)
         while time()-poll.start_time < poll_length:
             await poll.update_results()
             await asyncio.sleep(1)
@@ -191,6 +215,8 @@ class Strawpoll:
     
     @commands.command(pass_context=True, no_pm=True)
     async def strawpoll(self, ctx, *text):
+        if ctx.message.server.id not in self.settings:
+            self._new_server_settings(ctx.message.server.id)
         multi = False
         if len(text) <= 0:
             await self._say_usage()
@@ -229,24 +255,32 @@ class Strawpoll:
     
     @commands.command(name="strawpollset", pass_context=True)
     @checks.mod_or_permissions(manage_server=True)
-    async def settings(self, ctx, *text):
+    async def strawpoll_settings(self, ctx, *text):
+        server_id = ctx.message.server.id
+        if server_id not in self.settings:
+            self._new_server_settings(server_id)
+        settings = self.settings[server_id]
         if len(text) < 2:
-            for setting, value in self.settings.items():
-                await self.bot.say("`{}: {}`".format(setting, value))
+            settings_text = ''
+            for setting, value in settings.items():
+                settings_text += '{}: {}\n'.format(setting, value)
+            await self.bot.say("```{}```".format(settings_text))
             return
         setting = text[0]
         value = text[1]
-        if setting not in self.settings:
+        if setting not in settings:
             await self.bot.say("`{}` is not a valid setting!".format(setting))
             return
-        if isinstance(self.settings[setting], int):
-            self.settings[setting] = int(float(value))
-        if isinstance(self.settings[setting], float):
-            self.settings[setting] = float(value)
-        if isinstance(self.settings[setting], str):
-            self.settings[setting] = str(value)
+        old_value = settings[setting]
+        if isinstance(settings[setting], int):
+            settings[setting] = int(float(value))
+        if isinstance(settings[setting], float):
+            settings[setting] = float(value)
+        if isinstance(settings[setting], str):
+            settings[setting] = str(value)
+        await self.bot.say("`{}` updated. `{}` -> `{}`".format(
+            setting, old_value, settings[setting]))
         dataIO.save_json(self.settings_path, self.settings)
-        self.bot.say("Setting updated")
 
 def setup(bot):
     cog = Strawpoll(bot, "data/strawpoll/settings.json")
