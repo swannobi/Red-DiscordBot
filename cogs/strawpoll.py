@@ -139,11 +139,6 @@ class Strawpoll:
         self.settings[server_id] = default_settings
         dataIO.save_json(self.settings_path, self.settings)
 
-    async def _say_usage(self):
-        await self.bot.say(
-        "```strawpoll question;option1;option2 (...)\n"
-        "strawpoll m question;option1;option2 (...)```")
-
     def _check_new_poll_tasks(self):
         for poll in self.poll_sessions:
             if poll not in self.poll_session_tasks:
@@ -215,18 +210,26 @@ class Strawpoll:
     
     @commands.command(pass_context=True, no_pm=True)
     async def strawpoll(self, ctx, *text):
+        """
+        Host a poll on Strawpoll.me with live results
+
+        Usage: strawpoll [m] title;option 1;option 2 (...)
+        
+        Options:
+            m       Allow multiple options to be selected
+        """
         if ctx.message.server.id not in self.settings:
             self._new_server_settings(ctx.message.server.id)
         multi = False
         if len(text) <= 0:
-            await self._say_usage()
+            await self.bot.send_cmd_help(ctx)
             return
         if text[0] is 'm':
             multi = True
             text = text[1:]
         poll = ' '.join(text).split(';', 1)
         if len(poll) != 2:
-            await self._say_usage()
+            await self.bot.send_cmd_help(ctx)
             return
         options = poll[1].split(';')
         # ~ fancy way of removing empty strings ~
@@ -244,7 +247,7 @@ class Strawpoll:
             await self.bot.say(
                 "Strawpoll error: `{}`"
                 .format(response['errorMessage']))
-            await self._say_usage()
+            await self.bot.send_cmd_help(ctx)
             return
         results_message = await self.bot.send_message(
             ctx.message.channel, 
