@@ -111,29 +111,19 @@ class _Poll:
 
 class Strawpoll:
     """Create, link, and update live results for a Strawpoll within Discord"""
-    
+
     def __init__(self, bot, settings_path):
         self.bot = bot
         self.settings_path = settings_path
+        self.settings = defaultdict(dict, dataIO.load_json(settings_path))
         self.poll_sessions = []
         self.poll_session_tasks = {}
-        try:
-            if not dataIO.is_valid_json(settings_path):
-                raise FileNotFoundError("JSON file not valid")
-            settings = dataIO.load_json(settings_path)
-            self.settings = defaultdict(dict, settings)
-        except FileNotFoundError:
-            self.settings = {}
-            if not os.path.exists(os.path.dirname(settings_path)):
-                print("Creating strawpoll data folder...")
-                os.makedirs(os.path.dirname(settings_path))
-            dataIO.save_json(settings_path, self.settings)
 
     def _new_server_settings(self, server_id):
         default_settings = {
             'refresh_emoji': '🔄',
-            'poll_length': 60.0,
-            'poll_react_time': 1800.0, # 30 minutes
+            'poll_length': 30.0,
+            'poll_react_time': 300.0, # 5 minutes
             'bar_length': 30
         }
         self.settings[server_id] = default_settings
@@ -167,13 +157,15 @@ class Strawpoll:
             if not task.done()}
 
     async def check_polls(self):
+        POLL_CHECK_RATE = 5 # seconds between each check for expired polls
+        # while cog is loaded
         while self is self.bot.get_cog("Strawpoll"):
             current_time = time()
             self._check_new_poll_tasks()
             self._cancel_expired_poll_tasks(current_time)
             self._delete_expired_poll_sessions(current_time)
             self._remove_done_poll_tasks()
-            await asyncio.sleep(5)
+            await asyncio.sleep(POLL_CHECK_RATE)
         for poll in self.poll_session_tasks.keys():
             self.poll_session_tasks[poll].cancel()
         
@@ -231,14 +223,10 @@ class Strawpoll:
         if len(poll) != 2:
             await self.bot.send_cmd_help(ctx)
             return
+        title = poll[0]
         options = poll[1].split(';')
-        # ~ fancy way of removing empty strings ~
-        # if a string is empty, it evaluates to false.
-        # so, if an option from options has content, then
-        # assign that option for itself, otherwise it wont get
-        # included in the splice. (took me a sec to parse it lol)
         options[:] = [option for option in options if option.strip()]
-        response = _post_poll(poll[0], options, multi)
+        response = _post_poll(title, options, multi)
         if not response:
             await self.bot.send_message(ctx.message.channel, 
                 "Uh-oh, no response from Strawpoll received!")
@@ -285,8 +273,20 @@ class Strawpoll:
             setting, old_value, settings[setting]))
         dataIO.save_json(self.settings_path, self.settings)
 
+def check_files(settings_path):
+    try:
+        if not dataIO.is_valid_json(settings_path):
+            raise FileNotFoundError("JSON file not valid")
+    except FileNotFoundError:
+        if not os.path.exists(os.path.dirname(settings_path)):
+            print("Creating strawpoll data folder...")
+            os.makedirs(os.path.dirname(settings_path))
+        dataIO.save_json(settings_path, {})
+
 def setup(bot):
-    cog = Strawpoll(bot, "data/strawpoll/settings.json")
+    settings_path = "data/strawpoll/settings.json"
+    check_files(settings_path)
+    cog = Strawpoll(bot, settings_path)
     loop = asyncio.get_event_loop()
     loop.create_task(cog.check_polls())
     bot.add_cog(cog)
