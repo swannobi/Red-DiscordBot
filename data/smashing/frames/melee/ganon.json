@@ -1,0 +1,167 @@
+{
+  "stats": {
+    "AirborneOn": "7",
+    "FHTotal": "42",
+    "FHFFOn": "22",
+    "FHFFTotal": "32",
+    "SHTotal": "33",
+    "SHFFOn": "18",
+    "SHFFTotal": "24",
+    "DashBecomesRunOn": "16"
+  },
+  "jab": {
+    "Total": "21",
+    "Hits": "3-5",
+    "SAF": "19"
+  },
+  "ftilt": {
+    "Total": "29",
+    "Hits": "9-11",
+    "SAF": "30"
+  },
+  "dtilt": {
+    "Total": "35",
+    "Hits": "10-12",
+    "SAF": "35"
+  },
+  "utilt": {
+    "Total": "114",
+    "Hits": "81-83",
+    "SAF": "113"
+  },
+  "da": {
+    "Total": "39",
+    "Hits": "7-16",
+    "SAF": "38"
+  },
+  "fsmash": {
+    "Total": "66",
+    "Hits": "20-24",
+    "SAF": "60",
+    "Charge": "10"
+  },
+  "dsmash": {
+    "Total": "49",
+    "Hits": "19-22, 29-32",
+    "SAF": "47",
+    "Charge": "14"
+  },
+  "usmash": {
+    "Total": "54",
+    "Hits": "21-23, 26-29",
+    "SAF": "40",
+    "Charge": "8"
+  },
+  "nair": {
+    "Total": "44",
+    "Hits": "7-8, 20-21",
+    "SAF": "45",
+    "AC": "<3 22>",
+    "Landlag": "25",
+    "Notes": [
+      "Ganon's nair hits 7-8, 16-17 in Melee v1.0."
+    ]
+  },
+  "fair": {
+    "Total": "44",
+    "Hits": "14-19",
+    "SAF": "35",
+    "AC": "<6 34>",
+    "Landlag": "25"
+  },
+  "bair": {
+    "Total": "33",
+    "Hits": "6-16",
+    "SAF": "30",
+    "AC": "22>",
+    "Landlag": "25"
+  },
+  "dair": {
+    "Total": "44",
+    "Hits": "16-20",
+    "SAF": "38",
+    "AC": "<3 36>",
+    "Landlag": "35"
+  },
+  "uair": {
+    "Total": "33",
+    "Hits": "4-9",
+    "SAF": "34",
+    "AC": "16>",
+    "Landlag": "18"
+  },
+  "grab": {
+    "standing": {
+      "Total": "30",
+      "Hits": "7-8"
+    },
+    "dash": {
+      "Total": "40",
+      "Hits": "11-13"
+    }
+  },
+  "b": {
+    "Total": "119",
+    "Hits": "70-72"
+  },
+  "sideb": {
+    "Total": "79",
+    "Hits": "4-8",
+    "Activates": "15-34",
+    "Landlag": "20",
+    "SpecialFallLag": "20",
+    "Notes": [
+      "On activation, the animation plays for 25 total frames.",
+      "If in the air, landlag and special fall lag are both 40 frames."
+    ]
+  },
+  "downb": {
+    "ground": {
+      "Total": "77",
+      "Hits": "14-34",
+      "Notes": [
+        "The animation when hitting a wall lasts 60 frames."
+      ]
+    },
+    "air": {
+      "Total": "69",
+      "Hits": "14-34",
+      "Notes": [
+        "This move refreshes Ganon's double jump.",
+        "Landing hit frames 2-3.",
+        "Landing animation is 57 total frames."
+      ]
+    }
+  },
+  "upb": {
+    "Total": "64",
+    "SoonestLedgeGrab": "45",
+    "Activates": "13-33",
+    "Hits": "3-5, 9-11, 15-17, 21-23",
+    "Landlag": "30",
+    "SpecialFallLag": "30",
+    "Notes": [
+      "Grabs ledge from both sides.",
+      "Grab sends opponent away on frame 25.",
+      "Grab lasts 60 frames total."
+    ]
+  },
+  "dodge": {
+    "airdodge": {
+      "Total": "49",
+      "Intangible": "4-29"
+    },
+    "rollBack": {
+      "Total": "32",
+      "Intangible": "4-19"
+    },
+    "rollForward": {
+      "Total": "32",
+      "Intangible": "4-19"
+    },
+    "spotdodge": {
+      "Total": "32",
+      "Intangible": "2-20"
+    }
+  }
+}

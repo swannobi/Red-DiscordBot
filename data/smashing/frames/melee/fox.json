@@ -1,0 +1,207 @@
+{
+    "b" : {
+        "air" : {
+            "Hits" : "10-44",
+            "NextLaser" : "Repeated shots every 10 frames",
+            "Notes" : [
+                "Autocancels on landing."
+            ],
+            "Total" : "36"
+        },
+        "ground" : {
+            "Hits" : "12-44",
+            "NextLaser" : "Repeated shots every 10 frames.",
+            "Total" : "23"
+        }
+    },
+    "bair" : {
+        "AC" : "<3 24>",
+        "Hits" : "4-19",
+        "Landlag" : "20",
+        "SAF" : "38",
+        "Total" : "39",
+        "URL" : "Asn24Hs"
+    },
+    "da" : {
+        "Hits" : "4-17",
+        "SAF" : "36",
+        "Total" : "39"
+    },
+    "dair" : {
+        "AC" : "<4 31>",
+        "Hits" : "5-6, 8-9, 11-12, 14-15, 17-18, 20-21, 23-24",
+        "Landlag" : "18",
+        "Total" : "49"
+    },
+    "dodge" : {
+        "airdodge" : {
+            "Intangible" : "4-29",
+            "Total" : "49"
+        },
+        "rollBack" : {
+            "Intangible" : "4-19",
+            "Total" : "31"
+        },
+        "rollForward" : {
+            "Intangible" : "4-19",
+            "Total" : "31"
+        },
+        "spotdodge" : {
+            "Intangible" : "2-15",
+            "Total" : "22"
+        }
+    },
+    "downb" : {
+        "Hits" : "1",
+        "Notes" : [
+            "Fully invincible frame 1.",
+            "This move can be jump-cancelled after frame 4.",
+            "19 frames of lag on release",
+            "Reflects up to the frame after B is released, if held."
+        ],
+        "Reflects" : "4-21",
+        "Total" : "39",
+        "URL" : "u5FpbDg"
+    },
+    "dsmash" : {
+        "Charge" : "2",
+        "Hits" : "6-10",
+        "Notes" : [
+            "Legs invincible frame 6."
+        ],
+        "SAF" : "46",
+        "Total" : "49"
+    },
+    "dtilt" : {
+        "Hits" : "7-9",
+        "SAF" : "28",
+        "Total" : "29"
+    },
+    "fair" : {
+        "AC" : "<5 49>",
+        "Hits" : "6-8, 16-18, 24-26, 33-35, 43-45",
+        "Landlag" : "22",
+        "SAF" : "53",
+        "Total" : "59"
+    },
+    "fsmash" : {
+        "Charge" : "7",
+        "Hits" : "12-22",
+        "SAF" : "40",
+        "Total" : "39"
+    },
+    "ftilt" : {
+        "Hits" : "5-8",
+        "SAF" : "27",
+        "Total" : "26"
+    },
+    "grab" : {
+        "dash" : {
+            "Hits" : "12-13",
+            "Total" : "40",
+            "URL" : "w6xZSp0"
+        },
+        "standing" : {
+            "Hits" : "7-8",
+            "Total" : "30",
+            "URL" : "qmxzg9k"
+        }
+    },
+    "jab" : {
+        "jab1" : {
+            "Hits" : "2-3",
+            "Jab2Start" : "6",
+            "NextWindow" : "3-31",
+            "SAF" : "16",
+            "Total" : "17"
+        },
+        "jab2" : {
+            "Hits" : "3-4",
+            "Jab3Start" : "6",
+            "NextWindow" : "1-20",
+            "SAF" : "19",
+            "Total" : "20"
+        },
+        "rapidjab" : {
+            "Hits" : "3-4, 10-11, 17-18, 24-25, 31-32",
+            "SAF" : "39",
+            "Total" : "36"
+        }
+    },
+    "nair" : {
+        "AC" : "<3 37>",
+        "Hits" : "4-31",
+        "Landlag" : "15",
+        "SAF" : "42",
+        "Total" : "49"
+    },
+    "sideb" : {
+        "air" : {
+            "Hits" : "22-25",
+            "Landlag" : "20",
+            "MovesOn" : "21",
+            "Notes" : [
+                "Illusion has 4 different lengths (shortens frame 19-20, 21, 22, + the full distance Phantasm)."
+            ],
+            "ShortenWindow" : "19-22",
+            "SoonestLedgeGrab" : "29",
+            "SpecialFallLag" : "3",
+            "Total" : "63"
+        },
+        "ground" : {
+            "Hits" : "22-25",
+            "Landlag" : "20",
+            "MovesOn" : "21",
+            "Notes" : [
+                "Illusion has 4 different lengths (shortens frame 19-20, 21, 22, + the full distance Phantasm)."
+            ],
+            "ShortenWindow" : "19-22",
+            "SoonestLedgeGrab" : "29",
+            "SpecialFallLag" : "3",
+            "Total" : "63"
+        }
+    },
+    "stats" : {
+        "AirborneOn" : "4",
+        "DashBecomesRunOn" : "12",
+        "FHFFOn" : "18",
+        "FHFFTotal" : "27",
+        "FHTotal" : "35",
+        "SHFFOn" : "12",
+        "SHFFTotal" : "15",
+        "SHTotal" : "21"
+    },
+    "uair" : {
+        "AC" : "<7 26>",
+        "Hits" : "8-9, 11-14",
+        "Landlag" : "18",
+        "SAF" : "36",
+        "Total" : "39"
+    },
+    "upb" : {
+        "Hits" : "20, 22, 24, 26, 28, 30, 32, 43-72",
+        "Landlag" : "6",
+        "Notes" : [
+            "Grabs ledge from both sides.",
+            "Soonest ledge grab not during charge is 73.",
+            "Aim on frame 42."
+        ],
+        "SoonestLedgeGrab" : "16",
+        "SpecialFallLag" : "3",
+        "Total" : "64"
+    },
+    "usmash" : {
+        "Charge" : "2",
+        "Hits" : "7-17",
+        "Notes" : [
+            "Head invincible 1-9."
+        ],
+        "SAF" : "42",
+        "Total" : "41"
+    },
+    "utilt" : {
+        "Hits" : "5-11",
+        "SAF" : "23",
+        "Total" : "24"
+    }
+}

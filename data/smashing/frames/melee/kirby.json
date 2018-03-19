@@ -1,0 +1,179 @@
+{
+  "stats": {
+    "AirborneOn": "4",
+    "FHTotal": "51",
+    "FHFFOn": "27",
+    "FHFFTotal": "38",
+    "SHTotal": "38",
+    "SHFFOn": "21",
+    "SHFFTotal": "27",
+    "DashBecomesRunOn": "13"
+  },
+  "jab": {
+    "jab1": {
+      "Total": "17",
+      "Hits": "3-4",
+      "SAF": "16",
+      "NextWindow": "3-25",
+      "Jab2Start": "6"
+    },
+    "jab2": {
+      "Total": "20",
+      "Hits": "3-4",
+      "SAF": "17",
+      "NextWindow": "1-20",
+      "Jab3Start": "8"
+    },
+    "rapidjab": {
+      "Total": "32",
+      "Hits": "2-3, 6-7, 10-11, 14-15, 18-19",
+      "SAF": "33"
+    }
+  },
+  "ftilt": {
+    "Total": "32",
+    "Hits": "5-8",
+    "SAF": "28"
+  },
+  "dtilt": {
+    "Total": "29",
+    "Hits": "4-7",
+    "SAF": "30"
+  },
+  "utilt": {
+    "Total": "23",
+    "Hits": "4-7",
+    "SAF": "24"
+  },
+  "fsmash": {
+    "Total": "49",
+    "Hits": "13-21",
+    "SAF": "50",
+    "Charge": "5"
+  },
+  "dsmash": {
+    "Total": "55",
+    "Hits": "7-22",
+    "SAF": "50",
+    "Charge": "5",
+    "Notes": [
+      "Legs invincible 7-9."
+    ]
+  },
+  "usmash": {
+    "Total": "49",
+    "Hits": "13-23",
+    "SAF": "50",
+    "Charge": "9"
+  },
+  "nair": {
+    "Total": "79",
+    "Hits": "10-34",
+    "SAF": "50",
+    "AC": "<9 38>",
+    "Landlag": "15"
+  },
+  "fair": {
+    "Total": "49",
+    "Hits": "10-11, 17-18, 25-26",
+    "SAF": "40",
+    "AC": "<9 38>",
+    "Landlag": "20",
+    "Notes": [
+      "Landing hit frames 1-2."
+    ]
+  },
+  "bair": {
+    "Total": "43",
+    "Hits": "6-20",
+    "SAF": "36",
+    "AC": "<5 28>",
+    "Landlag": "15"
+  },
+  "dair": {
+    "Total": "59",
+    "Hits": "18-19, 21-22, 24-25, 27-28, 30-31, 33-34",
+    "AC": "<17 48>",
+    "SAF": "55",
+    "Landlag": "20"
+  },
+  "uair": {
+    "Total": "39",
+    "Hits": "11-13",
+    "SAF": "36",
+    "AC": "<10 17>",
+    "Landlag": "15"
+  },
+  "da": {
+    "Total": "63",
+    "Hits": "9-43",
+    "SAF": "60"
+  },
+  "grab": {
+    "standing": {
+      "Total": "30",
+      "Hits": "7-8"
+    },
+    "dash": {
+      "Total": "40",
+      "Hits": "11-12"
+    }
+  },
+  "b": {
+    "Total": "79",
+    "Sucks": "17-50",
+    "Notes": [
+      "Lasts as long as B is held.",
+      "20 frame recovery animation when B is released."
+    ]
+  },
+  "sideb": {
+    "ground": {
+      "Total": "59",
+      "Hits": "22-28"
+    },
+    "air": {
+      "Total": "69",
+      "Hits": "7-46",
+      "Landlag": "16"
+    }
+  },
+  "downb": {
+    "Total": "181",
+    "Hits": "30",
+    "Notes": [
+      "Max time as stone is 150 frames.",
+      "Minimum time as stone is 17 frames (B on 18).",
+      "Kirby has 31 frames of lag when move ends or B is pressed."
+    ]
+  },
+  "upb": {
+    "Total": "90",
+    "Hits": "23-24, 47-49, 54-56",
+    "SoonestLedgeGrab": "44",
+    "Landlag": "6",
+    "SpecialFallLag": "3",
+    "Notes": [
+      "Cutter projectile hits 2-26 while traveling along the ground.",
+      "Kirby can choose to face backward from frames 2-15."
+    ]
+  },
+  "dodge": {
+    "airdodge": {
+      "Total": "49",
+      "Intangible": "4-29"
+    },
+    "rollBack": {
+      "Total": "4-19",
+      "Intangible": "31"
+    },
+    "rollForward": {
+      "Total": "4-19",
+      "Intangible": "31"
+    },
+    "spotdodge": {
+      "Total": "22",
+      "Intangible": "2-15"
+    }
+  }
+}

@@ -1,0 +1,179 @@
+{
+  "stats": {
+    "AirborneOn": "5",
+    "FHTotal": "51",
+    "FHFFOn": "27",
+    "FHFFTotal": "38",
+    "SHTotal": "30",
+    "SHFFOn": "17",
+    "SHFFTotal": "21",
+    "DashBecomesRunOn": "9"
+  },
+  "jab": {
+    "jab1": {
+      "Total": "17",
+      "Hits": "4-6",
+      "SAF": "16",
+      "NextWindow": "3-16"
+    },
+    "rapidjab": {
+      "Total": "13",
+      "Hits": "5-7"
+    }
+  },
+  "ftilt": {
+    "Total": "44",
+    "Hits": "13-30",
+    "SAF": "42"
+  },
+  "dtilt": {
+    "Total": "29",
+    "Hits": "6-13",
+    "SAF": "26"
+  },
+  "utilt": {
+    "Total": "29",
+    "Hits": "9-29",
+    "SAF": "30"
+  },
+  "da": {
+    "Total": "37",
+    "Hits": "6-29",
+    "SAF": "38"
+  },
+  "fsmash": {
+    "Total": "44",
+    "Hits": "13-33",
+    "SAF": "42",
+    "Charge": "8"
+  },
+  "dsmash": {
+    "Total": "34",
+    "Hits": "15-19",
+    "SAF": "35",
+    "Charge": "8"
+  },
+  "usmash": {
+    "Total": "44",
+    "Hits": "24-28",
+    "SAF": "40",
+    "Charge": "18",
+    "Notes": [
+      "Head invincible 24-28."
+    ]
+  },
+  "nair": {
+    "Total": "44",
+    "Hits": "20-29",
+    "SAF": "45",
+    "AC": "<2",
+    "Landlag": "15",
+    "Notes": [
+      "This move cannot be L-cancelled."
+    ]
+  },
+  "fair": {
+    "Total": "44",
+    "Hits": "10-32",
+    "SAF": "45",
+    "AC": "<2",
+    "Landlag": "25"
+  },
+  "bair": {
+    "Total": "39",
+    "Hits": "10-21",
+    "SAF": "40",
+    "AC": "<9",
+    "Landlag": "18",
+    "Notes": [
+      "This move cannot be L-cancelled.",
+      "Landing hit on frame 1."
+    ]
+  },
+  "dair": {
+    "Total": "49",
+    "Hits": "12-38",
+    "SAF": "50",
+    "AC": "<5",
+    "Landlag": "20"
+  },
+  "uair": {
+    "Total": "39",
+    "Hits": "7-16, 21-22",
+    "SAF": "40",
+    "AC": "<6",
+    "Landlag": "18",
+    "Notes": [
+      "This move cannot be L-cancelled."
+    ]
+  },
+  "grab": {
+    "standing": {
+      "Total": "30",
+      "Hits": "7-8"
+    },
+    "dash": {
+      "Total": "40",
+      "Hits": "11-12"
+    }
+  },
+  "b": {
+    "Total": "49",
+    "Hits": "18-21",
+    "Notes": [
+      "1st sausage on frame 18.",
+      "Window for next B press is 20-34.",
+      "Sausages last 80 frames or until they land."
+    ]
+  },
+  "sideb": {
+    "9": {
+      "Total": "49",
+      "Hits": "16-29",
+      "Notes": [
+        "9 hammer hitbox is smaller than 1-8."
+      ]
+    },
+    "1-8": {
+      "Total": "49",
+      "Hits": "16-29",
+      "Notes": [
+        "9 hammer hitbox is smaller than 1-8.",
+        "No number can be repeated until 2 more hammer throws."
+      ]
+    }
+  },
+  "downb": {
+    "Total": "49",
+    "Hits": "2-37",
+    "Notes": [
+      "Starts absorbing after frame 5.",
+      "25 frames of full invincibility when a projectile is caught."
+    ]
+  },
+  "upb": {
+    "Total": "39",
+    "SoonestLedgeGrab": "?",
+    "Hits": "1-37",
+    "Landlag": "40",
+    "SpecialFallLag": "6"
+  },
+  "dodge": {
+    "airdodge": {
+      "Total": "49",
+      "Intangible": "4-29"
+    },
+    "rollBack": {
+      "Total": "35",
+      "Intangible": "4-19"
+    },
+    "rollForward": {
+      "Total": "35",
+      "Intangible": "4-19"
+    },
+    "spotdodge": {
+      "Total": "32",
+      "Intangible": "2-12"
+    }
+  }
+}
