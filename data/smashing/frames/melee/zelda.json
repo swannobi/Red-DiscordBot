@@ -1,0 +1,170 @@
+{
+  "stats": {
+    "AirborneOn": "7",
+    "FHTotal": "63",
+    "FHFFOn": "31",
+    "FHFFTotal": "48",
+    "SHTotal": "47",
+    "SHFFOn": "24",
+    "SHFFTotal": "33",
+    "DashBecomesRunOn": "16"
+  },
+  "jab": {
+    "Total": "29",
+    "Hits": "11, 13, 15",
+    "SAF": "27"
+  },
+  "ftilt": {
+    "Total": "37",
+    "Hits": "12-15",
+    "SAF": "37"
+  },
+  "dtilt": {
+    "Total": "31",
+    "Hits": "5-7",
+    "SAF": "30"
+  },
+  "utilt": {
+    "Total": "43",
+    "Hits": "10-24",
+    "SAF": "40"
+  },
+  "da": {
+    "Total": "37",
+    "Hits": "6-13",
+    "SAF": "36"
+  },
+  "fsmash": {
+    "Total": "39",
+    "Hits": "6, 18, 20, 22, 24",
+    "SAF": "40",
+    "Charge": "11"
+  },
+  "dsmash": {
+    "Total": "39",
+    "Hits": "4-7, 13-16",
+    "SAF": "32",
+    "Charge": "2",
+    "Notes": [
+      "Legs invincible 4-16."
+    ]
+  },
+  "usmash": {
+    "Total": "56",
+    "Hits": "5, 7, 9, 11, 13, 15, 24, 26, 28, 30, 32, 34",
+    "SAF": "51",
+    "Charge": "4"
+  },
+  "nair": {
+    "Total": "49",
+    "Hits": "6-7, 10-11, 14-15, 18-19, 22-23, 26-27",
+    "SAF": "42",
+    "AC": "<5 38>",
+    "Landlag": "18"
+  },
+  "fair": {
+    "Total": "39",
+    "Hits": "8-11",
+    "SAF": "36",
+    "AC": "<7 25>",
+    "Landlag": "18"
+  },
+  "bair": {
+    "Total": "35",
+    "Hits": "5-8",
+    "SAF": "33",
+    "AC": "<4 25>",
+    "Landlag": "18"
+  },
+  "dair": {
+    "Total": "43",
+    "Hits": "14-17",
+    "AC": "40>",
+    "Landlag": "24"
+  },
+  "uair": {
+    "Total": "54",
+    "Hits": "14-16",
+    "SAF": "55",
+    "AC": "<13 45>",
+    "Landlag": "13"
+  },
+  "grab": {
+    "standing": {
+      "Total": "30",
+      "Hits": "12-13"
+    },
+    "dash": {
+      "Total": "40",
+      "Hits": "12-13"
+    }
+  },
+  "b": {
+    "Total": "59",
+    "Hits": "12, 15, 18, 21, 24, 27",
+    "Reflects": "4-41",
+    "Notes": [
+      "Fully invincible 4-11."
+    ]
+  },
+  "sideb": {
+    "ground": {
+      "Total": "77",
+      "Hits": "60-62",
+      "Notes": [
+        "138 max total frames.",
+        "Max charge hits on 98-101.",
+        "The hitbox expands as it moves further from Zelda."
+      ]
+    },
+    "air": {
+      "Total": "77",
+      "Hits": "60-62",
+      "SpecialFallLag": "4",
+      "Notes": [
+        "138 max total frames.",
+        "Max charge hits on 98-101.",
+        "The hitbox expands as it moves further from Zelda."
+      ]
+    }
+  },
+  "downb": {
+    "Total": "69",
+    "Notes": [
+      "Fully invincible 34-43."
+    ]
+  },
+  "upb": {
+    "Total": "114",
+    "Hits": "10-11",
+    "SoonestLedgeGrab": "28",
+    "Landlag": "30",
+    "SpecialFallLag": "4",
+    "Notes": [
+      "Fully invincible 33-55.",
+      "Aim by frame 33.",
+      ""
+    ]
+  },
+  "dodge": {
+    "airdodge": {
+      "Total": "49",
+      "Intangible": "4-19",
+      "Notes": [
+        "FF on or after frame 20."
+      ]
+    },
+    "rollBack": {
+      "Total": "31",
+      "Intangible": "4-19"
+    },
+    "rollForward": {
+      "Total": "31",
+      "Intangible": "4-19"
+    },
+    "spotdodge": {
+      "Total": "32",
+      "Intangible": "3-20"
+    }
+  }
+}

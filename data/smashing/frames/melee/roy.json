@@ -1,0 +1,194 @@
+{
+    "b" : {
+        "Charge" : "11-222",
+        "Hits" : "5-10",
+        "Notes" : [
+            "Full charge only hits on one frame.",
+            "Hit begins 5 frames after B is released."
+        ],
+        "Total" : "232"
+    },
+    "bair" : {
+        "Autocancel" : "34>",
+        "Hits" : "8-10",
+        "Landlag" : "24",
+        "Total" : "45",
+        "SAF" : "43"
+    },
+    "da" : {
+        "Total" : "57",
+        "Hits" : "8-10",
+        "SAF" : "40"
+    },
+    "dair" : {
+        "Autocancel" : "<6 55>",
+        "Hits" : "7-10",
+        "Landlag" : "32",
+        "Total" : "68",
+        "SAF" : "64"
+    },
+    "dodge" : {
+        "airdodge" : {
+            "Intangible" : "4-29",
+            "Total" : "49"
+        },
+        "backroll" : {
+            "Intangible" : "4-23",
+            "Total" : "35"
+        },
+        "forwardroll" : {
+            "Intangible" : "4-19",
+            "Total" : "35"
+        },
+        "spotdodge" : {
+            "Intangible" : "2-18",
+            "Total" : "27"
+        }
+    },
+    "downb" : {
+        "Counters" : "8-20",
+        "Hits" : "14-20",
+        "Notes" : [
+            "Roy's counter deals 1.5x the damage and knockback of the incoming attack.",
+            "Hit begins 14 frames after activationi (needs confirmation).",
+            "Fully invincible 1-16 when activated (needs confirmation)."
+        ],
+        "Total" : "59"
+    },
+    "dsmash" : {
+        "Charge" : "3",
+        "Hits" : "6-8, 23-25",
+        "SAF" : "72",
+        "Total" : "74"
+    },
+    "dtilt" : {
+        "Hits" : "8-10",
+        "Notes" : [
+            "Cannot interrupt with shield."
+        ],
+        "SAF" : "20",
+        "Total" : "57"
+    },
+    "fair" : {
+        "Autocancel" : "30>",
+        "Hits" : "5-7",
+        "Landlag" : "20",
+        "Total" : "38",
+        "SAF" : "35"
+    },
+    "fsmash" : {
+        "Charge" : "3",
+        "Hits" : "12-14",
+        "SAF" : "54",
+        "Total" : "57"
+    },
+    "ftilt" : {
+        "Hits" : "9-13",
+        "SAF" : "40",
+        "Total" : "40"
+    },
+    "grab" : {
+        "dash" : {
+            "Hits" : "10-11",
+            "Total" : "40"
+        },
+        "standing" : {
+            "Hits" : "7-8",
+            "Total" : "30"
+        }
+    },
+    "jab" : {
+        "Hits" : "4-7",
+        "SAF" : "26",
+        "Total" : "31"
+    },
+    "nair" : {
+        "Autocancel" : "<6 32>",
+        "Hits" : "57",
+        "Landlag" : "20",
+        "Total" : "57",
+        "SAF" : "50"
+    },
+    "sideb" : {
+        "1-side" : {
+            "Hits" : "6-8",
+            "NextWindow" : "8-26",
+            "Total" : "29"
+        },
+        "2-side" : {
+            "Hits" : "14-16",
+            "NextWindow" : "17-33",
+            "Total" : "40"
+        },
+        "2-up" : {
+            "Hits" : "12-15",
+            "NextWindow" : "17-32",
+            "Total" : "40"
+        },
+        "3-down" : {
+            "Hits" : "16, 18, 20, 22",
+            "NextWindow" : "23-35",
+            "Total" : "46"
+        },
+        "3-side" : {
+            "Hits" : "11-14",
+            "NextWindow" : "16-37",
+            "Total" : "46"
+        },
+        "3-up" : {
+            "Hits" : "13-17",
+            "NextWindow" : "18-37",
+            "Total" : "46"
+        },
+        "4-down" : {
+            "Hits" : "13-15, 19-21, 25-27, 31-33, 37-38",
+            "Total" : "60"
+        },
+        "4-side" : {
+            "Hits" : "23-26",
+            "Total" : "50"
+        },
+        "4-up" : {
+            "Hits" : "20-25",
+            "Total" : "50"
+        }
+    },
+    "stats" : {
+        "AirborneOn" : "6",
+        "DashBecomesRunOn" : "16",
+        "FHAirTime" : "48",
+        "FHFFAirTime" : "35",
+        "FHFFOn" : "25", 
+        "SHAirTime" : "29",
+        "SHFFAirTime" : "19",
+        "SHFFOn" : "16"
+    },
+    "uair" : {
+        "Autocancel" : "<4 30>",
+        "Hits" : "5-10",
+        "Landlag" : "18",
+        "Total" : "52",
+        "SAF" : "49"
+    },
+    "upb" : {
+        "Hits" : "9-21",
+        "Notes" : [
+            "Aims on frame 9."
+        ],
+        "Landlag" : "30",
+        "SpecialFallLag" : "30",
+        "SoonestLedgeGrab" : "32",
+        "Total" : "48"
+    },
+    "usmash" : {
+        "Charge" : "8",
+        "Hits" : "15-24",
+        "SAF" : "46",
+        "Total" : "62"
+    },
+    "utilt" : {
+        "Hits" : "7-13",
+        "SAF" : "40",
+        "Total" : "45"
+    }
+}

@@ -1,0 +1,167 @@
+{
+  "stats": {
+    "AirborneOn": "6",
+    "FHTotal": "60",
+    "FHFFOn": "30",
+    "FHFFTotal": "44",
+    "SHTotal": "35",
+    "SHFFOn": "19",
+    "SHFFTotal": "24",
+    "DashBecomesRunOn": "18"
+  },
+  "jab": {
+    "jab1": {
+      "Total": "29",
+      "Hits": "8",
+      "NextWindow": "3-28",
+      "Jab2Start": "12"
+    },
+    "rapidjab": {
+      "Total": "79",
+      "Hits": "13, 20, 27, 34, 41, 48, 55, 65"
+    }
+  },
+  "ftilt": {
+    "Total": "31",
+    "Hits": "6-8",
+    "SAF": "29"
+  },
+  "dtilt": {
+    "Total": "29",
+    "Hits": "5-7",
+    "SAF": "?"
+  },
+  "utilt": {
+    "Total": "31",
+    "Hits": "6-11",
+    "SAF": "?"
+  },
+  "fsmash": {
+    "Total": "59",
+    "Hits": "18-19",
+    "SAF": "60",
+    "Charge": "14"
+  },
+  "dsmash": {
+    "Total": "59",
+    "Hits": "20-21",
+    "SAF": "60",
+    "Charge": "17"
+  },
+  "usmash": {
+    "Total": "79",
+    "Hits": "9-10, 13-14, 17-18, 21-22, 25-26, 29-30, 33-34",
+    "SAF": "52",
+    "Charge": "2"
+  },
+  "nair": {
+    "Total": "54",
+    "Hits": "5-6, 9-10, 13-14, 17-18, 21-22, 25-26, 29-30, 33-34, 37-38",
+    "SAF": "55",
+    "AC": "<5 37>",
+    "Landlag": "17"
+  },
+  "fair": {
+    "Total": "39",
+    "Hits": "6-8",
+    "SAF": "40",
+    "AC": "<1 35>",
+    "Landlag": "25"
+  },
+  "bair": {
+    "Total": "31",
+    "Hits": "12-15",
+    "SAF": "32",
+    "AC": "<3 30>",
+    "Landlag": "28"
+  },
+  "dair": {
+    "Total": "57",
+    "Hits": "18-21",
+    "AC": "<6 45>",
+    "SAF": "58",
+    "Landlag": "28"
+  },
+  "uair": {
+    "Total": "37",
+    "Hits": "9-11",
+    "SAF": "38",
+    "AC": "<4 33>",
+    "Landlag": "20"
+  },
+  "da": {
+    "Total": "49",
+    "Hits": "10-29",
+    "SAF": "50"
+  },
+  "grab": {
+    "standing": {
+      "Total": "31",
+      "Hits": "7-8"
+    },
+    "dash": {
+      "Total": "39",
+      "Hits": "8-9"
+    }
+  },
+  "b": {
+    "charging": {
+      "Total": "119",
+      "Hits": "18-19, 22-24, 27-29, 32-35, ...",
+      "Charge": "18",
+      "Notes": [
+        "This move can be charged indefinitely.",
+        "Full charge on frame 118.",
+        "8 frames of lag when cancelling charge with shield, but no lag with roll.",
+        "Shadow Ball spawns on frame 9 after B is pressed and lasts 69 frames.",
+        "Shot animation lasts 24 frames."
+      ]
+    },
+    "fullcharge": {
+      "Total": "41",
+      "Hits": "26-95"
+    }
+  },
+  "sideb": {
+    "Total": "55",
+    "Grabs": "2-15",
+    "Reflects": "12-27",
+    "Notes": [
+      "Reflected projectiles remain owned by the character that threw them (i.e. Fox's reflected lasers will not hit Fox)."
+    ]
+  },
+  "downb": {
+    "Total": "41",
+    "Hits": "15-21",
+    "Notes": [
+      "This move can only hit opponents facing Mewtwo."
+    ]
+  },
+  "upb": {
+    "Total": "46",
+    "Landlag": "30",
+    "SpecialFallLag": "4",
+    "Notes": [
+      "If teleport puts Mewtwo in the air, it only lasts 32 frames total.",
+      "Fully invincible 8-17."
+    ]
+  },
+  "dodge": {
+    "airdodge": {
+      "Total": "39",
+      "Intangible": "4-30"
+    },
+    "rollBack": {
+      "Total": "37",
+      "Intangible": "4-20"
+    },
+    "rollForward": {
+      "Total": "37",
+      "Intangible": "4-20"
+    },
+    "spotdodge": {
+      "Total": "37",
+      "Intangible": "2-21"
+    }
+  }
+}

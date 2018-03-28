@@ -1,0 +1,172 @@
+rborneOn": "6",
+    "FHTotal": "56",
+    "FHFFOn": "29",
+    "FHFFTotal": "40",
+    "SHTotal": "40",
+    "SHFFOn": "22",
+    "SHFFTotal": "27",
+    "DashBecomesRunOn": "14"
+  },
+  "jab": {
+    "jab1": {
+      "Total": "17",
+      "Hits": "3-5",
+      "NextWindow": "3-25",
+      "Jab2Start": "8",
+      "SAF": "18"
+    },
+    "jab2": {
+      "Total": "20",
+      "Hits": "4-6",
+      "SAF": "21"
+    }
+  },
+  "ftilt": {
+    "Total": "29",
+    "Hits": "6-8",
+    "SAF": "30"
+  },
+  "dtilt": {
+    "Total": "23",
+    "Hits": "8-10",
+    "SAF": "24"
+  },
+  "utilt": {
+    "Total": "29",
+    "Hits": "8-12",
+    "SAF": "30"
+  },
+  "da": {
+    "Total": "43",
+    "Hits": "10-23",
+    "SAF": "42",
+    "Notes": [
+      "Head invincible 5-13."
+    ]
+  },
+  "fsmash": {
+    "Total": "47",
+    "Hits": "14-16",
+    "SAF": "44",
+    "Charge": "6",
+    "Notes": [
+      "Head invincible 12-16."
+    ]
+  },
+  "dsmash": {
+    "Total": "49",
+    "Hits": "6-8, 21-22",
+    "SAF": "50",
+    "Charge": "4"
+  },
+  "usmash": {
+    "Total": "43",
+    "Hits": "11-15",
+    "SAF": "40",
+    "Charge": "6",
+    "Notes": [
+      "Head invincible 11-15."
+    ]
+  },
+  "nair": {
+    "Total": "47",
+    "Hits": "3-33",
+    "SAF": "45",
+    "AC": "<2 36>",
+    "Landlag": "15"
+  },
+  "fair": {
+    "Total": "49",
+    "Hits": "19-21",
+    "SAF": "44",
+    "AC": "<3 36>",
+    "Landlag": "21"
+  },
+  "bair": {
+    "Total": "39",
+    "Hits": "10-12, 16-18, 23-25, 28-30",
+    "SAF": "38",
+    "AC": "<9 33>",
+    "Landlag": "15"
+  },
+  "dair": {
+    "Total": "59",
+    "Hits": "18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44",
+    "SAF": "53",
+    "AC": "<15 50>",
+    "Landlag": "26"
+  },
+  "uair": {
+    "Total": "39",
+    "Hits": "5-6",
+    "SAF": "39",
+    "AC": "<4 33>",
+    "Landlag": "19"
+  },
+  "grab": {
+    "standing": {
+      "Total": "79",
+      "Hits": "18-23"
+    },
+    "dash": {
+      "Total": "70",
+      "Hits": "11-16"
+    }
+  },
+  "b": {
+    "Total": "39",
+    "Hits": "18-21"
+  },
+  "sideb": {
+    "Total": "999",
+    "Hits": "?",
+    "Notes": [
+      "Egg roll moves slightly faster on green surfaces."
+    ]
+  },
+  "downb": {
+    "ground": {
+      "Total": "?",
+      "Hits": "27-36",
+      "Notes": [
+        "Can grab ledges as soon as frame 28.",
+        "Landing hit frames 1-16."
+      ]
+    },
+    "air": {
+      "Total": "?",
+      "Hits": "19-255",
+      "Notes": [
+        "Can grab ledges as soon as frame 18.",
+        "Landing hit frames 1-16."
+      ]
+    }
+  },
+  "upb": {
+    "Total": "54",
+    "Hits": "18-76",
+    "SoonestLedgeGrab": "19",
+    "Notes": [
+      "Egg will explode on frame 56 even if it hasn't hit anything.",
+      "Egg hitbox lasts 3 frames during its explosion."
+    ]
+  },
+  "dodge": {
+    "airdodge": {
+      "Total": "49",
+      "Intangible": "4-29"
+    },
+    "rollBack": {
+      "Total": "37",
+      "Intangible": "4-19"
+    },
+    "rollForward": {
+      "Total": "34",
+      "Intangible": "4-19"
+    },
+    "spotdodge": {
+      "Total": "22",
+      "Intangible": "2-15"
+    }
+  }
+}

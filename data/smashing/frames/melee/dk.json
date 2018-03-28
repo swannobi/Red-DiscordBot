@@ -1,0 +1,184 @@
+{
+  "stats": {
+    "AirborneOn": "6",
+    "FHTotal": "55",
+    "FHFFOn": "30",
+    "FHFFTotal": "41",
+    "SHTotal": "33",
+    "SHFFOn": "18",
+    "SHFFTotal": "21",
+    "DashBecomesRunOn": "16"
+  },
+  "jab": {
+    "jab1": {
+      "Total": "24",
+      "Hits": "5-7",
+      "SAF": "25",
+      "NextWindow": "3-29",
+      "Jab2Start": "10"
+    },
+    "jab2": {
+      "Total": "34",
+      "Hits": "5-11",
+      "SAF": "35"
+    }
+  },
+  "ftilt": {
+    "Total": "33",
+    "Hits": "8-11",
+    "SAF": "37"
+  },
+  "dtilt": {
+    "Total": "22",
+    "Hits": "6-9",
+    "SAF": "23"
+  },
+  "utilt": {
+    "Total": "39",
+    "Hits": "6-11",
+    "SAF": "40"
+  },
+  "da": {
+    "Total": "54",
+    "Hits": "9-20",
+    "SAF": "55"
+  },
+  "fsmash": {
+    "Total": "54",
+    "Hits": "22-23",
+    "SAF": "55",
+    "Charge": "15"
+  },
+  "dsmash": {
+    "Total": "55",
+    "Hits": "10-13",
+    "SAF": "56",
+    "Charge": "3"
+  },
+  "usmash": {
+    "Total": "53",
+    "Hits": "14-16",
+    "SAF": "54",
+    "Charge": "7",
+    "Notes": [
+      "Head and forearms invincible 12-16."
+    ]
+  },
+  "nair": {
+    "Total": "43",
+    "Hits": "10-26",
+    "SAF": "39",
+    "AC": "<9 39>",
+    "Landlag": "20"
+  },
+  "fair": {
+    "Total": "59",
+    "Hits": "25-29",
+    "SAF": "60",
+    "AC": "",
+    "Landlag": "30",
+    "Notes": [
+      "DK's fair is the only aerial in the game that has no autocancel window."
+    ]
+  },
+  "bair": {
+    "Total": "39",
+    "Hits": "7-15",
+    "SAF": "32",
+    "AC": "<6 20>",
+    "Landlag": "15"
+  },
+  "dair": {
+    "Total": "54",
+    "Hits": "18-23",
+    "SAF": "55",
+    "AC": "<2 50>",
+    "Landlag": "31"
+  },
+  "uair": {
+    "Total": "44",
+    "Hits": "6-8",
+    "SAF": "38",
+    "AC": "<5 13>",
+    "Landlag": "25"
+  },
+  "grab": {
+    "standing": {
+      "Total": "30",
+      "Hits": "8-9"
+    },
+    "dash": {
+      "Total": "40",
+      "Hits": "10-11"
+    }
+  },
+  "b": {
+    "uncharged": {
+      "Total": "58",
+      "Hits": "17-21",
+      "Notes": [
+        "This move has 12 levels of charge.",
+        "Each charge is stored every 12 frames.",
+        "No charge to full charge takes 120 frames."
+      ]
+    },
+    "charged": {
+      "Total": "46",
+      "Hits": "17-21",
+      "Notes": [
+        "Fully invincible 17-18."
+      ]
+    }
+  },
+  "sideb": {
+    "Total": "59",
+    "Hits": "20-21"
+  },
+  "downb": {
+    "Total": "60",
+    "Hits": "6-7, 17-18",
+    "Notes": [
+      "Each additional iteration of slap is 27 frames and hits 6-7",
+      "17-18",
+      "plus a 20 frame cooldown."
+    ]
+  },
+  "upb": {
+    "ground": {
+      "Total": "84",
+      "SoonestLedgeGrab": "85",
+      "Hits": "3-5, 19-58",
+      "Notes": [
+        "Fully invincible 3-5."
+      ]
+    },
+    "air": {
+      "Total": "84",
+      "SoonestLedgeGrab": "85",
+      "Hits": "2-5, 11-66",
+      "SpecialFallLag": "7",
+      "Notes": [
+        "Fully invincible 2-5.",
+        "Arms invincible 11-42."
+      ]
+    }
+  },
+  "dodge": {
+    "airdodge": {
+      "Total": "49",
+      "Intangible": "4-29"
+    },
+    "rollBack": {
+      "Total": "31",
+      "Intangible": "4-19"
+    },
+    "rollForward": {
+      "Total": "31",
+      "Intangible": "4-19"
+    },
+    "spotdodge": {
+      "Total": "37",
+      "Intangible": "2-23"
+    }
+  }
+}
