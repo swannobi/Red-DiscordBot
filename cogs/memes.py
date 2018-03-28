@@ -25,6 +25,11 @@ class Memes:
         with open('data/memes/lex.png', 'rb') as f:
             await self.bot.send_file(ctx.message.channel, f)
 
+    @commands.command(pass_context=True)
+    async def collin(self, ctx):
+        """F this"""
+        await self.bot.say("https://gfycat.com/AffectionateGenerousBarebirdbat")
+
     @commands.group(name="smith", pass_context=True)
     async def smith(self, ctx):
         """Smiff"""
@@ -46,6 +51,10 @@ class Memes:
         with open('data/memes/nugs.jpg', 'rb') as f:
             await self.bot.send_file(ctx.message.channel, f)
 
+    @commands.command(pass_context=True)
+    async def bodied(self, ctx):
+        with open('data/memes/bodied.gif', 'rb') as f:
+            await self.bot.send_file(ctx.message.channel, f)
+
 def setup(bot):
     bot.add_cog(Memes(bot))
-
