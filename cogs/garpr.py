@@ -1,12 +1,13 @@
 # GarPR integration cog for Red-DiscordBot by Twentysix, an
 #   open-source discord bot (github.com/Cog-Creators/Red-DiscordBot)
 #
-# Authored by Swann (github.com/swannobi)
-# GarPR at github.com/garsh0p/garrpr
+# Class authored by Swann (github.com/swannobi)
+# Original GarPR at github.com/garsh0p/garpr
+# New GarPR at github.com/ripgarpr/garpr
 #
 # Route class based on martmists' work on the ram.moe wrapper
 #
-# Last updated Jan 14, 2018
+# Last updated Mar 28, 2018
 
 import discord
 import os
@@ -215,6 +216,7 @@ class GarPR:
                         data.set_field_at(index=1, name="Rank:", value=str(guy["rank"])+self.settings["rank emotes"][3])
                     elif 51 <= guy["rank"] < 101:
                         data.colour = self.settings["rank colors"][4]
+                        data.set_field_at(index=1, name="Rank:", value=str(guy["rank"])+self.settings["rank emotes"][4])
             data.set_footer(text="notgarpr-discord integration by Swann")
             try:
                 await self.bot.say(embed=data) 
@@ -253,15 +255,20 @@ class GarPR:
             if answer < 0 or answer > 5:
                 await self.bot.edit_message(prompt, "Invalid choice")
                 return
-            await self.bot.edit_message(prompt, "Editing emote for ("+tiers[answer-1]+")\nWhich emote should display?")
+            await self.bot.edit_message(prompt, "Editing emote for ("+tiers[answer-1]+")\nWhich emote should display (type \".\" to remove emote)?")
             emote = await self.bot.wait_for_message(timeout=60, author=ctx.message.author)
             emote = emote.content
         except:
             await self.bot.edit_message(prompt, "Timed out.")
             return
-        self.settings["rank emotes"][answer-1] = emote
-        dataIO.save_json(self.resources+"garpr_settings.json", self.settings)
-        await self.bot.edit_message(prompt, "Ok, I've set "+emote+" as the new rank icon for"+str(answer))
+        if emote == ".":
+            self.settings["rank emotes"][answer-1] = ""
+            dataIO.save_json(self.resources+"garpr_settings.json", self.settings)
+            await self.bot.edit_message(prompt, "Ok, I've removed the emote for "+str(answer))
+        else:
+            self.settings["rank emotes"][answer-1] = emote
+            dataIO.save_json(self.resources+"garpr_settings.json", self.settings)
+            await self.bot.edit_message(prompt, "Ok, I've set "+emote+" as the new rank icon for "+str(answer))
 
     @garprset.command(pass_context=True, name="color")
     async def color(self, ctx):
@@ -274,6 +281,7 @@ class GarPR:
         roleNames = []
         coloredRoles = [0,1,2,3,4]
         msg = "Current settings:\n"
+        #Ensure roles exist and are mapped to the current colors
         for role in roles:
             roleNames.append(role.name)
         for index, botRole in enumerate(tiers):
@@ -292,7 +300,6 @@ class GarPR:
                 print("error editing "+botRole)
         msg+="\nFrom above, choose an option 1-5 to change!"
         prompt = await self.bot.say(msg)
-
         try:
             answer = await self.bot.wait_for_message(timeout=60, author=ctx.message.author)
             answer = int(re.sub(r'[^\d]', '', answer.content))
@@ -338,7 +345,7 @@ class ResponseError(BaseException):
 
 def check_folders(resources_folder):
     if not os.path.exists(resources_folder):
-        print("Creating smashing data folder...")
+        print("Creating garpr data folder...")
         os.makedirs(resources_folder)
 
 def check_files(resources_folder):
@@ -357,12 +364,12 @@ def check_files(resources_folder):
                 {
                     "region" : "northcarolina",
                     "tournaments on record" : 0,
-                    "rank emotes" : [":pineapple:", ":apple:", ":tangerine:", ":cherries:"],
-                    "rank colors" : [discord.Colour.dark_green().value,discord.Colour.gold().value,discord.Colour.light_grey().value,discord.Colour.purple().value,10061926]
+                    "rank emotes" : [":pineapple:", ":apple:", ":tangerine:", ":cherries:", ""],
+                    "rank colors" : [discord.Colour.gold().value,discord.Colour.dark_green().value,discord.Colour.light_grey().value,discord.Colour.purple().value,10061926]
                 })
 
 def setup(bot):
-    resources_folder = "data/smashing/"
+    resources_folder = "data/garpr/"
     check_folders(resources_folder)
     check_files(resources_folder)
     bot.add_cog(GarPR(bot, resources_folder))
