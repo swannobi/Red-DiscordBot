@@ -60,14 +60,32 @@ def _post_poll(title, options, multi):
 class _Poll:
     """Internal poll class for Strawpoll cog"""
     
-    def __init__(self, bot, settings, message, author, poll_id, poll_length):
+    def __init__(self, bot, settings, message, 
+            author, poll_id, poll_length, sleep_time):
         self.bot = bot
         self.settings = settings
         self.message = message
         self.author = author
         self.poll_id = poll_id
+        self.poll_title = ""
         self.poll_length = poll_length
+        self.sleep_time = sleep_time
         self.start_time = time()
+
+    # https://www.w3resource.com/python-exercises/python-basic-exercise-65.php
+    def _time_left(self, seconds):
+        days = seconds // (24 * 3600)
+        seconds = seconds % (24 * 3600)
+        hours = seconds // 3600
+        seconds %= 3600
+        minutes = seconds // 60
+        seconds %= 60
+        if days > 0:
+            return "%d:%02d:%02d:%02d" % (days, hours, minutes, seconds)
+        elif hours > 0:
+            return "%02d:%02d:%02d" % (hours, minutes, seconds)
+        else:
+            return "%02d:%02d" % (minutes, seconds)
 
     def _bar_creator(self, data, option):
         display_bar = " :: "
@@ -87,6 +105,7 @@ class _Poll:
         if data is None:
             await self.bot.edit_message(self.message, 
                 embed=discord.Embed(title="Error receiving strawpoll data!"))
+        self.poll_title = unescape(data['title'])
         embed=discord.Embed(title=unescape(data['title']), 
             url='https://strawpoll.me/' + str(self.poll_id), 
             description="Strawpoll Results", color=self.author.color)
@@ -102,8 +121,8 @@ class _Poll:
                 value=self._bar_creator(data, option))
         time_left = round(self.poll_length-(time()-self.start_time))
         if (time_left > 0):
-            embed.set_footer(text="{} sec{} left".format(
-                str(time_left), '' if (time_left == 1) else 's'))
+            embed.set_footer(text="{} left (update every {}s)".format(
+                self._time_left(time_left), self.sleep_time))
         else: 
             embed.set_footer(text="as of {}".format(
                 strftime('%A %B %-m, %Y @ %I:%M:%S%p ')))
@@ -116,6 +135,8 @@ class Strawpoll:
         self.bot = bot
         self.settings_path = settings_path
         self.settings = defaultdict(dict, dataIO.load_json(settings_path))
+        self.active_poll_sessions = []
+        self.active_poll_session_tasks = {}
         self.poll_sessions = []
         self.poll_session_tasks = {}
 
@@ -130,6 +151,10 @@ class Strawpoll:
         dataIO.save_json(self.settings_path, self.settings)
 
     def _check_new_poll_tasks(self):
+        for poll in self.active_poll_sessions:
+            if poll not in self.active_poll_session_tasks:
+                self.active_poll_session_tasks[poll] = asyncio.ensure_future(
+                    self._countdown_poll(poll))
         for poll in self.poll_sessions:
             if poll not in self.poll_session_tasks:
                 self.poll_session_tasks[poll] = asyncio.ensure_future(
@@ -155,6 +180,9 @@ class Strawpoll:
         self.poll_session_tasks = { 
             poll:task for poll,task in self.poll_session_tasks.items() 
             if not task.done()}
+        self.active_poll_session_tasks = { 
+            poll:task for poll,task in self.active_poll_session_tasks.items() 
+            if not task.done()}
 
     async def check_polls(self):
         POLL_CHECK_RATE = 5 # seconds between each check for expired polls
@@ -168,6 +196,8 @@ class Strawpoll:
             await asyncio.sleep(POLL_CHECK_RATE)
         for poll in self.poll_session_tasks.keys():
             self.poll_session_tasks[poll].cancel()
+        for poll in self.active_poll_session_tasks.keys():
+            self.active_poll_session_tasks[poll].cancel()
         
     async def _check_reacts(self, poll):
         settings = self.settings[poll.message.server.id]
@@ -183,32 +213,78 @@ class Strawpoll:
         except CancelledError:
             await self.bot.clear_reactions(poll.message)
             raise CancelledError("Poll cancelled")
-            
-    async def _create_poll(self, message, channel, author, poll_id):
-        settings = self.settings[message.server.id]
+
+    async def _countdown_poll(self, poll):
+        settings = self.settings[poll.message.server.id]
         refresh_emoji = settings['refresh_emoji']
-        poll_length = settings['poll_length']
-        poll = _Poll(self.bot, settings, 
-                message, author, poll_id, poll_length)
-        while time()-poll.start_time < poll_length:
+        try:
+            while time()-poll.start_time < poll.poll_length:
+                await poll.update_results()
+                await asyncio.sleep(poll.sleep_time)
+            await self.bot.delete_message(poll.message)
+            poll.message = await self.bot.send_message(poll.message.channel,
+                embed=discord.Embed(title="Loading results..."))
             await poll.update_results()
-            await asyncio.sleep(1)
-        await self.bot.delete_message(poll.message)
-        poll.message = await self.bot.send_message(channel,
-            embed=discord.Embed(title="Loading results..."))
+            await self.bot.add_reaction(poll.message, refresh_emoji)
+            self.poll_sessions.append(poll)
+            self.active_poll_sessions.remove(poll)
+        except CancelledError:
+            poll.poll_length = 0
+            await poll.update_results()
+            self.active_poll_sessions.remove(poll)
+            raise CancelledError("Poll cancelled")
+
+    async def _create_poll(self, message, channel, author, poll_id, poll_length):
+        settings = self.settings[message.server.id]
+        sleep_time = self._sleep_time(poll_length)
+        poll = _Poll(self.bot, settings, 
+                message, author, poll_id, poll_length, sleep_time)
         await poll.update_results()
-        await self.bot.add_reaction(poll.message, refresh_emoji)
-        self.poll_sessions.append(poll)
+        self.active_poll_sessions.append(poll)
     
+    def _sleep_time(self, poll_length):
+        if poll_length < 5*60: # 5 minutes
+            return 1
+        elif poll_length < 60*60: # 1 hour
+            return 5
+        elif poll_length < 60*60*12: # 12 hours
+            return 10
+        else: # more than 12 hours
+            return 20
+            
+    async def _stop_poll(self, text, channel, author):
+        text = text.lower()
+        for poll in self.active_poll_sessions:
+            if poll.message.server.id != channel.server.id:
+                continue
+            poll_title = poll.poll_title.lower()
+            if text in poll_title:
+                if poll in self.active_poll_session_tasks:
+                    if not channel.permissions_for(author).manage_messages:
+                        if poll.author != author:
+                            await self.bot.send_message(channel, 
+                                "Can't stop `" + poll.poll_title +
+                                "` since you didn't create it.")
+                            return
+                    self.active_poll_session_tasks[poll].cancel()
+                    await self.bot.send_message(channel, 
+                        "Poll `" + poll.poll_title + "` stopped!")
+                    return
+        await self.bot.send_message(channel, 
+            "Can't find any polls matching `" + text + "`.")
+        
     @commands.command(pass_context=True, no_pm=True)
     async def strawpoll(self, ctx, *text):
         """
         Host a poll on Strawpoll.me with live results
 
-        Usage: strawpoll [m] title;option 1;option 2 (...)
+        Usage: strawpoll [hours] [m] title;option 1;option 2 (...)
+               strawpoll stop [search terms]
         
         Options:
+            hours   How many hours to run the poll (can be a decimal. eg. 0.1)
             m       Allow multiple options to be selected
+            stop    Stops a poll matching title text provided after "stop"
         """
         if ctx.message.server.id not in self.settings:
             self._new_server_settings(ctx.message.server.id)
@@ -216,7 +292,19 @@ class Strawpoll:
         if len(text) <= 0:
             await self.bot.send_cmd_help(ctx)
             return
-        if text[0] is 'm':
+        if text[0] == 'stop':
+            text = text[1:]
+            await self._stop_poll(' '.join(text),
+                ctx.message.channel, ctx.message.author)
+            return
+        try:
+            hours = float(text[0])
+            poll_length = hours * 60 * 60 # hours to seconds
+            text = text[1:]
+        except ValueError:
+            settings = self.settings[ctx.message.server.id]
+            poll_length = settings['poll_length']
+        if text[0] == 'm':
             multi = True
             text = text[1:]
         poll = ' '.join(text).split(';', 1)
@@ -242,7 +330,7 @@ class Strawpoll:
             embed=discord.Embed(title="Loading strawpoll..."))
         await self._create_poll(
             results_message, ctx.message.channel, 
-            ctx.message.author, response['id'])
+            ctx.message.author, response['id'], poll_length)
     
     @commands.command(name="strawpollset", pass_context=True)
     @checks.mod_or_permissions(manage_server=True)
