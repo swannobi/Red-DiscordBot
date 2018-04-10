@@ -171,6 +171,7 @@ class GarPR:
             "and "+str(stats["losses"])+" losses ("+ratio+")")
         except KeyError as e:
             print(e)
+            await self.bot.add_reaction(message=ctx.message, emoji="❌")
         except ResponseError as e:
             print("GarPR may be down!")
             print(e)
