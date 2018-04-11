@@ -335,6 +335,17 @@ class Strawpoll:
     @commands.command(name="strawpollset", pass_context=True)
     @checks.mod_or_permissions(manage_server=True)
     async def strawpoll_settings(self, ctx, *text):
+        """
+        Adjust strawpoll default settings
+    
+        Usage: strawpollset option value
+        
+        Options:
+            refresh_emoji    Manual refresh emoji once a poll ends
+            poll_length      Time in seconds for the default length of a poll
+            poll_react_time  How long in seconds the refresh emoji stays active
+            bar_length       How long the distribution bars in the embed are
+        """
         server_id = ctx.message.server.id
         if server_id not in self.settings:
             self._new_server_settings(server_id)
