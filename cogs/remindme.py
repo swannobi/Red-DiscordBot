@@ -15,7 +15,7 @@ class RemindMe:
         self.units = {"minute" : 60, "hour" : 3600, "day" : 86400, "week": 604800, "month": 2592000}
 
     @commands.command(pass_context=True)
-    async def remindme(self, ctx,  quantity : int, time_unit : str, *, text : str):
+    async def remindme(self, ctx, quantity : int, time_unit : str, *, text : str):
         """Sends you <text> when the time is up
 
         Accepts: minutes, hours, days, weeks, month
@@ -38,9 +38,41 @@ class RemindMe:
             return
         seconds = self.units[time_unit] * quantity
         future = int(time.time()+seconds)
-        self.reminders.append({"ID" : author.id, "FUTURE" : future, "TEXT" : text})
+        self._remindme( author.id, future, 0, text )
         logger.info("{} ({}) set a reminder.".format(author.name, author.id))
         await self.bot.say("I will remind you that in {} {}.".format(str(quantity), time_unit + s))
+
+    @commands.command(pass_context=True)
+    async def keepremindingme( self, ctx, quantity : int, time_unit : str, *, text: str):
+        """Sends you <text> when the time is up... again... and again... and again...
+
+        Accepts: minutes, hours, days, weeks, month
+        Example:
+        [p]remindme 3 days Have sushi with Asu and JennJenn"""
+        time_unit = time_unit.lower()
+        author = ctx.message.author
+        s = ""
+        if time_unit.endswith("s"):
+            time_unit = time_unit[:-1]
+            s = "s"
+        if not time_unit in self.units:
+            await self.bot.say("Invalid time unit. Choose minutes/hours/days/weeks/month")
+            return
+        if quantity < 1:
+            await self.bot.say("Quantity must not be 0 or negative.")
+            return
+        if len(text) > 1960:
+            await self.bot.say("Text is too long.")
+            return
+        seconds = self.units[time_unit] * quantity
+        future = int(time.time()+seconds)
+        self._remindme( author.id, future, seconds, text )
+        logger.info("{} ({}) set a reminder.".format(author.name, author.id))
+        await self.bot.say("I will remind you that in {} {}.".format(str(quantity), time_unit + s))
+
+    def _remindme( self, author, future, repeat, text ):
+        """Accepts: minutes, hours, days, weeks, month"""
+        self.reminders.append({"ID" : author, "FUTURE" : future, "REPEAT" : repeat, "TEXT" : text})
         fileIO("data/remindme/reminders.json", "save", self.reminders)
 
     @commands.command(pass_context=True)
@@ -75,6 +107,8 @@ class RemindMe:
                         to_remove.append(reminder)
             for reminder in to_remove:
                 self.reminders.remove(reminder)
+                if reminder["REPEAT"] > 0:
+                    self._remindme( reminder["ID"], int(time.time()+reminder["REPEAT"]), reminder["REPEAT"], reminder["TEXT"])
             if to_remove:
                 fileIO("data/remindme/reminders.json", "save", self.reminders)
             await asyncio.sleep(5)

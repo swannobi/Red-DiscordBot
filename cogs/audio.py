@@ -1913,7 +1913,7 @@ class Audio:
             vchan = server.me.voice_channel
             vc = self.voice_client(server)
             if msg.author.voice_channel == vchan:
-                if self.can_instaskip(msg.author):
+                if self.can_instaskip(msg.author) and "force" in ctx.message.content:
                     vc.audio_player.stop()
                     if self._get_queue_repeat(server) is False:
                         self._set_queue_nowplaying(server, None, None)
@@ -1927,8 +1927,9 @@ class Audio:
                         reply = "you voted to skip."
 
                     num_votes = len(self.skip_votes[server.id])
-                    # Exclude bots and non-plebs
-                    num_members = sum(not (m.bot or self.can_instaskip(m))
+                    # Exclude bots and non-plebs  #Swann-Cogs: Allow mods to vote
+                                                  #            normally if they wish.
+                    num_members = sum(not (m.bot) #or self.can_instaskip(m))
                                       for m in vchan.voice_members)
                     vote = int(100 * num_votes / num_members)
                     thresh = self.get_server_settings(server)["VOTE_THRESHOLD"]
