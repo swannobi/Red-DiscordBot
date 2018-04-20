@@ -147,6 +147,7 @@ class GarPR:
                     return
             except KeyError as e:
                 print(e)
+                await self.bot.add_reaction(message=ctx.message, emoji="❌")
                 return
             except ResponseError as e:
                 print("GarPR may be down!")
@@ -365,8 +366,16 @@ def check_files(resources_folder):
                 {
                     "region" : "northcarolina",
                     "tournaments on record" : 0,
-                    "rank emotes" : [":pineapple:", ":apple:", ":tangerine:", ":cherries:", ""],
-                    "rank colors" : [discord.Colour.gold().value,discord.Colour.dark_green().value,discord.Colour.light_grey().value,discord.Colour.purple().value,10061926]
+                    "rank emotes" : [":pineapple:", 
+                                     ":apple:", 
+                                     ":tangerine:", 
+                                     ":cherries:", 
+                                     ""],
+                    "rank colors" : [discord.Colour.gold().value,
+                                     discord.Colour.dark_green().value,
+                                     discord.Colour.light_grey().value,
+                                     discord.Colour.purple().value,
+                                     10061926]
                 })
 
 def setup(bot):
