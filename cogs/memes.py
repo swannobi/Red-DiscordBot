@@ -30,7 +30,7 @@ class Memes:
         """F this"""
         await self.bot.say("https://gfycat.com/AffectionateGenerousBarebirdbat")
 
-    @commands.group(name="smith", pass_context=True)
+    @commands.group(pass_context=True)
     async def smith(self, ctx):
         """Smiff"""
         if ctx.invoked_subcommand is None:
