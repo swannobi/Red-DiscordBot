@@ -272,41 +272,18 @@ class Strawpoll:
                     return
         await self.bot.send_message(channel, 
             "Can't find any polls matching `" + text + "`.")
-        
-    @commands.command(pass_context=True, no_pm=True)
-    async def strawpoll(self, ctx, *text):
-        """
-        Host a poll on Strawpoll.me with live results
 
-        Usage: strawpoll [hours] [m] title;option 1;option 2 (...)
-               strawpoll stop [search terms]
-        
-        Options:
-            hours   How many hours to run the poll (can be a decimal. eg. 0.1)
-            m       Allow multiple options to be selected
-            stop    Stops a poll matching title text provided after "stop"
-        """
+    async def _poll_args_process(self, ctx, hours, text, multi):
         if ctx.message.server.id not in self.settings:
             self._new_server_settings(ctx.message.server.id)
-        multi = False
         if len(text) <= 0:
             await self.bot.send_cmd_help(ctx)
             return
-        if text[0] == 'stop':
-            text = text[1:]
-            await self._stop_poll(' '.join(text),
-                ctx.message.channel, ctx.message.author)
-            return
         try:
-            hours = float(text[0])
             poll_length = hours * 60 * 60 # hours to seconds
-            text = text[1:]
         except ValueError:
             settings = self.settings[ctx.message.server.id]
             poll_length = settings['poll_length']
-        if text[0] == 'm':
-            multi = True
-            text = text[1:]
         poll = ' '.join(text).split(';', 1)
         if len(poll) != 2:
             await self.bot.send_cmd_help(ctx)
@@ -332,15 +309,69 @@ class Strawpoll:
             results_message, ctx.message.channel, 
             ctx.message.author, response['id'], poll_length)
     
-    @commands.command(name="strawpollset", pass_context=True)
+    @commands.group(pass_context=True, no_pm=True)
+    async def strawpoll(self, ctx):
+        """Interface for Strawpoll"""
+        if ctx.invoked_subcommand is None:
+            await self.bot.send_cmd_help(ctx)
+    
+    @strawpoll.command(pass_context=True, no_pm=True)
+    async def stop(self, ctx, *search_terms):
+        """
+        Stop a poll on Strawpoll.me that matches search terms
+
+        Usage: [p]strawpoll stop [search terms]
+        """
+        await self._stop_poll(' '.join(search_terms),
+            ctx.message.channel, ctx.message.author)
+
+    @strawpoll.command(pass_context=True, no_pm=True)
+    async def multi(self, ctx, hours:float, *text):
+        """
+        Host a multiple choice poll on Strawpoll.me with live results
+
+        Options:
+            hours   How many hours to run the poll 
+                    (can be a decimal. eg. 0.1)
+            text    title;option 1;option 2;option 3(...)
+        """
+        await self._poll_args_process(ctx, hours, text, True)
+
+
+    @strawpoll.command(pass_context=True, no_pm=True)
+    async def host(self, ctx, hours:float, *text):
+        """
+        Host a poll on Strawpoll.me with live results
+
+        Options:
+            hours   How many hours to run the poll 
+                    (can be a decimal. eg. 0.1)
+            text    title;option 1;option 2;option 3(...)
+        """
+        await self._poll_args_process(ctx, hours, text, False)
+
     @checks.mod_or_permissions(manage_server=True)
-    async def strawpoll_settings(self, ctx, *text):
+    @strawpoll.command(pass_context=True, no_pm=True)
+    async def config(self, ctx):
+        """
+        Display current strawpoll settings for this server
+        """
+        server_id = ctx.message.server.id
+        if server_id not in self.settings:
+            self._new_server_settings(server_id)
+        settings = self.settings[server_id]
+        settings_text = ''
+        for setting, value in settings.items():
+            settings_text += '{}: {}\n'.format(setting, value)
+        await self.bot.say("```{}```".format(settings_text))
+
+    @strawpoll.command(pass_context=True, no_pm=True)
+    @checks.mod_or_permissions(manage_server=True)
+    async def set(self, ctx, setting:str, value:str):
         """
         Adjust strawpoll default settings
     
-        Usage: strawpollset option value
-        
-        Options:
+        Settings:
             refresh_emoji    Manual refresh emoji once a poll ends
             poll_length      Time in seconds for the default length of a poll
             poll_react_time  How long in seconds the refresh emoji stays active
@@ -350,14 +381,12 @@ class Strawpoll:
         if server_id not in self.settings:
             self._new_server_settings(server_id)
         settings = self.settings[server_id]
-        if len(text) < 2:
+        if setting is None or value is None:
             settings_text = ''
             for setting, value in settings.items():
                 settings_text += '{}: {}\n'.format(setting, value)
             await self.bot.say("```{}```".format(settings_text))
             return
-        setting = text[0]
-        value = text[1]
         if setting not in settings:
             await self.bot.say("`{}` is not a valid setting!".format(setting))
             return
