@@ -252,7 +252,7 @@ class Strawpoll:
         else: # more than 12 hours
             return 20
             
-    async def _stop_poll(self, text, channel, author):
+    def _poll_search(self, text, channel):
         text = text.lower()
         for poll in self.active_poll_sessions:
             if poll.message.server.id != channel.server.id:
@@ -260,18 +260,45 @@ class Strawpoll:
             poll_title = poll.poll_title.lower()
             if text in poll_title:
                 if poll in self.active_poll_session_tasks:
-                    if not channel.permissions_for(author).manage_messages:
-                        if poll.author != author:
-                            await self.bot.send_message(channel, 
-                                "Can't stop `" + poll.poll_title +
-                                "` since you didn't create it.")
-                            return
-                    self.active_poll_session_tasks[poll].cancel()
-                    await self.bot.send_message(channel, 
-                        "Poll `" + poll.poll_title + "` stopped!")
-                    return
+                    return poll
+        return None
+
+    async def _stop_poll(self, text, channel, author):
+        poll = self._poll_search(text, channel)
+        if poll is None:
+            await self.bot.send_message(channel, 
+                "Can't find any polls matching `" + text + "`.")
+            return
+        if not channel.permissions_for(author).manage_messages:
+            if poll.author != author:
+                await self.bot.send_message(channel, 
+                    "Can't stop `" + poll.poll_title +
+                    "` since you didn't create it.")
+                return
+        self.active_poll_session_tasks[poll].cancel()
         await self.bot.send_message(channel, 
-            "Can't find any polls matching `" + text + "`.")
+            "Poll `" + poll.poll_title + "` stopped!")
+        return
+    
+    async def _extend_poll(self, text, channel, author, hours):
+        poll = self._poll_search(text, channel)
+        if poll is None:
+            await self.bot.send_message(channel, 
+                "Can't find any polls matching `" + text + "`.")
+            return
+        if not channel.permissions_for(author).manage_messages:
+            if poll.author != author:
+                await self.bot.send_message(channel, 
+                    "Can't extend `" + poll.poll_title +
+                    "` since you didn't create it.")
+                return
+        old_length = poll.poll_length
+        poll.poll_length += hours * 60 * 60
+        await self.bot.send_message(channel, 
+            "Poll `" + poll.poll_title + "` extended! `" +
+            str(poll._time_left(old_length)) + "` -> `" + 
+            str(poll._time_left(poll.poll_length)) + "`")
+        return
 
     async def _poll_args_process(self, ctx, hours, text, multi):
         if ctx.message.server.id not in self.settings:
@@ -319,8 +346,6 @@ class Strawpoll:
     async def stop(self, ctx, *search_terms):
         """
         Stop a poll on Strawpoll.me that matches search terms
-
-        Usage: [p]strawpoll stop [search terms]
         """
         await self._stop_poll(' '.join(search_terms),
             ctx.message.channel, ctx.message.author)
@@ -350,6 +375,19 @@ class Strawpoll:
         """
         await self._poll_args_process(ctx, hours, text, False)
 
+    @strawpoll.command(pass_context=True, no_pm=True)
+    async def extend(self, ctx, hours:float, *search_terms):
+        """
+        Extend a currently running poll that matches search terms
+        
+        Options:
+            hours        How many hours to extend the poll
+                         (can be a decimal. eg. 0.1)
+            search_terms Search terms matching a currently running poll
+        """
+        await self._extend_poll(' '.join(search_terms),
+            ctx.message.channel, ctx.message.author, hours)
+    
     @checks.mod_or_permissions(manage_server=True)
     @strawpoll.command(pass_context=True, no_pm=True)
     async def config(self, ctx):
