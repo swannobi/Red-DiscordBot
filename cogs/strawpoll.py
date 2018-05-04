@@ -12,7 +12,7 @@ from .utils import checks
 from .utils.dataIO import dataIO
 from concurrent.futures import CancelledError
 from html import unescape
-from time import sleep, time, strftime
+from time import sleep, time as currenttime, strftime
 from discord.ext import commands
 
 def _get_poll(poll_id):
@@ -70,7 +70,7 @@ class _Poll:
         self.poll_title = ""
         self.poll_length = poll_length
         self.sleep_time = sleep_time
-        self.start_time = time()
+        self.start_time = currenttime()
 
     # https://www.w3resource.com/python-exercises/python-basic-exercise-65.php
     def _time_left(self, seconds):
@@ -119,7 +119,7 @@ class _Poll:
                     str(data['votes'][option]),
                     '' if (data['votes'][option] == 1) else 's'),
                 value=self._bar_creator(data, option))
-        time_left = round(self.poll_length-(time()-self.start_time))
+        time_left = round(self.poll_length-(currenttime()-self.start_time))
         if (time_left > 0):
             embed.set_footer(text="{} left (update every {}s)".format(
                 self._time_left(time_left), self.sleep_time))
@@ -187,7 +187,7 @@ class Strawpoll:
         POLL_CHECK_RATE = 5 # seconds between each check for expired polls
         # while cog is loaded
         while self is self.bot.get_cog("Strawpoll"):
-            current_time = time()
+            current_time = currenttime()
             self._check_new_poll_tasks()
             self._cancel_expired_poll_tasks(current_time)
             self._delete_expired_poll_sessions(current_time)
@@ -217,7 +217,7 @@ class Strawpoll:
         settings = self.settings[poll.message.server.id]
         refresh_emoji = settings['refresh_emoji']
         try:
-            while time()-poll.start_time < poll.poll_length:
+            while currenttime()-poll.start_time < poll.poll_length:
                 await poll.update_results()
                 await asyncio.sleep(poll.sleep_time)
             await self.bot.delete_message(poll.message)
@@ -279,7 +279,22 @@ class Strawpoll:
             "Poll `" + poll.poll_title + "` stopped!")
         return
     
-    async def _extend_poll(self, text, channel, author, hours):
+    async def _extend_poll(self, text, channel, author, time, time_unit):
+        time_unit = time_unit.lower()
+        if time_unit.startswith('second'):
+            extend_length = time # seconds
+        elif time_unit.startswith('minute'):
+            extend_length = time * 60 # minutes to seconds
+        elif time_unit.startswith('hour'):
+            extend_length = time * 60 * 60 # hours to seconds
+        elif time_unit.startswith('day'):
+            extend_length = time * 60 * 60 * 24 # days to seconds
+        else:
+            await self.bot.say(
+                "Unknown time unit! Accepted units are:" + 
+                "`second(s)`, `minute(s)`, `hour(s)`, `day(s)`.")
+            await self.bot.send_cmd_help(ctx)
+            return
         poll = self._poll_search(text, channel)
         if poll is None:
             await self.bot.send_message(channel, 
@@ -291,12 +306,19 @@ class Strawpoll:
                     "Can't extend `" + poll.poll_title +
                     "` since you didn't create it.")
                 return
-        old_length = poll.poll_length
-        poll.poll_length += hours * 60 * 60
+        current_time = currenttime()
+        # pre-extension
+        poll_end_time = poll.start_time + poll.poll_length
+        old_length = poll_end_time - current_time
+        poll.poll_length += extend_length
+        # post-extension        
+        poll_end_time = poll.start_time + poll.poll_length
+        new_length = poll_end_time - current_time
         await self.bot.send_message(channel, 
             "Poll `" + poll.poll_title + "` extended! `" +
             str(poll._time_left(old_length)) + "` -> `" + 
-            str(poll._time_left(poll.poll_length)) + "`")
+            ('finished' if new_length<0 else str(poll._time_left(new_length))) +
+            "`")
         return
 
     async def _poll_args_process(self, ctx, time, time_unit, text, multi):
@@ -371,7 +393,7 @@ class Strawpoll:
         Host a multiple choice poll on Strawpoll.me with live results
 
         Options:
-            time       How many `time_units` to run the poll 
+            time       How many `time_unit`s to run the poll 
                        (can be a decimal. eg. 0.1)
             time_unit  'seconds', 'minutes', 'hours', 'days'
             text       title;option 1;option 2;option 3(...)
@@ -385,7 +407,7 @@ class Strawpoll:
         Host a poll on Strawpoll.me with live results
 
         Options:
-            time       How many `time_units` to run the poll 
+            time       How many `time_unit`s to run the poll 
                        (can be a decimal. eg. 0.1)
             time_unit  'seconds', 'minutes', 'hours', 'days'
             text       title;option 1;option 2;option 3(...)
@@ -393,17 +415,19 @@ class Strawpoll:
         await self._poll_args_process(ctx, time, time_unit, text, False)
 
     @strawpoll.command(pass_context=True, no_pm=True)
-    async def extend(self, ctx, hours:float, *search_terms):
+    async def extend(self, ctx, time:float, time_unit:str, *search_terms):
         """
         Extend a currently running poll that matches search terms
         
         Options:
-            hours        How many hours to extend the poll
+            time         How many `time_unit`s to extend the poll 
                          (can be a decimal. eg. 0.1)
+                         (can also be negative)
+            time_unit    'seconds', 'minutes', 'hours', 'days'
             search_terms Search terms matching a currently running poll
         """
         await self._extend_poll(' '.join(search_terms),
-            ctx.message.channel, ctx.message.author, hours)
+            ctx.message.channel, ctx.message.author, time, time_unit)
     
     @checks.mod_or_permissions(manage_server=True)
     @strawpoll.command(pass_context=True, no_pm=True)
