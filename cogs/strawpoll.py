@@ -300,17 +300,27 @@ class Strawpoll:
             str(poll._time_left(poll.poll_length)) + "`")
         return
 
-    async def _poll_args_process(self, ctx, hours, text, multi):
+    async def _poll_args_process(self, ctx, time, time_unit, text, multi):
         if ctx.message.server.id not in self.settings:
             self._new_server_settings(ctx.message.server.id)
         if len(text) <= 0:
             await self.bot.send_cmd_help(ctx)
             return
-        try:
-            poll_length = hours * 60 * 60 # hours to seconds
-        except ValueError:
-            settings = self.settings[ctx.message.server.id]
-            poll_length = settings['poll_length']
+        time_unit = time_unit.lower()
+        if time_unit.startswith('second'):
+            poll_length = time # seconds
+        elif time_unit.startswith('minute'):
+            poll_length = time * 60 # minutes to seconds
+        elif time_unit.startswith('hour'):
+            poll_length = time * 60 * 60 # hours to seconds
+        elif time_unit.startswith('day'):
+            poll_length = time * 60 * 60 * 24 # days to seconds
+        else:
+            await self.bot.say(
+                "Unknown time unit! Accepted units are:" + 
+                "`second(s)`, `minute(s)`, `hour(s)`, `day(s)`.")
+            await self.bot.send_cmd_help(ctx)
+            return
         poll = ' '.join(text).split(';', 1)
         if len(poll) != 2:
             await self.bot.send_cmd_help(ctx)
@@ -351,29 +361,31 @@ class Strawpoll:
             ctx.message.channel, ctx.message.author)
 
     @strawpoll.command(pass_context=True, no_pm=True)
-    async def multi(self, ctx, hours:float, *text):
+    async def multi(self, ctx, time:float, time_unit:str, *text):
         """
         Host a multiple choice poll on Strawpoll.me with live results
 
         Options:
-            hours   How many hours to run the poll 
-                    (can be a decimal. eg. 0.1)
-            text    title;option 1;option 2;option 3(...)
+            time       How many `time_units` to run the poll 
+                       (can be a decimal. eg. 0.1)
+            time_unit  'seconds', 'minutes', 'hours', 'days'
+            text       title;option 1;option 2;option 3(...)
         """
-        await self._poll_args_process(ctx, hours, text, True)
+        await self._poll_args_process(ctx, time, time_unit, text,  True)
 
 
     @strawpoll.command(pass_context=True, no_pm=True)
-    async def host(self, ctx, hours:float, *text):
+    async def host(self, ctx, time:float, time_unit:str, *text):
         """
         Host a poll on Strawpoll.me with live results
 
         Options:
-            hours   How many hours to run the poll 
-                    (can be a decimal. eg. 0.1)
-            text    title;option 1;option 2;option 3(...)
+            time       How many `time_units` to run the poll 
+                       (can be a decimal. eg. 0.1)
+            time_unit  'seconds', 'minutes', 'hours', 'days'
+            text       title;option 1;option 2;option 3(...)
         """
-        await self._poll_args_process(ctx, hours, text, False)
+        await self._poll_args_process(ctx, time, time_unit, text, False)
 
     @strawpoll.command(pass_context=True, no_pm=True)
     async def extend(self, ctx, hours:float, *search_terms):
