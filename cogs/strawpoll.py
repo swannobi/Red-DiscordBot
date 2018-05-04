@@ -75,7 +75,7 @@ class _Poll:
     # https://www.w3resource.com/python-exercises/python-basic-exercise-65.php
     def _time_left(self, seconds):
         days = seconds // (24 * 3600)
-        seconds = seconds % (24 * 3600)
+        seconds %= (24 * 3600)
         hours = seconds // 3600
         seconds %= 3600
         minutes = seconds // 60
@@ -354,8 +354,14 @@ class Strawpoll:
     @strawpoll.command(pass_context=True, no_pm=True)
     async def stop(self, ctx, *search_terms):
         """
-        Stop a poll on Strawpoll.me that matches search terms
+        Stop a currently running poll that matches search terms
+        
+        Options:
+            search_terms Search terms matching a currently running poll
         """
+        if not search_terms:
+            await self.bot.send_cmd_help(ctx)
+            return
         await self._stop_poll(' '.join(search_terms),
             ctx.message.channel, ctx.message.author)
 
