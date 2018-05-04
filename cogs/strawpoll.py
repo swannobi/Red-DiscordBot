@@ -143,7 +143,6 @@ class Strawpoll:
     def _new_server_settings(self, server_id):
         default_settings = {
             'refresh_emoji': '🔄',
-            'poll_length': 30.0,
             'poll_react_time': 300.0, # 5 minutes
             'bar_length': 30
         }
@@ -423,7 +422,6 @@ class Strawpoll:
     
         Settings:
             refresh_emoji    Manual refresh emoji once a poll ends
-            poll_length      Time in seconds for the default length of a poll
             poll_react_time  How long in seconds the refresh emoji stays active
             bar_length       How long the distribution bars in the embed are
         """
