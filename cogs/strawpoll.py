@@ -13,6 +13,7 @@ from .utils.dataIO import dataIO
 from concurrent.futures import CancelledError
 from html import unescape
 from time import sleep, time as currenttime, strftime
+from datetime import datetime
 from discord.ext import commands
 
 def _get_poll(poll_id):
@@ -57,11 +58,21 @@ def _post_poll(title, options, multi):
         return None
     return json_response
 
+def _sleep_time(poll_length):
+    if poll_length < 5*60: # 5 minutes
+        return 1
+    elif poll_length < 60*60: # 1 hour
+        return 5
+    elif poll_length < 60*60*12: # 12 hours
+        return 10
+    else: # more than 12 hours
+        return 20
+
 class _Poll:
     """Internal poll class for Strawpoll cog"""
     
     def __init__(self, bot, settings, message, 
-            author, poll_id, poll_length, sleep_time):
+            author, poll_id, poll_length):
         self.bot = bot
         self.settings = settings
         self.message = message
@@ -69,7 +80,6 @@ class _Poll:
         self.poll_id = poll_id
         self.poll_title = ""
         self.poll_length = poll_length
-        self.sleep_time = sleep_time
         self.start_time = currenttime()
 
     # https://www.w3resource.com/python-exercises/python-basic-exercise-65.php
@@ -122,10 +132,9 @@ class _Poll:
         time_left = round(self.poll_length-(currenttime()-self.start_time))
         if (time_left > 0):
             embed.set_footer(text="{} left (update every {}s)".format(
-                self._time_left(time_left), self.sleep_time))
+                self._time_left(time_left), _sleep_time(self.poll_length)))
         else: 
-            embed.set_footer(text="as of {}".format(
-                strftime('%A %B %-m, %Y @ %I:%M:%S%p ')))
+            embed.timestamp = datetime.now()
         await self.bot.edit_message(self.message, embed=embed)
 
 class Strawpoll:
@@ -219,7 +228,7 @@ class Strawpoll:
         try:
             while currenttime()-poll.start_time < poll.poll_length:
                 await poll.update_results()
-                await asyncio.sleep(poll.sleep_time)
+                await asyncio.sleep(_sleep_time(poll.poll_length))
             await self.bot.delete_message(poll.message)
             poll.message = await self.bot.send_message(poll.message.channel,
                 embed=discord.Embed(title="Loading results..."))
@@ -235,21 +244,10 @@ class Strawpoll:
 
     async def _create_poll(self, message, channel, author, poll_id, poll_length):
         settings = self.settings[message.server.id]
-        sleep_time = self._sleep_time(poll_length)
         poll = _Poll(self.bot, settings, 
-                message, author, poll_id, poll_length, sleep_time)
+                message, author, poll_id, poll_length)
         await poll.update_results()
         self.active_poll_sessions.append(poll)
-    
-    def _sleep_time(self, poll_length):
-        if poll_length < 5*60: # 5 minutes
-            return 1
-        elif poll_length < 60*60: # 1 hour
-            return 5
-        elif poll_length < 60*60*12: # 12 hours
-            return 10
-        else: # more than 12 hours
-            return 20
             
     def _poll_search(self, text, channel):
         text = text.lower()
