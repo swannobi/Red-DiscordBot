@@ -353,6 +353,7 @@ def check_folders(resources_folder):
 def check_files(resources_folder):
     garpr = resources_folder+"garpr_rankings.json"
     records = resources_folder+"garpr_match_records.json"
+    playercache = resources_folder+"garpr_players.json"
     settings = resources_folder+"garpr_settings.json"
     if not dataIO.is_valid_json(garpr):
         print("Creating empty "+str(garpr)+"...")
@@ -360,6 +361,9 @@ def check_files(resources_folder):
     if not dataIO.is_valid_json(records):
         print("Creating empty "+str(records)+"...")
         dataIO.save_json(records, {})
+    if not dataIO.is_valid_json(playercache):
+        print("Creating empty "+str(playercache)+"...")
+        dataIO.save_json(playercache, {})
     if not dataIO.is_valid_json(settings):
         print("Creating default "+str(settings)+"...")
         dataIO.save_json(settings, 

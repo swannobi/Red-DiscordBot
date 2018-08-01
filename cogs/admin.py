@@ -255,7 +255,7 @@ class Admin:
             except BaseException as e:
                 print(e)
 
-    @commands.group(no_pm=True, pass_context=True, invoke_without_command=True, aliases=["region", "main"])
+    @commands.group(no_pm=True, pass_context=True, invoke_without_command=True, aliases=["main"])
     async def selfrole(self, ctx, *, rolename):
         """Allows users to set their own role.
 

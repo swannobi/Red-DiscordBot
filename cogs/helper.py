@@ -322,9 +322,8 @@ def check_folders():
         os.makedirs(RESOURCES)
 
 def check_files():
-    garpr = RESOURCES+"garpr_rankings.json"
     melee = RESOURCES+"frames/melee/"
-    files = [RESOURCES+"character_privilege.json", garpr]
+    files = [RESOURCES+"character_privilege.json"]
     for path in files:
         if not dataIO.is_valid_json(path):
             print("Creating empty "+str(path)+"...")
