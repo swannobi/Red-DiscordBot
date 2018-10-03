@@ -1,159 +1,182 @@
 {
-  "stats": {
-    "AirborneOn": "4",
-    "FHTotal": "50",
-    "FHFFOn": "26",
-    "FHFFTotal": "38",
-    "SHTotal": "34",
-    "SHFFOn": "18",
-    "SHFFTotal": "23",
-    "DashBecomesRunOn": "14"
-  },
-  "jab": {
-    "Total": "21",
-    "Hits": "2-3",
-    "Notes": [
-      "Consecutive jabs start as early as frame 5."
-    ]
-  },
-  "ftilt": {
-    "Total": "29",
-    "Hits": "7-14",
-    "SAF": "30"
-  },
-  "dtilt": {
-    "Total": "21",
-    "Hits": "7-9",
-    "SAF": "19"
-  },
-  "utilt": {
-    "Total": "23",
-    "Hits": "7-14",
-    "SAF": "24"
-  },
-  "fsmash": {
-    "Total": "49",
-    "Hits": "16-33",
-    "SAF": "50",
-    "Charge": "14"
-  },
-  "dsmash": {
-    "Total": "54",
-    "Hits": "7-8, 10-11, 13-14, 16-17, 19-20, 22-23, 25",
-    "SAF": "51",
-    "Charge": "5"
-  },
-  "usmash": {
-    "Total": "43",
-    "Hits": "8-17",
-    "SAF": "41",
-    "Charge": "5"
-  },
-  "nair": {
-    "Total": "39",
-    "Hits": "3-28",
-    "SAF": "40",
-    "AC": "<2 35>",
-    "Landlag": "15"
-  },
-  "fair": {
-    "Total": "39",
-    "Hits": "10-12, 14-16, 18-20, 22-24",
-    "SAF": "40",
-    "AC": "<9 34>",
-    "Landlag": "15"
-  },
-  "bair": {
-    "Total": "59",
-    "Hits": "4-37",
-    "SAF": "60",
-    "AC": "<3 50>",
-    "Landlag": "30"
-  },
-  "dair": {
-    "Total": "57",
-    "Hits": "14-26",
-    "SAF": "48",
-    "AC": "39>",
-    "Landlag": "40",
-    "Notes": [
-      "Landing hit on frame 2."
-    ]
-  },
-  "uair": {
-    "Total": "27",
-    "Hits": "3-8",
-    "SAF": "28",
-    "AC": "<2 18>",
-    "Landlag": "26"
-  },
-  "da": {
-    "Total": "49",
-    "Hits": "5-16",
-    "SAF": "50"
-  },
-  "grab": {
-    "standing": {
-      "Total": "30",
-      "Hits": "7-8"
+    "b" : {
+        "Hits" : "18-117",
+        "Notes" : [
+            "Fastfall this move at any time."
+        ],
+        "Total" : "57",
+        "URL" : "1WKos"
     },
-    "dash": {
-      "Total": "40",
-      "Hits": "11-12"
+    "bair" : {
+        "AC" : "<3 50>",
+        "Hits" : "4-37",
+        "Landlag" : "30",
+        "SAF" : "60",
+        "Total" : "59",
+        "URL" : "mw0L5"
+    },
+    "da" : {
+        "Hits" : "5-16",
+        "SAF" : "50",
+        "Total" : "49",
+        "URL" : "IGXc9"
+    },
+    "dair" : {
+        "AC" : "39>",
+        "Hits" : "14-26",
+        "Landlag" : "40",
+        "Notes" : [
+            "Landing hit on frame 2."
+        ],
+        "SAF" : "48",
+        "Total" : "57",
+        "URL" : "ZQSjY"
+    },
+    "dodge" : {
+        "airdodge" : {
+            "Intangible" : "4-29",
+            "Total" : "49",
+            "URL" : "6lU7Z"
+        },
+        "back" : {
+            "Intangible" : "4-19",
+            "Total" : "31",
+            "URL" : "JYyPh"
+        },
+        "forward" : {
+            "Intangible" : "4-19",
+            "Total" : "31",
+            "URL" : "HHdhZ"
+        },
+        "spotdodge" : {
+            "Intangible" : "2-15",
+            "Total" : "22",
+            "URL" : "w4hVi"
+        }
+    },
+    "downb" : {
+        "Hits" : "40-48",
+        "Notes" : [
+            "Thunder hitboxes are active 20-60, 28-68, 36-76, 44-84.",
+            "Strong hit is 51-59 if Pikachu is falling."
+        ],
+        "Total" : "78",
+        "URL" : "li6vf"
+    },
+    "dsmash" : {
+        "Charge" : "5",
+        "Hits" : "7-8, 10-11, 13-14, 16-17, 19-20, 22-23, 25",
+        "SAF" : "51",
+        "Total" : "54",
+        "URL" : "McuYn"
+    },
+    "dtilt" : {
+        "Hits" : "7-9",
+        "SAF" : "19",
+        "Total" : "21",
+        "URL" : "lPAjt"
+    },
+    "fair" : {
+        "AC" : "<9 34>",
+        "Hits" : "10-12, 14-16, 18-20, 22-24",
+        "Landlag" : "15",
+        "SAF" : "40",
+        "Total" : "39",
+        "URL" : "1d7sR"
+    },
+    "fsmash" : {
+        "Charge" : "14",
+        "Hits" : "16-33",
+        "SAF" : "50",
+        "Total" : "49",
+        "URL" : "snmFL"
+    },
+    "ftilt" : {
+        "Hits" : "7-14",
+        "SAF" : "30",
+        "Total" : "29",
+        "URL" : "BY4IK"
+    },
+    "grab" : {
+        "dash" : {
+            "Hits" : "11-12",
+            "Total" : "40",
+            "URL" : "2nait"
+        },
+        "standing" : {
+            "Hits" : "7-8",
+            "Total" : "30",
+            "URL" : "Q2B1J"
+        }
+    },
+    "jab" : {
+        "Hits" : "2-3",
+        "Notes" : [
+            "Consecutive jabs start as early as frame 5."
+        ],
+        "Total" : "21",
+        "URL" : "b0m1T"
+    },
+    "nair" : {
+        "AC" : "<2 35>",
+        "Hits" : "3-28",
+        "Landlag" : "15",
+        "SAF" : "40",
+        "Total" : "39",
+        "URL" : "vQnm9"
+    },
+    "sideb" : {
+        "Charge" : "14",
+        "Hits" : "20-55",
+        "Notes" : [
+            "Max charge time is 90 frames.",
+            "34 frames of recovery on hit.",
+            "If Pikachu lands before the air recovery is finished, a 30 frame ground recovery animation is played."
+        ],
+        "Total" : "84",
+        "URL" : "Y0rTY"
+    },
+    "stats" : {
+        "AirborneOn" : "4",
+        "DashBecomesRunOn" : "14",
+        "FHFFOn" : "26",
+        "FHFFTotal" : "38",
+        "FHTotal" : "50",
+        "SHFFOn" : "18",
+        "SHFFTotal" : "23",
+        "SHTotal" : "34"
+    },
+    "uair" : {
+        "AC" : "<2 18>",
+        "Hits" : "3-8",
+        "Landlag" : "26",
+        "SAF" : "28",
+        "Total" : "27",
+        "URL" : "zwanT"
+    },
+    "upb" : {
+        "Hits" : "13-18, 27-31",
+        "Landlag" : "24",
+        "Notes" : [
+            "81 total frames if Pikachu jumps twice.",
+            "1st jump is aimed on frame 13.",
+            "2nd jump is aimed on frame 26."
+        ],
+        "SpecialFallLag" : "4",
+        "Total" : "68",
+        "URL" : "pktM6"
+    },
+    "usmash" : {
+        "Charge" : "5",
+        "Hits" : "8-17",
+        "SAF" : "41",
+        "Total" : "43",
+        "URL" : "91Kz0"
+    },
+    "utilt" : {
+        "Hits" : "7-14",
+        "SAF" : "24",
+        "Total" : "23",
+        "URL" : "P2RTR"
     }
-  },
-  "b": {
-    "Total": "57",
-    "Hits": "18-117",
-    "Notes": [
-      "Fastfall this move at any time."
-    ]
-  },
-  "sideb": {
-    "Total": "84",
-    "Hits": "20-55",
-    "Charge": "14",
-    "Notes": [
-      "Max charge time is 90 frames.",
-      "34 frames of recovery on hit.",
-      "If Pikachu lands before the air recovery is finished, a 30 frame ground recovery animation is played."
-    ]
-  },
-  "downb": {
-    "Total": "78",
-    "Hits": "40-48",
-    "Notes": [
-      "Thunder hitboxes are active 20-60, 28-68, 36-76, 44-84.",
-      "Strong hit is 51-59 if Pikachu is falling."
-    ]
-  },
-  "upb": {
-    "Total": "68",
-    "Hits": "13-18, 27-31",
-    "Landlag": "24",
-    "SpecialFallLag": "4",
-    "Notes": [
-      "81 total frames if Pikachu jumps twice.",
-      "1st jump is aimed on frame 13.",
-      "2nd jump is aimed on frame 26."
-    ]
-  },
-  "dodge": {
-    "airdodge": {
-      "Total": "49",
-      "Intangible": "4-29"
-    },
-    "rollBack": {
-      "Total": "31",
-      "Intangible": "4-19"
-    },
-    "rollForward": {
-      "Total": "31",
-      "Intangible": "4-19"
-    },
-    "spotdodge": {
-      "Total": "22",
-      "Intangible": "2-15"
-    }
-  }
 }

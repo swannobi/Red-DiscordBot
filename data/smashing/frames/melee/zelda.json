@@ -154,11 +154,11 @@
         "FF on or after frame 20."
       ]
     },
-    "rollBack": {
+    "back": {
       "Total": "31",
       "Intangible": "4-19"
     },
-    "rollForward": {
+    "forward": {
       "Total": "31",
       "Intangible": "4-19"
     },

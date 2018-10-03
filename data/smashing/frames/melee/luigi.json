@@ -1,201 +1,233 @@
 {
-  "stats": {
-    "AirborneOn": "5",
-    "FHTotal": "76",
-    "FHFFOn": "37",
-    "FHFFTotal": "59",
-    "SHTotal": "44",
-    "SHFFOn": "23",
-    "SHFFTotal": "31",
-    "DashBecomesRunOn": "11"
-  },
-  "jab": {
-    "jab1": {
-      "Total": "15",
-      "Hits": "2-3",
-      "SAF": "16",
-      "NextWindow": "3-25",
-      "Jab2Start": "6"
+    "b" : {
+        "Hits" : "17-67",
+        "Notes" : [
+            "Can fastfall at any time."
+        ],
+        "Total" : "46",
+        "URL" : "kjql2"
     },
-    "jab2": {
-      "Total": "18",
-      "Hits": "3-4",
-      "SAF": "19",
-      "NextWindow": "2-25",
-      "Jab3Start": "7"
+    "bair" : {
+        "AC" : "<5 19>",
+        "Hits" : "6-17",
+        "Landlag" : "15",
+        "SAF" : "29",
+        "Total" : "28",
+        "URL" : "8aLE8"
     },
-    "jab3": {
-      "Total": "30",
-      "Hits": "5-6",
-      "SAF": "23"
+    "da" : {
+        "Hits" : "4, 10, 16, 22, 29, 37",
+        "SAF" : "59",
+        "Total" : "63",
+        "URL" : "TsiJQ"
+    },
+    "dair" : {
+        "AC" : "<5 24>",
+        "Hits" : "10-14",
+        "Landlag" : "18",
+        "SAF" : "29",
+        "Total" : "32",
+        "URL" : "uUlgt"
+    },
+    "dodge" : {
+        "airdodge" : {
+            "Intangible" : "4-29",
+            "Total" : "48",
+            "URL" : "Q19p1Cv"
+        },
+        "back" : {
+            "Intangible" : "4-19",
+            "Total" : "31",
+            "URL" : "RZUHzDg"
+        },
+        "forward" : {
+            "Intangible" : "4-19",
+            "Total" : "31",
+            "URL" : "l83oci7"
+        },
+        "spotdodge" : {
+            "Intangible" : "2-15",
+            "Total" : "22",
+            "URL" : "RhkeiK8"
+        }
+    },
+    "downb" : {
+        "air" : {
+            "Hits" : "6-29, 43",
+            "Notes" : [
+                "Mash B for height during frames 6-43."
+            ],
+            "Total" : "79",
+            "URL" : "a7CGk"
+        },
+        "ground" : {
+            "Hits" : "6-29, 43",
+            "Notes" : [
+                "Mash B for height during frames 6-43.",
+                "Mashing B 5-7/second gives 0 height gain.",
+                "Mashing B 14+/second gives the most height."
+            ],
+            "Total" : "79",
+            "URL" : "jkyiV"
+        }
+    },
+    "dsmash" : {
+        "Charge" : "3",
+        "Hits" : "5-6, 14-15",
+        "SAF" : "38",
+        "Total" : "37",
+        "URL" : "TKhmr"
+    },
+    "dtilt" : {
+        "Hits" : "5-7",
+        "SAF" : "35",
+        "Total" : "34",
+        "URL" : "nmSyC"
+    },
+    "fair" : {
+        "AC" : "20>",
+        "Hits" : "7-10",
+        "Landlag" : "25",
+        "SAF" : "33",
+        "Total" : "34",
+        "URL" : "A0218"
+    },
+    "fsmash" : {
+        "Charge" : "5",
+        "Hits" : "12-13",
+        "SAF" : "42",
+        "Total" : "41",
+        "URL" : "Cygt0"
+    },
+    "ftilt" : {
+        "Hits" : "4-8",
+        "SAF" : "32",
+        "Total" : "32",
+        "URL" : "fHjo5"
+    },
+    "grab" : {
+        "dash" : {
+            "Hits" : "11-12",
+            "Total" : "40",
+            "URL" : "ygn09"
+        },
+        "standing" : {
+            "Hits" : "7-8",
+            "Total" : "30",
+            "URL" : "8Sfjb"
+        }
+    },
+    "jab" : {
+        "jab1" : {
+            "Hits" : "2-3",
+            "Jab2Start" : "6",
+            "NextWindow" : "3-25",
+            "SAF" : "16",
+            "Total" : "15",
+            "URL" : "JDkdc"
+        },
+        "jab2" : {
+            "Hits" : "3-4",
+            "Jab3Start" : "7",
+            "NextWindow" : "2-25",
+            "SAF" : "19",
+            "Total" : "18",
+            "URL" : "GXsHz"
+        },
+        "jab3" : {
+            "Hits" : "5-6",
+            "SAF" : "23",
+            "Total" : "30",
+            "URL" : "eJcLJ"
+        }
+    },
+    "nair" : {
+        "AC" : "<2 36>",
+        "Hits" : "3-31",
+        "Landlag" : "15",
+        "SAF" : "46",
+        "Total" : "45",
+        "URL" : "qRzGD"
+    },
+    "sideb" : {
+        "misfire" : {
+            "Hits" : "23-62",
+            "Landlag" : "41",
+            "Total" : "74",
+            "URL" : "mB5MJ"
+        },
+        "standard" : {
+            "Charge" : "18",
+            "Hits" : "23-62",
+            "Landlag" : "41",
+            "MaxChargeTime" : "71",
+            "Notes" : [
+                "Performing this move like a smash attack causes the move to finish charging sooner."
+            ],
+            "Total" : "74",
+            "URL" : "jorS4"
+        }
+    },
+    "stats" : {
+        "AirborneOn" : "5",
+        "DashBecomesRunOn" : "11",
+        "FHFFOn" : "37",
+        "FHFFTotal" : "59",
+        "FHTotal" : "76",
+        "SHFFOn" : "23",
+        "SHFFTotal" : "31",
+        "SHTotal" : "44"
+    },
+    "taunt" : {
+       "Total" : "70",
+       "Hits" : "45"
+    }, 
+    "uair" : {
+        "AC" : "<2 16>",
+        "Hits" : "5-7",
+        "Landlag" : "15",
+        "SAF" : "30",
+        "Total" : "33",
+        "URL" : "2RBTV"
+    },
+    "upb" : {
+        "normal" : {
+            "Hits" : "5-23",
+            "Landlag" : "40",
+            "Notes" : [
+                "Fully invincible 5-8."
+            ],
+            "SoonestLedgeGrab" : "27",
+            "SpecialFallLag" : "40",
+            "Total" : "39",
+            "URL" : "No7Rm"
+        },
+        "sweetspot" : {
+            "Hits" : "5",
+            "Landlag" : "40",
+            "Notes" : [
+                "Fully invincible 5-8."
+            ],
+            "SoonestLedgeGrab" : "27",
+            "SpecialFallLag" : "40",
+            "Total" : "39",
+            "URL" : "J5wIe"
+        }
+    },
+    "usmash" : {
+        "Charge" : "7",
+        "Hits" : "9-11",
+        "Notes" : [
+            "Head invincible 9-11."
+        ],
+        "SAF" : "40",
+        "Total" : "39",
+        "URL" : "35SJp"
+    },
+    "utilt" : {
+        "Hits" : "4-12",
+        "SAF" : "30",
+        "Total" : "29",
+        "URL" : "uZEH9"
     }
-  },
-  "ftilt": {
-    "Total": "32",
-    "Hits": "4-8",
-    "SAF": "32"
-  },
-  "dtilt": {
-    "Total": "34",
-    "Hits": "5-7",
-    "SAF": "35"
-  },
-  "utilt": {
-    "Total": "29",
-    "Hits": "4-12",
-    "SAF": "30"
-  },
-  "fsmash": {
-    "Total": "41",
-    "Hits": "12-13",
-    "SAF": "42",
-    "Charge": "5"
-  },
-  "dsmash": {
-    "Total": "37",
-    "Hits": "5-6, 14-15",
-    "SAF": "38",
-    "Charge": "3"
-  },
-  "usmash": {
-    "Total": "39",
-    "Hits": "9-11",
-    "SAF": "40",
-    "Charge": "7",
-    "Notes": [
-      "Head invincible 9-11."
-    ]
-  },
-  "nair": {
-    "Total": "45",
-    "Hits": "3-31",
-    "SAF": "46",
-    "AC": "<2 36>",
-    "Landlag": "15"
-  },
-  "fair": {
-    "Total": "34",
-    "Hits": "7-10",
-    "SAF": "33",
-    "AC": "20>",
-    "Landlag": "25"
-  },
-  "bair": {
-    "Total": "28",
-    "Hits": "6-17",
-    "SAF": "29",
-    "AC": "<5 19>",
-    "Landlag": "15"
-  },
-  "dair": {
-    "Total": "32",
-    "Hits": "10-14",
-    "SAF": "29",
-    "AC": "<5 24>",
-    "Landlag": "18"
-  },
-  "uair": {
-    "Total": "33",
-    "Hits": "5-7",
-    "SAF": "30",
-    "AC": "<2 16>",
-    "Landlag": "15"
-  },
-  "da": {
-    "Total": "63",
-    "Hits": "4, 10, 16, 22, 29, 37",
-    "SAF": "59"
-  },
-  "grab": {
-    "standing": {
-      "Total": "30",
-      "Hits": "7-8"
-    },
-    "dash": {
-      "Total": "40",
-      "Hits": "11-12"
-    }
-  },
-  "b": {
-    "Total": "46",
-    "Hits": "17-67",
-    "Notes": [
-      "Can fastfall at any time."
-    ]
-  },
-  "sideb": {
-    "standard": {
-      "Total": "74",
-      "Hits": "23-62",
-      "Charge": "18",
-      "MaxChargeTime": "71",
-      "Landlag": "41",
-      "Notes": [
-        "Performing this move like a smash attack causes the move to finish charging sooner."
-      ]
-    },
-    "misfire": {
-      "Total": "74",
-      "Hits": "23-62",
-      "Landlag": "41"
-    }
-  },
-  "downb": {
-    "ground": {
-      "Total": "79",
-      "Hits": "6-29, 43",
-      "Notes": [
-        "Mash B for height during frames 6-43.",
-        "Mashing B 5-7/second gives 0 height gain.",
-        "Mashing B 14+/second gives the most height."
-      ]
-    },
-    "air": {
-      "Total": "79",
-      "Hits": "6-29, 43",
-      "Notes": [
-        "Mash B for height during frames 6-43."
-      ]
-    }
-  },
-  "upb": {
-    "normal": {
-      "Total": "39",
-      "Hits": "5-23",
-      "SoonestLedgeGrab": "27",
-      "Landlag": "40",
-      "SpecialFallLag": "40",
-      "Notes": [
-        "Fully invincible 5-8."
-      ]
-    },
-    "sweetspot": {
-      "Total": "39",
-      "Hits": "5",
-      "SoonestLedgeGrab": "27",
-      "Landlag": "40",
-      "SpecialFallLag": "40",
-      "Notes": [
-        "Fully invincible 5-8."
-      ]
-    }
-  },
-  "dodge": {
-    "airdodge": {
-      "Total": "48",
-      "Intangible": "4-29"
-    },
-    "rollBack": {
-      "Total": "31",
-      "Intangible": "4-19"
-    },
-    "rollForward": {
-      "Total": "31",
-      "Intangible": "4-19"
-    },
-    "spotdodge": {
-      "Total": "22",
-      "Intangible": "2-15"
-    }
-  }
 }

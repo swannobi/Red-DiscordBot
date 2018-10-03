@@ -1,198 +1,224 @@
 {
-  "stats": {
-    "AirborneOn": "9",
-    "FHTotal": "47",
-    "FHFFOn": "24",
-    "FHFFTotal": "37",
-    "SHTotal": "27",
-    "SHFFOn": "15",
-    "SHFFTotal": "19",
-    "DashBecomesRunOn": "14"
-  },
-  "jab": {
-    "jab1": {
-      "Total": "24",
-      "Hits": "7-9",
-      "SAF": "25",
-      "NextWindow": "3-25",
-      "Jab2Start": "14"
+    "b" : {
+        "FireLasts" : "21",
+        "Hits" : "23, 26, 29, 32, 35, 38, 41, 44, 47, 50, 53, 56, 59, 62, etc",
+        "Lag" : "30",
+        "Notes" : [
+            "Fire lasts shorter as time goes on, eventually only lasting one frame.",
+            "14 fires from one B press.",
+            "In 1.0 if you land before flames come out Bowser will skip the startup animation (Flame Cancel)."
+        ],
+        "Total" : "92",
+        "URL" : "oCK6Ut2"
     },
-    "jab2": {
-      "Total": "30",
-      "Hits": "9-11",
-      "SAF": "31"
+    "bair" : {
+        "AC" : "<8 45>",
+        "Hits" : "9-17",
+        "Landlag" : "35",
+        "SAF" : "50",
+        "Total" : "49",
+        "URL" : "wYxEemh"
+    },
+    "da" : {
+        "Hits" : "10-17",
+        "SAF" : "56",
+        "Total" : "59",
+        "URL" : "VG6uOZi"
+    },
+    "dair" : {
+        "AC" : "<13 70>",
+        "Hits" : "14-15, 17-18, 20-21, 23-24, 26-27, 29-30, 32-33, 35-36, 38-39",
+        "Landlag" : "40",
+        "Notes" : [
+            "Hits 4 frames upon landing."
+        ],
+        "Total" : "79",
+        "URL" : "KeFQYm4"
+    },
+    "dodge" : {
+        "airdodge" : {
+            "Intangible" : "3-29",
+            "Total" : "49",
+            "URL" : "KZNlgMl"
+        },
+        "back" : {
+            "Intangible" : "4-19",
+            "Total" : "39",
+            "URL" : "CvoApxh"
+        },
+        "forward" : {
+            "Intangible" : "4-19",
+            "Total" : "39",
+            "URL" : "An5DiEw"
+        },
+        "spotdodge" : {
+            "Intangible" : "4-24",
+            "Total" : "42",
+            "URL" : "0QGlUW7"
+        }
+    },
+    "downb" : {
+        "air" : {
+            "Hits" : "32-",
+            "Notes" : [
+                "Hitbox active until landing.",
+                "Can grab ledges on front side."
+            ],
+            "Total" : "106",
+            "URL" : "CXfLnHj"
+        },
+        "ground" : {
+            "Hits" : "42-47",
+            "Notes" : [
+                "Landing hit on frame 47"
+            ],
+            "Total" : "106",
+            "URL" : "NtvJl2Z"
+        }
+    },
+    "dsmash" : {
+        "Charge" : "8",
+        "Hits" : "14-15, 17-18, 20-21, 23-24, 26-27, 29-30, 32",
+        "SAF" : "68",
+        "Total" : "69",
+        "URL" : "LtOaana"
+    },
+    "dtilt" : {
+        "Hits" : "14-18, 27-30",
+        "SAF" : "60",
+        "Total" : "59",
+        "URL" : "geJ9BU0"
+    },
+    "fair" : {
+        "AC" : "<7 31>",
+        "Hits" : "8-11",
+        "Landlag" : "30",
+        "SAF" : "42",
+        "Total" : "45",
+        "URL" : "h3EtqGt"
+    },
+    "fsmash" : {
+        "Charge" : "10",
+        "Hits" : "29-33",
+        "SAF" : "66",
+        "Total" : "69",
+        "URL" : "4BdlRls"
+    },
+    "ftilt" : {
+        "Hits" : "12-16",
+        "SAF" : "37",
+        "Total" : "47",
+        "URL" : "17nkqre"
+    },
+    "grab" : {
+        "dash" : {
+            "Hits" : "10-12",
+            "Total" : "50",
+            "URL" : "YcfGYGM"
+        },
+        "standing" : {
+            "Hits" : "9-10",
+            "Total" : "40",
+            "URL" : "WgNroTm"
+        }
+    },
+    "jab" : {
+        "jab1" : {
+            "Hits" : "7-9",
+            "Jab2Start" : "14",
+            "NextWindow" : "3-25",
+            "SAF" : "25",
+            "Total" : "24",
+            "URL" : "bheQl0j"
+        },
+        "jab2" : {
+            "Hits" : "9-11",
+            "SAF" : "31",
+            "Total" : "30",
+            "URL" : "w69YCB4"
+        }
+    },
+    "nair" : {
+        "AC" : "<7 40>",
+        "Hits" : "8-23",
+        "Landlag" : "30",
+        "SAF" : "48",
+        "Total" : "49",
+        "URL" : "k2e9aFd"
+    },
+    "sideb" : {
+        "bite" : {
+            "BiteHit" : "19-23",
+            "Bites" : "32",
+            "Notes" : [
+                "You may throw any time except 20-22."
+            ]
+        },
+        "bthrow" : {
+            "Release" : "14",
+            "Total" : "40"
+        },
+        "claw" : {
+            "Grabs" : "16-18",
+            "Hits" : "16-18",
+            "Total" : "59",
+            "URL" : "mr9Q8HP"
+        },
+        "fthrow" : {
+            "Hits" : "18-22",
+            "Release" : "24",
+            "Total" : "43"
+        }
+    },
+    "stats" : {
+        "AirborneOn" : "9",
+        "DashBecomesRunOn" : "14",
+        "FHFFOn" : "24",
+        "FHFFTotal" : "37",
+        "FHTotal" : "47",
+        "SHFFOn" : "15",
+        "SHFFTotal" : "19",
+        "SHTotal" : "27"
+    },
+    "uair" : {
+        "AC" : "<9 40>",
+        "Hits" : "22-25",
+        "Landlag" : "30",
+        "SAF" : "45",
+        "Total" : "47",
+        "URL" : "RzVxVLC"
+    },
+    "upb" : {
+        "air" : {
+            "Hits" : "5-46",
+            "SoonestLedgeGrab" : "36",
+            "SpecialFallLag" : "10",
+            "Total" : "49",
+            "URL" : "4m8Yi6q"
+        },
+        "ground" : {
+            "Hits" : "5-46",
+            "Notes" : [
+                "Invincible 1-4."
+            ],
+            "Total" : "79",
+            "URL" : "efNyTT1"
+        }
+    },
+    "usmash" : {
+        "Charge" : "10",
+        "Hits" : "15-21, 30",
+        "Notes" : [
+            "Invincible 16-17."
+        ],
+        "SAF" : "53",
+        "Total" : "59",
+        "URL" : "77ma1Aa"
+    },
+    "utilt" : {
+        "Hits" : "7-10",
+        "SAF" : "50",
+        "Total" : "54",
+        "URL" : "5dqcKIj"
     }
-  },
-  "ftilt": {
-    "Total": "47",
-    "Hits": "12-16",
-    "SAF": "37"
-  },
-  "dtilt": {
-    "Total": "59",
-    "Hits": "14-18, 27-30",
-    "SAF": "60"
-  },
-  "utilt": {
-    "Total": "54",
-    "Hits": "7-10",
-    "SAF": "50"
-  },
-  "fsmash": {
-    "Total": "69",
-    "Hits": "29-33",
-    "SAF": "66",
-    "Charge": "10"
-  },
-  "dsmash": {
-    "Total": "69",
-    "Hits": "14-15, 17-18, 20-21, 23-24, 26-27, 29-30, 32",
-    "SAF": "68",
-    "Charge": "8"
-  },
-  "usmash": {
-    "Total": "59",
-    "Hits": "15-21, 30",
-    "SAF": "53",
-    "Charge": "10",
-    "Notes": [
-      "Invincible 16-17."
-    ]
-  },
-  "nair": {
-    "Total": "49",
-    "Hits": "8-23",
-    "SAF": "48",
-    "AC": "<7 40>",
-    "Landlag": "30"
-  },
-  "fair": {
-    "Total": "45",
-    "Hits": "8-11",
-    "SAF": "42",
-    "AC": "<7 31>",
-    "Landlag": "30"
-  },
-  "bair": {
-    "Total": "49",
-    "Hits": "9-17",
-    "SAF": "50",
-    "AC": "<8 45>",
-    "Landlag": "35"
-  },
-  "dair": {
-    "Total": "79",
-    "Hits": "14-15, 17-18, 20-21, 23-24, 26-27, 29-30, 32-33, 35-36, 38-39",
-    "AC": "<13 70>",
-    "Landlag": "40",
-    "Notes": [
-      "Hits 4 frames upon landing."
-    ]
-  },
-  "uair": {
-    "Total": "47",
-    "Hits": "22-25",
-    "SAF": "45",
-    "AC": "<9 40>",
-    "Landlag": "30"
-  },
-  "da": {
-    "Total": "59",
-    "Hits": "10-17",
-    "SAF": "56"
-  },
-  "grab": {
-    "standing": {
-      "Total": "40",
-      "Hits": "9-10"
-    },
-    "dash": {
-      "Total": "50",
-      "Hits": "10-12"
-    }
-  },
-  "b": {
-    "Total": "92",
-    "Hits": "23, 26, 29, 32, 35, 38, 41, 44, 47, 50, 53, 56, 59, 62, etc",
-    "FireLasts": "21",
-    "Lag": "30",
-    "Notes": [
-      "Fire lasts shorter as time goes on, eventually only lasting one frame.",
-      "14 fires from one B press.",
-      "In 1.0 if you land before flames come out Bowser will skip the startup animation (Flame Cancel)."
-    ]
-  },
-  "sideb": {
-    "claw": {
-      "Total": "59",
-      "Hits": "16-18",
-      "Grabs": "16-18"
-    },
-    "bite": {
-      "Bites": "32",
-      "BiteHit": "19-23",
-      "Notes": [
-        "You may throw any time except 20-22."
-      ]
-    },
-    "bthrow": {
-      "Total": "40",
-      "Release": "14"
-    },
-    "fthrow": {
-      "Total": "43",
-      "Hits": "18-22",
-      "Release": "24"
-    }
-  },
-  "downb": {
-    "ground": {
-      "Total": "106",
-      "Hits": "42-47",
-      "Notes": [
-        "Landing hit on frame 47"
-      ]
-    },
-    "air": {
-      "Total": "106",
-      "Hits": "32-",
-      "Notes": [
-        "Hitbox active until landing.",
-        "Can grab ledges on front side."
-      ]
-    }
-  },
-  "upb": {
-    "ground": {
-      "Total": "79",
-      "Hits": "5-46",
-      "Notes": [
-        "Invincible 1-4."
-      ]
-    },
-    "air": {
-      "Total": "49",
-      "Hits": "5-46",
-      "SpecialFallLag": "10",
-      "SoonestLedgeGrab": "36"
-    }
-  },
-  "dodge": {
-    "airdodge": {
-      "Total": "49",
-      "Intangible": "3-29"
-    },
-    "rollBack": {
-      "Total": "39",
-      "Intangible": "4-19"
-    },
-    "rollForward": {
-      "Total": "39",
-      "Intangible": "4-19"
-    },
-    "spotdodge": {
-      "Total": "42",
-      "Intangible": "4-24"
-    }
-  }
 }

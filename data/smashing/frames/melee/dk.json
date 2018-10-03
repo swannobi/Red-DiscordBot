@@ -1,184 +1,210 @@
 {
-  "stats": {
-    "AirborneOn": "6",
-    "FHTotal": "55",
-    "FHFFOn": "30",
-    "FHFFTotal": "41",
-    "SHTotal": "33",
-    "SHFFOn": "18",
-    "SHFFTotal": "21",
-    "DashBecomesRunOn": "16"
-  },
-  "jab": {
-    "jab1": {
-      "Total": "24",
-      "Hits": "5-7",
-      "SAF": "25",
-      "NextWindow": "3-29",
-      "Jab2Start": "10"
+    "b" : {
+        "charged" : {
+            "Hits" : "17-21",
+            "Notes" : [
+                "Fully invincible 17-18."
+            ],
+            "Total" : "46",
+            "URL" : "OIwxQq5"
+        },
+        "uncharged" : {
+            "Hits" : "17-21",
+            "Notes" : [
+                "This move has 12 levels of charge.",
+                "Each charge is stored every 12 frames.",
+                "No charge to full charge takes 120 frames."
+            ],
+            "Total" : "58",
+            "URL" : "4bUbnT1"
+        }
     },
-    "jab2": {
-      "Total": "34",
-      "Hits": "5-11",
-      "SAF": "35"
+    "bair" : {
+        "AC" : "<6 20>",
+        "Hits" : "7-15",
+        "Landlag" : "15",
+        "SAF" : "32",
+        "Total" : "39",
+        "URL" : "xi04bMt"
+    },
+    "da" : {
+        "Hits" : "9-20",
+        "SAF" : "55",
+        "Total" : "54",
+        "URL" : "Vu5XU0m"
+    },
+    "dair" : {
+        "AC" : "<2 50>",
+        "Hits" : "18-23",
+        "Landlag" : "31",
+        "SAF" : "55",
+        "Total" : "54",
+        "URL" : "47bPbNp"
+    },
+    "dodge" : {
+        "airdodge" : {
+            "Intangible" : "4-29",
+            "Total" : "49",
+            "URL" : "Q6I52EX"
+        },
+        "back" : {
+            "Intangible" : "4-19",
+            "Total" : "31",
+            "URL" : "Z889gAr"
+        },
+        "forward" : {
+            "Intangible" : "4-19",
+            "Total" : "31",
+            "URL" : "WIeofWU"
+        },
+        "spotdodge" : {
+            "Intangible" : "2-23",
+            "Total" : "37",
+            "URL" : "zWILcW3"
+        }
+    },
+    "downb" : {
+        "Hits" : "6-7, 17-18",
+        "Notes" : [
+            "Each additional iteration of slap is 27 frames and hits 6-7",
+            "17-18",
+            "plus a 20 frame cooldown."
+        ],
+        "Total" : "60",
+        "URL" : "g5xXz8l"
+    },
+    "dsmash" : {
+        "Charge" : "3",
+        "Hits" : "10-13",
+        "SAF" : "56",
+        "Total" : "55",
+        "URL" : "pLTImua"
+    },
+    "dtilt" : {
+        "Hits" : "6-9",
+        "SAF" : "23",
+        "Total" : "22",
+        "URL" : "7ALseXy"
+    },
+    "fair" : {
+        "AC" : "",
+        "Hits" : "25-29",
+        "Landlag" : "30",
+        "Notes" : [
+            "DK's fair is the only aerial in the game that has no autocancel window."
+        ],
+        "SAF" : "60",
+        "Total" : "59",
+        "URL" : "DsKDoiG"
+    },
+    "fsmash" : {
+        "Charge" : "15",
+        "Hits" : "22-23",
+        "SAF" : "55",
+        "Total" : "54",
+        "URL" : "6sHLPkM"
+    },
+    "ftilt" : {
+        "Hits" : "8-11",
+        "SAF" : "37",
+        "Total" : "33",
+        "URL" : "ejL00OP"
+    },
+    "grab" : {
+        "dash" : {
+            "Hits" : "10-11",
+            "Total" : "40",
+            "URL" : "QcwXT4z"
+        },
+        "standing" : {
+            "Hits" : "8-9",
+            "Total" : "30",
+            "URL" : "Fbr23jp"
+        }
+    },
+    "jab" : {
+        "jab1" : {
+            "Hits" : "5-7",
+            "Jab2Start" : "10",
+            "NextWindow" : "3-29",
+            "SAF" : "25",
+            "Total" : "24",
+            "URL" : "eJetn8g"
+        },
+        "jab2" : {
+            "Hits" : "5-11",
+            "SAF" : "35",
+            "Total" : "34",
+            "URL" : "KmSOQhn"
+        }
+    },
+    "nair" : {
+        "AC" : "<9 39>",
+        "Hits" : "10-26",
+        "Landlag" : "20",
+        "SAF" : "39",
+        "Total" : "43",
+        "URL" : "sy4uPaJ"
+    },
+    "sideb" : {
+        "Hits" : "20-21",
+        "Total" : "59",
+        "URL" : "4N3E3F8"
+    },
+    "stats" : {
+        "AirborneOn" : "6",
+        "DashBecomesRunOn" : "16",
+        "FHFFOn" : "30",
+        "FHFFTotal" : "41",
+        "FHTotal" : "55",
+        "SHFFOn" : "18",
+        "SHFFTotal" : "21",
+        "SHTotal" : "33"
+    },
+    "uair" : {
+        "AC" : "<5 13>",
+        "Hits" : "6-8",
+        "Landlag" : "25",
+        "SAF" : "38",
+        "Total" : "44",
+        "URL" : "VGViLea"
+    },
+    "upb" : {
+        "air" : {
+            "Hits" : "2-5, 11-66",
+            "Notes" : [
+                "Fully invincible 2-5.",
+                "Arms invincible 11-42."
+            ],
+            "SoonestLedgeGrab" : "85",
+            "SpecialFallLag" : "7",
+            "Total" : "84",
+            "URL" : "Z17JKDS"
+        },
+        "ground" : {
+            "Hits" : "3-5, 19-58",
+            "Notes" : [
+                "Fully invincible 3-5."
+            ],
+            "SoonestLedgeGrab" : "85",
+            "Total" : "84",
+            "URL" : "o6PTT3X"
+        }
+    },
+    "usmash" : {
+        "Charge" : "7",
+        "Hits" : "14-16",
+        "Notes" : [
+            "Head and forearms invincible 12-16."
+        ],
+        "SAF" : "54",
+        "Total" : "53",
+        "URL" : "1G83Ccu"
+    },
+    "utilt" : {
+        "Hits" : "6-11",
+        "SAF" : "40",
+        "Total" : "39",
+        "URL" : "vq6UwDK"
     }
-  },
-  "ftilt": {
-    "Total": "33",
-    "Hits": "8-11",
-    "SAF": "37"
-  },
-  "dtilt": {
-    "Total": "22",
-    "Hits": "6-9",
-    "SAF": "23"
-  },
-  "utilt": {
-    "Total": "39",
-    "Hits": "6-11",
-    "SAF": "40"
-  },
-  "da": {
-    "Total": "54",
-    "Hits": "9-20",
-    "SAF": "55"
-  },
-  "fsmash": {
-    "Total": "54",
-    "Hits": "22-23",
-    "SAF": "55",
-    "Charge": "15"
-  },
-  "dsmash": {
-    "Total": "55",
-    "Hits": "10-13",
-    "SAF": "56",
-    "Charge": "3"
-  },
-  "usmash": {
-    "Total": "53",
-    "Hits": "14-16",
-    "SAF": "54",
-    "Charge": "7",
-    "Notes": [
-      "Head and forearms invincible 12-16."
-    ]
-  },
-  "nair": {
-    "Total": "43",
-    "Hits": "10-26",
-    "SAF": "39",
-    "AC": "<9 39>",
-    "Landlag": "20"
-  },
-  "fair": {
-    "Total": "59",
-    "Hits": "25-29",
-    "SAF": "60",
-    "AC": "",
-    "Landlag": "30",
-    "Notes": [
-      "DK's fair is the only aerial in the game that has no autocancel window."
-    ]
-  },
-  "bair": {
-    "Total": "39",
-    "Hits": "7-15",
-    "SAF": "32",
-    "AC": "<6 20>",
-    "Landlag": "15"
-  },
-  "dair": {
-    "Total": "54",
-    "Hits": "18-23",
-    "SAF": "55",
-    "AC": "<2 50>",
-    "Landlag": "31"
-  },
-  "uair": {
-    "Total": "44",
-    "Hits": "6-8",
-    "SAF": "38",
-    "AC": "<5 13>",
-    "Landlag": "25"
-  },
-  "grab": {
-    "standing": {
-      "Total": "30",
-      "Hits": "8-9"
-    },
-    "dash": {
-      "Total": "40",
-      "Hits": "10-11"
-    }
-  },
-  "b": {
-    "uncharged": {
-      "Total": "58",
-      "Hits": "17-21",
-      "Notes": [
-        "This move has 12 levels of charge.",
-        "Each charge is stored every 12 frames.",
-        "No charge to full charge takes 120 frames."
-      ]
-    },
-    "charged": {
-      "Total": "46",
-      "Hits": "17-21",
-      "Notes": [
-        "Fully invincible 17-18."
-      ]
-    }
-  },
-  "sideb": {
-    "Total": "59",
-    "Hits": "20-21"
-  },
-  "downb": {
-    "Total": "60",
-    "Hits": "6-7, 17-18",
-    "Notes": [
-      "Each additional iteration of slap is 27 frames and hits 6-7",
-      "17-18",
-      "plus a 20 frame cooldown."
-    ]
-  },
-  "upb": {
-    "ground": {
-      "Total": "84",
-      "SoonestLedgeGrab": "85",
-      "Hits": "3-5, 19-58",
-      "Notes": [
-        "Fully invincible 3-5."
-      ]
-    },
-    "air": {
-      "Total": "84",
-      "SoonestLedgeGrab": "85",
-      "Hits": "2-5, 11-66",
-      "SpecialFallLag": "7",
-      "Notes": [
-        "Fully invincible 2-5.",
-        "Arms invincible 11-42."
-      ]
-    }
-  },
-  "dodge": {
-    "airdodge": {
-      "Total": "49",
-      "Intangible": "4-29"
-    },
-    "rollBack": {
-      "Total": "31",
-      "Intangible": "4-19"
-    },
-    "rollForward": {
-      "Total": "31",
-      "Intangible": "4-19"
-    },
-    "spotdodge": {
-      "Total": "37",
-      "Intangible": "2-23"
-    }
-  }
 }

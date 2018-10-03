@@ -1,205 +1,233 @@
 {
-  "stats": {
-    "AirborneOn": "4",
-    "FHTotal": "69",
-    "FHFFOn": "34",
-    "FHFFTotal": "49",
-    "SHTotal": "55",
-    "SHFFOn": "28",
-    "SHFFTotal": "38",
-    "DashBecomesRunOn": "9"
-  },
-  "jab": {
-    "jab1": {
-      "Total": "17",
-      "Hits": "3-4",
-      "SAF": "18",
-      "NextWindow": "3-25",
-      "Jab2Start": "12"
+    "b" : {
+        "Hits" : "15-84",
+        "Notes" : [
+            "140 frames to full charge.",
+            "Starts charging frame 14.",
+            "Shots comes out frame 2 if fired while charging (+30 frames of lag).",
+            "Cancelling charge with shield incurs 8 frames of lag; cancelling charge with roll is frame 1."
+        ],
+        "Total" : "44",
+        "URL" : "9kMn4"
     },
-    "jab2": {
-      "Total": "30",
-      "Hits": "5-7",
-      "SAF": "31"
+    "bair" : {
+        "AC" : "<8 31>",
+        "Hits" : "9-12",
+        "Landlag" : "15",
+        "SAF" : "37",
+        "Total" : "39",
+        "URL" : "DDKWj"
+    },
+    "da" : {
+        "Hits" : "7-16",
+        "SAF" : "38",
+        "Total" : "37",
+        "URL" : "Jw4fZ"
+    },
+    "dair" : {
+        "AC" : "<2 34>",
+        "Hits" : "18-22",
+        "Landlag" : "15",
+        "Total" : "54",
+        "URL" : "P7J25"
+    },
+    "dodge" : {
+        "airdodge" : {
+            "Intangible" : "4-29",
+            "Total" : "49",
+            "URL" : "8H2qX"
+        },
+        "back" : {
+            "Intangible" : "4-23",
+            "Total" : "44",
+            "URL" : "HPG3r"
+        },
+        "forward" : {
+            "Intangible" : "4-23",
+            "Total" : "44",
+            "URL" : "QkO4g"
+        },
+        "spotdodge" : {
+            "Intangible" : "2-15",
+            "Total" : "22",
+            "URL" : "KMBow"
+        }
+    },
+    "downb" : {
+        "Activates" : "10-83",
+        "Hits" : "1-11",
+        "Notes" : [
+            "Cancellable by crouching after frame 46.",
+            "Bomb jumping is 53 frames and interruptible after frame 2.",
+            "Samus can super wavedash using this move (see online guides for more info)."
+        ],
+        "Total" : "53",
+        "URL" : "tEyKm"
+    },
+    "dsmash" : {
+        "Charge" : "3",
+        "Hits" : "6-8, 14-16",
+        "SAF" : "45",
+        "Total" : "48",
+        "URL" : "e52yZ"
+    },
+    "dtilt" : {
+        "Hits" : "6-8",
+        "SAF" : "40",
+        "Total" : "39",
+        "URL" : "8Qbpe"
+    },
+    "fair" : {
+        "AC" : "47>",
+        "Hits" : "4-5, 11-12, 18-19, 25-26, 30-31",
+        "Landlag" : "15",
+        "SAF" : "50",
+        "Total" : "55",
+        "URL" : "7FUWA"
+    },
+    "fsmash" : {
+        "Charge" : "4",
+        "Hits" : "10-13",
+        "SAF" : "44",
+        "Total" : "43",
+        "URL" : "ONYEW"
+    },
+    "ftilt" : {
+        "Hits" : "6-8",
+        "SAF" : "30",
+        "Total" : "31",
+        "URL" : "fPVoL"
+    },
+    "grab" : {
+        "dash" : {
+            "Hits" : "18-27, 30-33",
+            "Total" : "74",
+            "URL" : "t8rnL"
+        },
+        "extended" : {
+            "Hits" : "18-41, 42-57, 59-94",
+            "Notes" : [
+                "Press L to home in.",
+                "Must press A during a grab window to start grabbing; the grab will continue throughout the remainder of the grab window."
+            ],
+            "Total" : "94",
+            "URL" : "oxdGQ1c"
+        },
+        "standing" : {
+            "Hits" : "18-20, 22-37",
+            "Total" : "94",
+            "URL" : "tilH2"
+        }
+    },
+    "jab" : {
+        "jab1" : {
+            "Hits" : "3-4",
+            "Jab2Start" : "12",
+            "NextWindow" : "3-25",
+            "SAF" : "18",
+            "Total" : "17",
+            "URL" : "BAEfE"
+        },
+        "jab2" : {
+            "Hits" : "5-7",
+            "SAF" : "31",
+            "Total" : "30",
+            "URL" : "y7x6B"
+        }
+    },
+    "nair" : {
+        "AC" : "<4 35>",
+        "Hits" : "5-29",
+        "Landlag" : "15",
+        "SAF" : "40",
+        "Total" : "49",
+        "URL" : "XxVzR"
+    },
+    "sideb" : {
+        "air" : {
+            "Hits" : "15-91",
+            "Notes" : [
+                "Autocancels on landing.",
+                "Super missile animation (shown) is 49 total frames and comes out frame 15.",
+                "Homing missile animation is 59 total frames and comes out frame 24."
+            ],
+            "Total" : "49",
+            "URL" : "bFoZT"
+        },
+        "ground" : {
+            "Hits" : "22-98",
+            "Notes" : [
+                "Super missile animation (shown) is 49 total frames and comes out frame 22.",
+                "Homing missile animation is 59 total frames and comes out frame 22."
+            ],
+            "Total" : "49",
+            "URL" : "EHaBW"
+        }
+    },
+    "stats" : {
+        "AirborneOn" : "4",
+        "DashBecomesRunOn" : "9",
+        "FHFFOn" : "34",
+        "FHFFTotal" : "49",
+        "FHTotal" : "69",
+        "SHFFOn" : "28",
+        "SHFFTotal" : "38",
+        "SHTotal" : "55"
+    },
+    "uair" : {
+        "AC" : "<4 34>",
+        "Hits" : "5-6, 8-9, 11-12, 14-15, 17-18, 20-21",
+        "Landlag" : "15",
+        "SAF" : "39",
+        "Total" : "39",
+        "URL" : "Ni8q2"
+    },
+    "upb" : {
+        "air" : {
+            "Hits" : "4-5, 6-7, 8-9, 10-11, 12-13, 14-15, 16-17, 18-19, 20-21, 22-23, 24-25, 26-27",
+            "Landlag" : "24",
+            "Notes" : [
+                "Grabs ledge from both sides."
+            ],
+            "SoonestLedgeGrab" : "26",
+            "SpecialFallLag" : "24",
+            "Total" : "47",
+            "URL" : "ceOZL"
+        },
+        "ground" : {
+            "Hits" : "4-7, 8-9, 10-11, 12-13, 14-15, 16-17, 18-19, 20-21, 22-23, 24-25, 26-27, 28-29",
+            "Landlag" : "24",
+            "Notes" : [
+                "Grabs ledge from both sides."
+            ],
+            "SoonestLedgeGrab" : "26",
+            "SpecialFallLag" : "24",
+            "Total" : "49",
+            "URL" : "oKSgZ"
+        }
+    },
+    "usmash" : {
+        "Charge" : "8",
+        "Hits" : "12-14, 16-18, 20-22, 24-26, 28-29",
+        "SAF" : "58",
+        "Total" : "59",
+        "URL" : "1nsiW"
+    },
+    "utilt" : {
+        "Hits" : "14-17",
+        "SAF" : "35",
+        "Total" : "39",
+        "URL" : "AiXqv"
+    },
+    "zair" : {
+        "Hits" : "10-28",
+        "Landlag" : "30",
+        "Notes" : [
+            "Jump from tether 1-11."
+        ],
+        "SpecialFallLag" : "4",
+        "Tethers" : "9-29",
+        "Total" : "60",
+        "URL" : "2SwRvuG"
     }
-  },
-  "ftilt": {
-    "Total": "31",
-    "Hits": "6-8",
-    "SAF": "30"
-  },
-  "dtilt": {
-    "Total": "39",
-    "Hits": "6-8",
-    "SAF": "40"
-  },
-  "utilt": {
-    "Total": "39",
-    "Hits": "14-17",
-    "SAF": "35"
-  },
-  "fsmash": {
-    "Total": "43",
-    "Hits": "10-13",
-    "SAF": "44",
-    "Charge": "4"
-  },
-  "dsmash": {
-    "Total": "48",
-    "Hits": "6-8, 14-16",
-    "SAF": "45",
-    "Charge": "3"
-  },
-  "usmash": {
-    "Total": "59",
-    "Hits": "12-14, 16-18, 20-22, 24-26, 28-29",
-    "SAF": "58",
-    "Charge": "8"
-  },
-  "nair": {
-    "Total": "49",
-    "Hits": "5-29",
-    "SAF": "40",
-    "AC": "<4 35>",
-    "Landlag": "15"
-  },
-  "fair": {
-    "Total": "55",
-    "Hits": "4-5, 11-12, 18-19, 25-26, 30-31",
-    "SAF": "50",
-    "AC": "47>",
-    "Landlag": "15"
-  },
-  "bair": {
-    "Total": "39",
-    "Hits": "9-12",
-    "SAF": "37",
-    "AC": "<8 31>",
-    "Landlag": "15"
-  },
-  "dair": {
-    "Total": "54",
-    "Hits": "18-22",
-    "AC": "<2 34>",
-    "Landlag": "15"
-  },
-  "uair": {
-    "Total": "39",
-    "Hits": "5-6, 8-9, 11-12, 14-15, 17-18, 20-21",
-    "SAF": "39",
-    "AC": "<4 34>",
-    "Landlag": "15"
-  },
-  "zair": {
-    "Total": "60",
-    "Hits": "10-28",
-    "Tethers": "9-29",
-    "Landlag": "30",
-    "SpecialFallLag": "4",
-    "Notes": [
-      "Jump from tether 1-11."
-    ]
-  },
-  "da": {
-    "Total": "37",
-    "Hits": "7-16",
-    "SAF": "38"
-  },
-  "grab": {
-    "standing": {
-      "Total": "94",
-      "Hits": "18-20, 22-37"
-    },
-    "dash": {
-      "Total": "74",
-      "Hits": "18-27, 30-33"
-    },
-    "extended": {
-      "Total": "94",
-      "Hits": "18-41, 42-57, 59-94",
-      "Notes": [
-        "Press L to home in.",
-        "Must press A during a grab window to start grabbing; the grab will continue throughout the remainder of the grab window."
-      ]
-    }
-  },
-  "b": {
-    "Total": "44",
-    "Hits": "15-84",
-    "Notes": [
-      "140 frames to full charge.",
-      "Starts charging frame 14.",
-      "Shots comes out frame 2 if fired while charging (+30 frames of lag).",
-      "Cancelling charge with shield incurs 8 frames of lag; cancelling charge with roll is frame 1."
-    ]
-  },
-  "sideb": {
-    "ground": {
-      "Total": "49",
-      "Hits": "22-98",
-      "Notes": [
-        "Super missile animation (shown) is 49 total frames and comes out frame 22.",
-        "Homing missile animation is 59 total frames and comes out frame 22."
-      ]
-    },
-    "air": {
-      "Total": "49",
-      "Hits": "15-91",
-      "Notes": [
-        "Autocancels on landing.",
-        "Super missile animation (shown) is 49 total frames and comes out frame 15.",
-        "Homing missile animation is 59 total frames and comes out frame 24."
-      ]
-    }
-  },
-  "downb": {
-    "Total": "53",
-    "Activates": "10-83",
-    "Hits": "1-11",
-    "Notes": [
-      "Cancellable by crouching after frame 46.",
-      "Bomb jumping is 53 frames and interruptible after frame 2.",
-      "Samus can super wavedash using this move (see online guides for more info)."
-    ]
-  },
-  "upb": {
-    "ground": {
-      "Total": "49",
-      "Hits": "4-7, 8-9, 10-11, 12-13, 14-15, 16-17, 18-19, 20-21, 22-23, 24-25, 26-27, 28-29",
-      "SoonestLedgeGrab": "26",
-      "Landlag": "24",
-      "SpecialFallLag": "24",
-      "Notes": [
-        "Grabs ledge from both sides."
-      ]
-    },
-    "air": {
-      "Total": "47",
-      "Hits": "4-5, 6-7, 8-9, 10-11, 12-13, 14-15, 16-17, 18-19, 20-21, 22-23, 24-25, 26-27",
-      "SoonestLedgeGrab": "26",
-      "Landlag": "24",
-      "SpecialFallLag": "24",
-      "Notes": [
-        "Grabs ledge from both sides."
-      ]
-    }
-  },
-  "dodge": {
-    "airdodge": {
-      "Total": "49",
-      "Intangible": "4-29"
-    },
-    "rollBack": {
-      "Total": "44",
-      "Intangible": "4-23"
-    },
-    "rollForward": {
-      "Total": "44",
-      "Intangible": "4-23"
-    },
-    "spotdodge": {
-      "Total": "22",
-      "Intangible": "2-15"
-    }
-  }
 }

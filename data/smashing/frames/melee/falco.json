@@ -21,36 +21,43 @@
         "Hits" : "4-19",
         "Landlag" : "20",
         "SAF" : "38",
-        "Total" : "39"
+        "Total" : "39",
+        "URL" : "A2znRLt"
     },
     "da" : {
         "Hits" : "4-17",
         "SAF" : "36",
-        "Total" : "39"
+        "Total" : "39",
+        "URL" : "mSN3rrX"
     },
     "dair" : {
         "AC" : "<4 30>",
         "Hits" : "5-24",
         "Landlag" : "18",
         "SAF" : "50",
-        "Total" : "49"
+        "Total" : "49",
+        "URL" : "1yIW5Gw"
     },
     "dodge" : {
         "airdodge" : {
             "Intangible" : "4-29",
-            "Total" : "49"
+            "Total" : "49",
+            "URL" : "HcjPUYB"
         },
-        "rollBack" : {
+        "back" : {
             "Intangible" : "4-19",
-            "Total" : "31"
+            "Total" : "31",
+            "URL" : "aGyIShz"
         },
-        "rollForward" : {
+        "forward" : {
             "Intangible" : "4-19",
-            "Total" : "31"
+            "Total" : "31",
+            "URL" : "tQpGZtv"
         },
         "spotdodge" : {
             "Intangible" : "2-15",
-            "Total" : "22"
+            "Total" : "22",
+            "URL" : "YcAUQdE"
         }
     },
     "downb" : {
@@ -62,7 +69,8 @@
             "Reflects up to the frame after B is released, if held."
         ],
         "Reflects" : "4-21",
-        "Total" : "39"
+        "Total" : "39",
+        "URL" : "wdqjmwD"
     },
     "dsmash" : {
         "Charge" : "2",
@@ -71,39 +79,46 @@
             "Legs invincible 1-6."
         ],
         "SAF" : "50",
-        "Total" : "49"
+        "Total" : "49",
+        "URL" : "MzLH8bg"
     },
     "dtilt" : {
         "Hits" : "7-9",
         "SAF" : "28",
-        "Total" : "29"
+        "Total" : "29",
+        "URL" : "77k1w63"
     },
     "fair" : {
         "AC" : "<5 49>",
         "Hits" : "6-8, 16-18, 24-26, 33-35, 43-45",
         "Landlag" : "22",
         "SAF" : "53",
-        "Total" : "59"
+        "Total" : "59",
+        "URL" : "hY4DO2P"
     },
     "fsmash" : {
         "Charge" : "7",
         "Hits" : "12-21",
         "SAF" : "40",
-        "Total" : "39"
+        "Total" : "39",
+        "URL" : "eHsCUO4"
     },
     "ftilt" : {
         "Hits" : "5-9",
         "SAF" : "27",
-        "Total" : "26"
+        "Total" : "26",
+        "URL" : "3IzhKFg"
     },
     "grab" : {
         "dash" : {
             "Hits" : "12-13",
-            "Total" : "40"
+            "Total" : "40",
+            "URL" : "KqrGJlb"
         },
         "standing" : {
             "Hits" : "7-8",
-            "Total" : "30"
+            "Total" : "30",
+            "URL" : "qF04hIt"
         }
     },
     "jab" : {
@@ -112,19 +127,22 @@
             "Jab2Start" : "6",
             "NextWindow" : "3-31",
             "SAF" : "16",
-            "Total" : "17"
+            "Total" : "17",
+            "URL" : "KGWu6DC"
         },
         "jab2" : {
             "Hits" : "3-4",
             "Jab3Start" : "7",
             "NextWindow" : "1-20",
             "SAF" : "19",
-            "Total" : "20"
+            "Total" : "20",
+            "URL" : "Kon0G5P"
         },
         "rapidjab" : {
             "Hits" : "3-4, 10-11, 17-18, 24-25, 31-32",
             "SAF" : "37",
-            "Total" : "36"
+            "Total" : "36",
+            "URL" : "hEL5Miv"
         }
     },
     "nair" : {
@@ -132,7 +150,8 @@
         "Hits" : "4-31",
         "Landlag" : "15",
         "SAF" : "42",
-        "Total" : "49"
+        "Total" : "49",
+        "URL" : "YP1gtdd"
     },
     "sideb" : {
         "air" : {
@@ -145,7 +164,8 @@
             "ShortenWindow" : "17-20",
             "SoonestLedgeGrab" : "25",
             "SpecialFallLag" : "3",
-            "Total" : "59"
+            "Total" : "59",
+            "URL" : "D81cgEe"
         },
         "ground" : {
             "Hits" : "18-21",
@@ -157,7 +177,8 @@
             "ShortenWindow" : "17-20",
             "SoonestLedgeGrab" : "25",
             "SpecialFallLag" : "3",
-            "Total" : "59"
+            "Total" : "59",
+            "URL" : "45VjXjp"
         }
     },
     "stats" : {
@@ -175,7 +196,8 @@
         "Hits" : "8-9, 11-14",
         "Landlag" : "18",
         "SAF" : "36",
-        "Total" : "39"
+        "Total" : "39",
+        "URL" : "6Z0efCa"
     },
     "upb" : {
         "Hits" : "43-64",
@@ -187,7 +209,8 @@
         ],
         "SoonestLedgeGrab" : "16",
         "SpecialFallLag" : "3",
-        "Total" : "84"
+        "Total" : "84",
+        "URL" : "a7s6sii"
     },
     "usmash" : {
         "Charge" : "2",
@@ -196,11 +219,13 @@
             "Head invincible 1-10."
         ],
         "SAF" : "44",
-        "Total" : "43"
+        "Total" : "43",
+        "URL" : "Naa8unV"
     },
     "utilt" : {
         "Hits" : "5-11",
         "SAF" : "23",
-        "Total" : "23"
+        "Total" : "23",
+        "URL" : "8eo5sEA"
     }
 }

@@ -1,163 +1,187 @@
 {
-  "stats": {
-    "AirborneOn": "6",
-    "FHTotal": "51",
-    "FHFFOn": "27",
-    "FHFFTotal": "39",
-    "SHTotal": "33",
-    "SHFFOn": "19",
-    "SHFFTotal": "23",
-    "EarliestMidairJumpsEvery": "22",
-    "DashBecomesRunOn": "13"
-  },
-  "jab": {
-    "jab1": {
-      "Total": "17",
-      "Hits": "5-6",
-      "SAF": "16",
-      "NextWindow": "3-25",
-      "Jab2Start": "8"
+    "b" : {
+        "Charge" : "16",
+        "Hits" : "1-106",
+        "Notes" : [
+            "Maximum charge at 45.",
+            "While turning, Jigglypuff takes no damage for 27 frames."
+        ],
+        "Total" : "23",
+        "URL" : "2BFcR"
     },
-    "jab2": {
-      "Total": "20",
-      "Hits": "6-7",
-      "SAF": "17"
+    "bair" : {
+        "AC" : "<8 25>",
+        "Hits" : "9-12",
+        "Landlag" : "20",
+        "SAF" : "31",
+        "Total" : "39",
+        "URL" : "ecrxe"
+    },
+    "da" : {
+        "Hits" : "4-14",
+        "SAF" : "39",
+        "Total" : "39",
+        "URL" : "KgfNa"
+    },
+    "dair" : {
+        "AC" : "<4 39>",
+        "Hits" : "5-6, 8-9, 11-12, 14-15, 17-18, 20-21, 23-24, 26-27",
+        "Landlag" : "30",
+        "Total" : "49",
+        "URL" : "MrmS0"
+    },
+    "dodge" : {
+        "airdodge" : {
+            "Intangible" : "4-29",
+            "Total" : "49",
+            "URL" : "UBAiD"
+        },
+        "back" : {
+            "Intangible" : "4-19",
+            "Total" : "34",
+            "URL" : "ylVeE"
+        },
+        "forward" : {
+            "Intangible" : "2-18",
+            "Total" : "34",
+            "URL" : "H8WOv"
+        },
+        "spotdodge" : {
+            "Intangible" : "2-15",
+            "Total" : "27",
+            "URL" : "jeJ99"
+        }
+    },
+    "downb" : {
+        "Hits" : "1",
+        "Notes" : [
+            "Fully invincible frame 1-26."
+        ],
+        "Total" : "249",
+        "URL" : "hwk0i"
+    },
+    "dsmash" : {
+        "Charge" : "5",
+        "Hits" : "9-10",
+        "Notes" : [
+            "Legs invincible frame 9-10."
+        ],
+        "SAF" : "48",
+        "Total" : "54",
+        "URL" : "PVPe2"
+    },
+    "dtilt" : {
+        "Hits" : "10-12",
+        "SAF" : "30",
+        "Total" : "39",
+        "URL" : "3ly51"
+    },
+    "fair" : {
+        "AC" : "<6 34>",
+        "Hits" : "7-22",
+        "Landlag" : "20",
+        "SAF" : "35",
+        "Total" : "39",
+        "URL" : "laAG2"
+    },
+    "fsmash" : {
+        "Charge" : "4",
+        "Hits" : "12-20",
+        "SAF" : "45",
+        "Total" : "44",
+        "URL" : "0evKL"
+    },
+    "ftilt" : {
+        "Hits" : "6-9",
+        "SAF" : "28",
+        "Total" : "27",
+        "URL" : "FAZPp"
+    },
+    "grab" : {
+        "dash" : {
+            "Hits" : "11-12",
+            "Total" : "40",
+            "URL" : "rRple"
+        },
+        "standing" : {
+            "Hits" : "7-8",
+            "Total" : "30",
+            "URL" : "V6zp8"
+        }
+    },
+    "jab" : {
+        "jab1" : {
+            "Hits" : "5-6",
+            "Jab2Start" : "8",
+            "NextWindow" : "3-25",
+            "SAF" : "16",
+            "Total" : "17",
+            "URL" : "sQugU"
+        },
+        "jab2" : {
+            "Hits" : "6-7",
+            "SAF" : "17",
+            "Total" : "20",
+            "URL" : "OS751"
+        }
+    },
+    "nair" : {
+        "AC" : "<5 29>",
+        "Hits" : "6-28",
+        "Landlag" : "20",
+        "SAF" : "50",
+        "Total" : "49",
+        "URL" : "7V7Wz"
+    },
+    "sideb" : {
+        "EarliestFF" : "42",
+        "Hits" : "12-27",
+        "Notes" : [
+            "Can be aimed slightly upward or downward."
+        ],
+        "Total" : "45",
+        "URL" : "caF8s",
+        "WhenToAim" : "12"
+    },
+    "stats" : {
+        "AirborneOn" : "6",
+        "DashBecomesRunOn" : "13",
+        "EarliestMidairJumpsEvery" : "22",
+        "FHFFOn" : "27",
+        "FHFFTotal" : "39",
+        "FHTotal" : "51",
+        "SHFFOn" : "19",
+        "SHFFTotal" : "23",
+        "SHTotal" : "33"
+    },
+    "uair" : {
+        "AC" : "<8 37>",
+        "Hits" : "9-12",
+        "Landlag" : "20",
+        "SAF" : "38",
+        "Total" : "39",
+        "URL" : "lWnwC"
+    },
+    "upb" : {
+        "Hits" : "28-35, 69-76, 113-125",
+        "Notes" : [
+            "Jigglypuff's hitbox changes size during the animation.",
+            "Can grab ledge from both sides."
+        ],
+        "Total" : "179",
+        "URL" : "7fmda"
+    },
+    "usmash" : {
+        "Charge" : "5",
+        "Hits" : "7-10",
+        "SAF" : "45",
+        "Total" : "54",
+        "URL" : "ZMLwX"
+    },
+    "utilt" : {
+        "Hits" : "8-14",
+        "SAF" : "24",
+        "Total" : "23",
+        "URL" : "9akJd"
     }
-  },
-  "ftilt": {
-    "Total": "27",
-    "Hits": "6-9",
-    "SAF": "28"
-  },
-  "dtilt": {
-    "Total": "39",
-    "Hits": "10-12",
-    "SAF": "30"
-  },
-  "utilt": {
-    "Total": "23",
-    "Hits": "8-14",
-    "SAF": "24"
-  },
-  "fsmash": {
-    "Total": "44",
-    "Hits": "12-20",
-    "SAF": "45",
-    "Charge": "4"
-  },
-  "dsmash": {
-    "Total": "54",
-    "Hits": "9-10",
-    "SAF": "48",
-    "Charge": "5",
-    "Notes": [
-      "Legs invincible frame 9-10."
-    ]
-  },
-  "usmash": {
-    "Total": "54",
-    "Hits": "7-10",
-    "SAF": "45",
-    "Charge": "5"
-  },
-  "nair": {
-    "Total": "49",
-    "Hits": "6-28",
-    "SAF": "50",
-    "AC": "<5 29>",
-    "Landlag": "20"
-  },
-  "fair": {
-    "Total": "39",
-    "Hits": "7-22",
-    "SAF": "35",
-    "AC": "<6 34>",
-    "Landlag": "20"
-  },
-  "bair": {
-    "Total": "39",
-    "Hits": "9-12",
-    "SAF": "31",
-    "AC": "<8 25>",
-    "Landlag": "20"
-  },
-  "dair": {
-    "Total": "49",
-    "Hits": "5-6, 8-9, 11-12, 14-15, 17-18, 20-21, 23-24, 26-27",
-    "AC": "<4 39>",
-    "Landlag": "30"
-  },
-  "uair": {
-    "Total": "39",
-    "Hits": "9-12",
-    "SAF": "38",
-    "AC": "<8 37>",
-    "Landlag": "20"
-  },
-  "da": {
-    "Total": "39",
-    "Hits": "4-14",
-    "SAF": "39"
-  },
-  "grab": {
-    "standing": {
-      "Total": "30",
-      "Hits": "7-8"
-    },
-    "dash": {
-      "Total": "40",
-      "Hits": "11-12"
-    }
-  },
-  "b": {
-    "Total": "23",
-    "Hits": "1-106",
-    "Charge": "16",
-    "Notes": [
-      "Maximum charge at 45.",
-      "While turning, Jigglypuff takes no damage for 27 frames."
-    ]
-  },
-  "sideb": {
-    "Total": "45",
-    "Hits": "12-27",
-    "WhenToAim": "12",
-    "EarliestFF": "42",
-    "Notes": [
-      "Can be aimed slightly upward or downward."
-    ]
-  },
-  "downb": {
-    "Total": "249",
-    "Hits": "1",
-    "Notes": [
-      "Fully invincible frame 1-26."
-    ]
-  },
-  "upb": {
-    "Total": "179",
-    "Hits": "28-35, 69-76, 113-125",
-    "Notes": [
-      "Jigglypuff's hitbox changes size during the animation.",
-      "Can grab ledge from both sides."
-    ]
-  },
-  "dodge": {
-    "airdodge": {
-      "Total": "49",
-      "Intangible": "4-29"
-    },
-    "rollBack": {
-      "Total": "34",
-      "Intangible": "4-19"
-    },
-    "rollForward": {
-      "Total": "34",
-      "Intangible": "2-18"
-    },
-    "spotdodge": {
-      "Total": "27",
-      "Intangible": "2-15"
-    }
-  }
 }

@@ -6,43 +6,51 @@
             "Full charge only hits on one frame.",
             "Hit begins 5 frames after B is released."
         ],
-        "Total" : "232"
+        "Total" : "232",
+        "URL" : "yjG4RRL"
     },
     "bair" : {
         "Autocancel" : "34>",
         "Hits" : "8-10",
         "Landlag" : "24",
+        "SAF" : "43",
         "Total" : "45",
-        "SAF" : "43"
+        "URL" : "JBN0Kq3"
     },
     "da" : {
-        "Total" : "57",
         "Hits" : "8-10",
-        "SAF" : "40"
+        "SAF" : "40",
+        "Total" : "57",
+        "URL" : "0BEdH"
     },
     "dair" : {
         "Autocancel" : "<6 55>",
         "Hits" : "7-10",
         "Landlag" : "32",
+        "SAF" : "64",
         "Total" : "68",
-        "SAF" : "64"
+        "URL" : "EXgrqpQ"
     },
     "dodge" : {
         "airdodge" : {
             "Intangible" : "4-29",
-            "Total" : "49"
+            "Total" : "49",
+            "URL" : "8zkUt"
         },
-        "backroll" : {
+        "back" : {
             "Intangible" : "4-23",
-            "Total" : "35"
+            "Total" : "35",
+            "URL" : "XyEJi"
         },
-        "forwardroll" : {
+        "forward" : {
             "Intangible" : "4-19",
-            "Total" : "35"
+            "Total" : "35",
+            "URL" : "LqGGT"
         },
         "spotdodge" : {
             "Intangible" : "2-18",
-            "Total" : "27"
+            "Total" : "27",
+            "URL" : "GekiM"
         }
     },
     "downb" : {
@@ -53,13 +61,15 @@
             "Hit begins 14 frames after activationi (needs confirmation).",
             "Fully invincible 1-16 when activated (needs confirmation)."
         ],
-        "Total" : "59"
+        "Total" : "59",
+        "URL" : "6O8zUBY"
     },
     "dsmash" : {
         "Charge" : "3",
         "Hits" : "6-8, 23-25",
         "SAF" : "72",
-        "Total" : "74"
+        "Total" : "74",
+        "URL" : "1hTLeZQ"
     },
     "dtilt" : {
         "Hits" : "8-10",
@@ -67,90 +77,107 @@
             "Cannot interrupt with shield."
         ],
         "SAF" : "20",
-        "Total" : "57"
+        "Total" : "57",
+        "URL" : "yBI1Bi8"
     },
     "fair" : {
         "Autocancel" : "30>",
         "Hits" : "5-7",
         "Landlag" : "20",
+        "SAF" : "35",
         "Total" : "38",
-        "SAF" : "35"
+        "URL" : "AhSgOjN"
     },
     "fsmash" : {
         "Charge" : "3",
         "Hits" : "12-14",
         "SAF" : "54",
-        "Total" : "57"
+        "Total" : "57",
+        "URL" : "00YCwjL"
     },
     "ftilt" : {
         "Hits" : "9-13",
         "SAF" : "40",
-        "Total" : "40"
+        "Total" : "40",
+        "URL" : "FXXdMgE"
     },
     "grab" : {
         "dash" : {
             "Hits" : "10-11",
-            "Total" : "40"
+            "Total" : "40",
+            "URL" : "yNaOj"
         },
         "standing" : {
             "Hits" : "7-8",
-            "Total" : "30"
+            "Total" : "30",
+            "URL" : "7URUF"
         }
     },
     "jab" : {
         "Hits" : "4-7",
         "SAF" : "26",
-        "Total" : "31"
+        "Total" : "31",
+        "URL" : "Qw56JYC"
     },
     "nair" : {
         "Autocancel" : "<6 32>",
         "Hits" : "57",
         "Landlag" : "20",
+        "SAF" : "50",
         "Total" : "57",
-        "SAF" : "50"
+        "URL" : "VxTYBV6"
     },
     "sideb" : {
         "1-side" : {
             "Hits" : "6-8",
             "NextWindow" : "8-26",
-            "Total" : "29"
+            "Total" : "29",
+            "URL" : "G8yxa"
         },
         "2-side" : {
             "Hits" : "14-16",
             "NextWindow" : "17-33",
-            "Total" : "40"
+            "Total" : "40",
+            "URL" : "VI3bw"
         },
         "2-up" : {
             "Hits" : "12-15",
             "NextWindow" : "17-32",
-            "Total" : "40"
+            "Total" : "40",
+            "URL" : "u2nkv"
         },
         "3-down" : {
             "Hits" : "16, 18, 20, 22",
             "NextWindow" : "23-35",
-            "Total" : "46"
+            "Total" : "46",
+            "URL" : "BN76o"
         },
         "3-side" : {
             "Hits" : "11-14",
             "NextWindow" : "16-37",
-            "Total" : "46"
+            "Total" : "46",
+            "URL" : "vT0hv"
         },
         "3-up" : {
             "Hits" : "13-17",
             "NextWindow" : "18-37",
-            "Total" : "46"
+            "Total" : "46",
+            "URL" : "FVVxK"
         },
         "4-down" : {
             "Hits" : "13-15, 19-21, 25-27, 31-33, 37-38",
-            "Total" : "60"
+            "Total" : "60",
+            "URL" : "KXk9P"
         },
         "4-side" : {
             "Hits" : "23-26",
-            "Total" : "50"
+            "Total" : "50",
+            "URL" : "S7Zx0"
         },
         "4-up" : {
             "Hits" : "20-25",
-            "Total" : "50"
+            "Total" : "50",
+            "URL" : "Iu7un"
         }
     },
     "stats" : {
@@ -158,7 +185,7 @@
         "DashBecomesRunOn" : "16",
         "FHAirTime" : "48",
         "FHFFAirTime" : "35",
-        "FHFFOn" : "25", 
+        "FHFFOn" : "25",
         "SHAirTime" : "29",
         "SHFFAirTime" : "19",
         "SHFFOn" : "16"
@@ -167,28 +194,32 @@
         "Autocancel" : "<4 30>",
         "Hits" : "5-10",
         "Landlag" : "18",
+        "SAF" : "49",
         "Total" : "52",
-        "SAF" : "49"
+        "URL" : "BvYmDGw"
     },
     "upb" : {
         "Hits" : "9-21",
+        "Landlag" : "30",
         "Notes" : [
             "Aims on frame 9."
         ],
-        "Landlag" : "30",
-        "SpecialFallLag" : "30",
         "SoonestLedgeGrab" : "32",
-        "Total" : "48"
+        "SpecialFallLag" : "30",
+        "Total" : "48",
+        "URL" : "5LETKUa"
     },
     "usmash" : {
         "Charge" : "8",
         "Hits" : "15-24",
         "SAF" : "46",
-        "Total" : "62"
+        "Total" : "62",
+        "URL" : "mE5uviJ"
     },
     "utilt" : {
         "Hits" : "7-13",
         "SAF" : "40",
-        "Total" : "45"
+        "Total" : "45",
+        "URL" : "TstDGSw"
     }
 }

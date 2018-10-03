@@ -1,191 +1,218 @@
 {
-  "stats": {
-    "AirborneOn": "5",
-    "FHTotal": "58",
-    "FHFFOn": "30",
-    "FHFFTotal": "45",
-    "SHTotal": "34",
-    "SHFFOn": "19",
-    "SHFFTotal": "24",
-    "DashBecomesRunOn": "14"
-  },
-  "jab": {
-    "jab1": {
-      "Total": "19",
-      "Hits": "3-4",
-      "SAF": "20",
-      "NextWindow": "3-25",
-      "Jab2Start": "5"
+    "b" : {
+        "Hits" : "64-77",
+        "Notes" : [
+            "This move lasts 217 frames when fully charged.",
+            "Hits 20-33 after B is released, when charged."
+        ],
+        "Total" : "109",
+        "URL" : "2rZ47"
     },
-    "jab2": {
-      "Total": "20",
-      "Hits": "4-5",
-      "SAF": "21",
-      "NextWindow": "2-25",
-      "Jab3Start": "7"
+    "bair" : {
+        "AC" : "<9 25>",
+        "Hits" : "10-19",
+        "Landlag" : "18",
+        "SAF" : "36",
+        "Total" : "39",
+        "URL" : "PXSea"
     },
-    "jab3": {
-      "Total": "30",
-      "Hits": "7-10",
-      "SAF": "31"
+    "da" : {
+        "Hits" : "8, 15, 22",
+        "SAF" : "40",
+        "Total" : "41",
+        "URL" : "acISB"
+    },
+    "dair" : {
+        "AC" : "<19 29>",
+        "Hits" : "20-28",
+        "Landlag" : "28",
+        "SAF" : "60",
+        "Total" : "59",
+        "URL" : "eCxTp"
+    },
+    "dodge" : {
+        "airdodge" : {
+            "Intangible" : "4-29",
+            "Total" : "48",
+            "URL" : "sbJSHe8"
+        },
+        "back" : {
+            "Intangible" : "4-19",
+            "Total" : "31",
+            "URL" : "7yOh5i9"
+        },
+        "forward" : {
+            "Intangible" : "4-19",
+            "Total" : "31",
+            "URL" : "qjPqUD8"
+        },
+        "spotdodge" : {
+            "Intangible" : "2-18",
+            "Total" : "27",
+            "URL" : "88wkmci"
+        }
+    },
+    "downb" : {
+        "Absorbs" : "10-39",
+        "Notes" : [
+            "18 frames of lag on activation.",
+            "21 frames of lag when B is released, if move is extended."
+        ],
+        "Total" : "59",
+        "URL" : "q67vx"
+    },
+    "dsmash" : {
+        "Charge" : "13",
+        "Hits" : "12-31",
+        "SAF" : "59",
+        "Total" : "61",
+        "URL" : "n5VFC"
+    },
+    "dtilt" : {
+        "Hits" : "3-5",
+        "Notes" : [
+            "This move can cancel into itself on frame 8."
+        ],
+        "SAF" : "14",
+        "Total" : "13",
+        "URL" : "DwdEB"
+    },
+    "fair" : {
+        "AC" : "<7 30>",
+        "Hits" : "8-10, 11-13, 14-16, 17-19, 20-21",
+        "Landlag" : "18",
+        "SAF" : "40",
+        "Total" : "41",
+        "URL" : "kfAZw"
+    },
+    "fsmash" : {
+        "Charge" : "10",
+        "Hits" : "16-17",
+        "Reflects" : "16-17",
+        "SAF" : "50",
+        "Total" : "49",
+        "URL" : "y6ZAX"
+    },
+    "ftilt" : {
+        "Hits" : "7-11",
+        "SAF" : "35",
+        "Total" : "34",
+        "URL" : "gJi65"
+    },
+    "grab" : {
+        "dash" : {
+            "Hits" : "10-11",
+            "Total" : "40",
+            "URL" : "sObbE"
+        },
+        "standing" : {
+            "Hits" : "8-9",
+            "Total" : "30",
+            "URL" : "KCFxA"
+        }
+    },
+    "jab" : {
+        "jab1" : {
+            "Hits" : "3-4",
+            "Jab2Start" : "5",
+            "NextWindow" : "3-25",
+            "SAF" : "20",
+            "Total" : "19",
+            "URL" : "P1xS6"
+        },
+        "jab2" : {
+            "Hits" : "4-5",
+            "Jab3Start" : "7",
+            "NextWindow" : "2-25",
+            "SAF" : "21",
+            "Total" : "20",
+            "URL" : "tjerO"
+        },
+        "jab3" : {
+            "Hits" : "7-10",
+            "SAF" : "31",
+            "Total" : "30",
+            "URL" : "vvZBr"
+        }
+    },
+    "nair" : {
+        "AC" : "<4 27>",
+        "Hits" : "5-23",
+        "Landlag" : "22",
+        "SAF" : "36",
+        "Total" : "39",
+        "URL" : "DXhPL"
+    },
+    "sideb" : {
+        "air" : {
+            "Activates" : "20-40",
+            "Landlag" : "30",
+            "Notes" : [
+                "Fire hits 1-101."
+            ],
+            "Total" : "69",
+            "URL" : "yobbm"
+        },
+        "ground" : {
+            "Activates" : "20-19",
+            "Notes" : [
+                "Fire hits 1-101."
+            ],
+            "Total" : "69",
+            "URL" : "yobbm"
+        }
+    },
+    "stats" : {
+        "AirborneOn" : "5",
+        "DashBecomesRunOn" : "14",
+        "FHFFOn" : "30",
+        "FHFFTotal" : "45",
+        "FHTotal" : "58",
+        "SHFFOn" : "19",
+        "SHFFTotal" : "24",
+        "SHTotal" : "34"
+    },
+    "uair" : {
+        "AC" : "<7 27>",
+        "Hits" : "8-11",
+        "Landlag" : "18",
+        "SAF" : "42",
+        "Total" : "39",
+        "URL" : "ypUEK"
+    },
+    "upb" : {
+        "PKT" : {
+            "Hits" : "20-119",
+            "Total" : "173",
+            "URL" : "ixCsaqs"
+        },
+        "PKT2" : {
+            "Hits" : "1-36",
+            "Landlag" : "30",
+            "Notes" : [
+                "Fully invincible 1-9."
+            ],
+            "Total" : "70",
+            "URL" : "HuNTo"
+        }
+    },
+    "usmash" : {
+        "Charge" : "13",
+        "Hits" : "12, 14-31",
+        "Notes" : [
+            "Ness can activate the \"yo-yo glitch\" with this move (see online for more info)."
+        ],
+        "SAF" : "50",
+        "Total" : "49",
+        "URL" : "HAWif"
+    },
+    "utilt" : {
+        "Hits" : "5-9",
+        "Notes" : [
+            "Head invincible 5-6."
+        ],
+        "SAF" : "32",
+        "Total" : "39",
+        "URL" : "bgiI4"
     }
-  },
-  "ftilt": {
-    "Total": "34",
-    "Hits": "7-11",
-    "SAF": "35"
-  },
-  "dtilt": {
-    "Total": "13",
-    "Hits": "3-5",
-    "SAF": "14",
-    "Notes": [
-      "This move can cancel into itself on frame 8."
-    ]
-  },
-  "utilt": {
-    "Total": "39",
-    "Hits": "5-9",
-    "SAF": "32",
-    "Notes": [
-      "Head invincible 5-6."
-    ]
-  },
-  "fsmash": {
-    "Total": "49",
-    "Hits": "16-17",
-    "Reflects": "16-17",
-    "SAF": "50",
-    "Charge": "10"
-  },
-  "dsmash": {
-    "Total": "61",
-    "Hits": "12-31",
-    "SAF": "59",
-    "Charge": "13"
-  },
-  "usmash": {
-    "Total": "49",
-    "Hits": "12, 14-31",
-    "SAF": "50",
-    "Charge": "13",
-    "Notes": [
-      "Ness can activate the \"yo-yo glitch\" with this move (see online for more info)."
-    ]
-  },
-  "nair": {
-    "Total": "39",
-    "Hits": "5-23",
-    "SAF": "36",
-    "AC": "<4 27>",
-    "Landlag": "22"
-  },
-  "fair": {
-    "Total": "41",
-    "Hits": "8-10, 11-13, 14-16, 17-19, 20-21",
-    "SAF": "40",
-    "AC": "<7 30>",
-    "Landlag": "18"
-  },
-  "bair": {
-    "Total": "39",
-    "Hits": "10-19",
-    "SAF": "36",
-    "AC": "<9 25>",
-    "Landlag": "18"
-  },
-  "dair": {
-    "Total": "59",
-    "Hits": "20-28",
-    "SAF": "60",
-    "AC": "<19 29>",
-    "Landlag": "28"
-  },
-  "uair": {
-    "Total": "39",
-    "Hits": "8-11",
-    "SAF": "42",
-    "AC": "<7 27>",
-    "Landlag": "18"
-  },
-  "da": {
-    "Total": "41",
-    "Hits": "8, 15, 22",
-    "SAF": "40"
-  },
-  "grab": {
-    "standing": {
-      "Total": "30",
-      "Hits": "8-9"
-    },
-    "dash": {
-      "Total": "40",
-      "Hits": "10-11"
-    }
-  },
-  "b": {
-    "Total": "109",
-    "Hits": "64-77",
-    "Notes": [
-      "This move lasts 217 frames when fully charged.",
-      "Hits 20-33 after B is released, when charged."
-    ]
-  },
-  "sideb": {
-    "ground": {
-      "Total": "69",
-      "Activates": "20-19",
-      "Notes": [
-        "Fire hits 1-101."
-      ]
-    },
-    "air": {
-      "Total": "69",
-      "Activates": "20-40",
-      "Landlag": "30",
-      "Notes": [
-        "Fire hits 1-101."
-      ]
-    }
-  },
-  "downb": {
-    "Total": "59",
-    "Absorbs": "10-39",
-    "Notes": [
-      "18 frames of lag on activation.",
-      "21 frames of lag when B is released, if move is extended."
-    ]
-  },
-  "upb": {
-    "PKT": {
-      "Total": "173",
-      "Hits": "20-119"
-    },
-    "PKT2": {
-      "Total": "70",
-      "Hits": "1-36",
-      "Landlag": "30",
-      "Notes": [
-        "Fully invincible 1-9."
-      ]
-    }
-  },
-  "dodge": {
-    "airdodge": {
-      "Total": "48",
-      "Intangible": "4-29"
-    },
-    "rollBack": {
-      "Total": "31",
-      "Intangible": "4-19"
-    },
-    "rollForward": {
-      "Total": "31",
-      "Intangible": "4-19"
-    },
-    "spotdodge": {
-      "Total": "27",
-      "Intangible": "2-18"
-    }
-  }
 }

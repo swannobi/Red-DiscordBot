@@ -1,181 +1,207 @@
 {
-  "stats": {
-    "AirborneOn": "4",
-    "FHTotal": "50",
-    "FHFFOn": "26",
-    "FHFFTotal": "37",
-    "SHTotal": "38",
-    "SHFFOn": "20",
-    "SHFFTotal": "27",
-    "DashBecomesRunOn": "8"
-  },
-  "jab": {
-    "jab1": {
-      "Total": "17",
-      "Hits": "2-3",
-      "SAF": "16",
-      "NextWindow": "3-25",
-      "Jab2Start": "10"
+    "b" : {
+        "air" : {
+            "Hits" : "11, 14, 17, 20, 23, 26",
+            "NeedlesChargeEvery" : "11",
+            "NeedlesLast" : "30",
+            "Notes" : [
+                "Autocancels on landing."
+            ],
+            "Total" : "39",
+            "URL" : "aGn9J"
+        },
+        "ground" : {
+            "NeedleChargeEvery" : "11",
+            "Needles" : "12, 15, 18, 21, 24, 27",
+            "NeedlesLast" : "30",
+            "Total" : "40",
+            "URL" : "IeM0t"
+        }
     },
-    "jab2": {
-      "Total": "18",
-      "Hits": "3-5",
-      "SAF": "17",
-      "NextWindow": "2-18",
-      "RapidjabStart": "10"
+    "bair" : {
+        "AC" : "<3 25>",
+        "Hits" : "4-19",
+        "Landlag" : "16",
+        "SAF" : "38",
+        "Total" : "37",
+        "URL" : "9gMnp"
     },
-    "rapidjab": {
-      "Total": "55",
-      "Hits": "3-4, 7-8, 11-12, 15-16, 19-20, 23-24, 27-28",
-      "SAF": "?"
+    "da" : {
+        "Hits" : "6-12",
+        "SAF" : "36",
+        "Total" : "37",
+        "URL" : "mqtZK"
+    },
+    "dair" : {
+        "AC" : "<2",
+        "Hits" : "15-33",
+        "Landlag" : "20",
+        "Total" : "48",
+        "URL" : "btT23"
+    },
+    "dodge" : {
+        "airdodge" : {
+            "Intangible" : "4-29",
+            "Total" : "49",
+            "URL" : "EwkSp"
+        },
+        "back" : {
+            "Intangible" : "4-19",
+            "Total" : "31",
+            "URL" : "d3pVU"
+        },
+        "forward" : {
+            "Intangible" : "4-19",
+            "Total" : "31",
+            "URL" : "ULZdY"
+        },
+        "spotdodge" : {
+            "Intangible" : "2-15",
+            "Total" : "22",
+            "URL" : "F3i1P"
+        }
+    },
+    "downb" : {
+        "Notes" : [
+            "Fully invincible frame 27-36."
+        ],
+        "Total" : "62",
+        "Transforms" : "37",
+        "URL" : "BlXWT"
+    },
+    "dsmash" : {
+        "Charge" : "2",
+        "Hits" : "5-9, 16-19, 22-24",
+        "Notes" : [
+            "Legs invincible 5."
+        ],
+        "SAF" : "46",
+        "Total" : "49",
+        "URL" : "2RIC7"
+    },
+    "dtilt" : {
+        "Hits" : "5-8",
+        "SAF" : "28",
+        "Total" : "29",
+        "URL" : "Q5K3P"
+    },
+    "fair" : {
+        "AC" : "<4 11>",
+        "Hits" : "5-7",
+        "Landlag" : "16",
+        "SAF" : "34",
+        "Total" : "33",
+        "URL" : "kL7DF"
+    },
+    "fsmash" : {
+        "Charge" : "5",
+        "Hits" : "12, 27-29",
+        "SAF" : "46",
+        "Total" : "50",
+        "URL" : "J0JWM"
+    },
+    "ftilt" : {
+        "Hits" : "5-10",
+        "SAF" : "27",
+        "Total" : "29",
+        "URL" : "wXhj0"
+    },
+    "grab" : {
+        "dash" : {
+            "Hits" : "8-9",
+            "Total" : "40",
+            "URL" : "IlPv5"
+        },
+        "standing" : {
+            "Hits" : "7-8",
+            "Total" : "30",
+            "URL" : "kEdJV"
+        }
+    },
+    "jab" : {
+        "jab1" : {
+            "Hits" : "2-3",
+            "Jab2Start" : "10",
+            "NextWindow" : "3-25",
+            "SAF" : "16",
+            "Total" : "17",
+            "URL" : "oD33Q"
+        },
+        "jab2" : {
+            "Hits" : "3-5",
+            "NextWindow" : "2-18",
+            "RapidjabStart" : "10",
+            "SAF" : "17",
+            "Total" : "18",
+            "URL" : "lgIAq"
+        },
+        "rapidjab" : {
+            "Hits" : "3-4, 7-8, 11-12, 15-16, 19-20, 23-24, 27-28",
+            "SAF" : "?",
+            "Total" : "55",
+            "URL" : "l0iaw"
+        }
+    },
+    "nair" : {
+        "AC" : "<2 31>",
+        "Hits" : "3-20",
+        "Landlag" : "16",
+        "SAF" : "42",
+        "Total" : "48",
+        "URL" : "YSZiz"
+    },
+    "sideb" : {
+        "Hits" : "22-75",
+        "Notes" : [
+            "Chain fully extended on 34.",
+            "Earliest chain retract on 44."
+        ],
+        "Total" : "85",
+        "URL" : "LkR8w"
+    },
+    "stats" : {
+        "AirborneOn" : "4",
+        "DashBecomesRunOn" : "8",
+        "FHFFOn" : "26",
+        "FHFFTotal" : "37",
+        "FHTotal" : "50",
+        "SHFFOn" : "20",
+        "SHFFTotal" : "27",
+        "SHTotal" : "38"
+    },
+    "uair" : {
+        "AC" : "<4 30>",
+        "Hits" : "5-20",
+        "Landlag" : "24",
+        "SAF" : "37",
+        "Total" : "39",
+        "URL" : "5RUlB"
+    },
+    "upb" : {
+        "Hits" : "36-42",
+        "LandLag" : "30",
+        "Notes" : [
+            "Invincible 18-55.",
+            "Aim on 35."
+        ],
+        "SpecialFallLag" : "4",
+        "Total" : "94",
+        "URL" : "eZA1u"
+    },
+    "usmash" : {
+        "Charge" : "10",
+        "Hits" : "12, 14-16",
+        "Notes" : [
+            "Head and forearms invincible 12-16."
+        ],
+        "SAF" : "40",
+        "Total" : "47",
+        "URL" : "TFicf"
+    },
+    "utilt" : {
+        "Hits" : "5-10, 19-24",
+        "SAF" : "26",
+        "Total" : "33",
+        "URL" : "GUNvL"
     }
-  },
-  "ftilt": {
-    "Total": "29",
-    "Hits": "5-10",
-    "SAF": "27"
-  },
-  "dtilt": {
-    "Total": "29",
-    "Hits": "5-8",
-    "SAF": "28"
-  },
-  "utilt": {
-    "Total": "33",
-    "Hits": "5-10, 19-24",
-    "SAF": "26"
-  },
-  "fsmash": {
-    "Total": "50",
-    "Hits": "12, 27-29",
-    "SAF": "46",
-    "Charge": "5"
-  },
-  "dsmash": {
-    "Total": "49",
-    "Hits": "5-9, 16-19, 22-24",
-    "SAF": "46",
-    "Charge": "2",
-    "Notes": [
-      "Legs invincible 5."
-    ]
-  },
-  "usmash": {
-    "Total": "47",
-    "Hits": "12, 14-16",
-    "SAF": "40",
-    "Charge": "10",
-    "Notes": [
-      "Head and forearms invincible 12-16."
-    ]
-  },
-  "nair": {
-    "Total": "48",
-    "Hits": "3-20",
-    "SAF": "42",
-    "AC": "<2 31>",
-    "Landlag": "16"
-  },
-  "fair": {
-    "Total": "33",
-    "Hits": "5-7",
-    "SAF": "34",
-    "AC": "<4 11>",
-    "Landlag": "16"
-  },
-  "bair": {
-    "Total": "37",
-    "Hits": "4-19",
-    "SAF": "38",
-    "AC": "<3 25>",
-    "Landlag": "16"
-  },
-  "dair": {
-    "Total": "48",
-    "Hits": "15-33",
-    "AC": "<2",
-    "Landlag": "20"
-  },
-  "uair": {
-    "Total": "39",
-    "Hits": "5-20",
-    "SAF": "37",
-    "AC": "<4 30>",
-    "Landlag": "24"
-  },
-  "da": {
-    "Total": "37",
-    "Hits": "6-12",
-    "SAF": "36"
-  },
-  "grab": {
-    "standing": {
-      "Total": "30",
-      "Hits": "7-8"
-    },
-    "dash": {
-      "Total": "40",
-      "Hits": "8-9"
-    }
-  },
-  "b": {
-    "ground": {
-      "Total": "40",
-      "Needles": "12, 15, 18, 21, 24, 27",
-      "NeedleChargeEvery": "11",
-      "NeedlesLast": "30"
-    },
-    "air": {
-      "Total": "39",
-      "Hits": "11, 14, 17, 20, 23, 26",
-      "NeedlesChargeEvery": "11",
-      "NeedlesLast": "30",
-      "Notes": [
-        "Autocancels on landing."
-      ]
-    }
-  },
-  "sideb": {
-    "Total": "85",
-    "Hits": "22-75",
-    "Notes": [
-      "Chain fully extended on 34.",
-      "Earliest chain retract on 44."
-    ]
-  },
-  "downb": {
-    "Total": "62",
-    "Transforms": "37",
-    "Notes": [
-      "Fully invincible frame 27-36."
-    ]
-  },
-  "upb": {
-    "Total": "94",
-    "Hits": "36-42",
-    "LandLag": "30",
-    "SpecialFallLag": "4",
-    "Notes": [
-      "Invincible 18-55.",
-      "Aim on 35."
-    ]
-  },
-  "dodge": {
-    "airdodge": {
-      "Total": "49",
-      "Intangible": "4-29"
-    },
-    "rollBack": {
-      "Total": "31",
-      "Intangible": "4-19"
-    },
-    "rollForward": {
-      "Total": "31",
-      "Intangible": "4-19"
-    },
-    "spotdodge": {
-      "Total": "22",
-      "Intangible": "2-15"
-    }
-  }
 }

@@ -1,170 +1,194 @@
 {
-  "stats": {
-    "AirborneOn": "5",
-    "FHTotal": "52",
-    "FHFFOn": "27",
-    "FHFFTotal": "40",
-    "SHTotal": "32",
-    "SHFFOn": "17",
-    "SHFFTotal": "22",
-    "DashBecomesRunOn": "11"
-  },
-  "jab": {
-    "jab1": {
-      "Total": "15",
-      "Hits": "2-3",
-      "SAF": "26",
-      "NextWindow": "3-25",
-      "Jab2Start": "14"
+    "b" : {
+        "Hits" : "14-89",
+        "Notes" : [
+            "Can fastfall at any time."
+        ],
+        "Total" : "43",
+        "URL" : "m5579"
     },
-    "jab2": {
-      "Total": "18",
-      "Hits": "3-4",
-      "SAF": "26",
-      "NextWindow": "2-25",
-      "Jab3Start": "17"
+    "bair" : {
+        "AC" : "<5 19>",
+        "Hits" : "6-16",
+        "Landlag" : "18",
+        "SAF" : "32",
+        "Total" : "28",
+        "URL" : "Ollxi"
     },
-    "jab3": {
-      "Total": "22",
-      "Hits": "5-9",
-      "SAF": "23"
+    "da" : {
+        "Hits" : "6-25",
+        "SAF" : "38",
+        "Total" : "43",
+        "URL" : "lzWy5"
+    },
+    "dair" : {
+        "AC" : "<5 33>",
+        "Hits" : "10-11, 13-14, 16-17, 19-20, 22-23, 25-26, 28-29",
+        "Landlag" : "24",
+        "SAF" : "38",
+        "Total" : "38",
+        "URL" : "Jr9lH"
+    },
+    "dodge" : {
+        "airdodge" : {
+            "Intangible" : "4-29",
+            "Total" : "48",
+            "URL" : "SVlSA"
+        },
+        "back" : {
+            "Intangible" : "4-19",
+            "Total" : "31",
+            "URL" : "6zY61"
+        },
+        "forward" : {
+            "Intangible" : "4-19",
+            "Total" : "31",
+            "URL" : "RbIma"
+        },
+        "spotdodge" : {
+            "Intangible" : "2-15",
+            "Total" : "22",
+            "URL" : "7Mn0D"
+        }
+    },
+    "downb" : {
+        "Hits" : "8, 14, 21, 28-29, 38-39",
+        "Notes" : [
+            "Mash B to gain height.",
+            "Frame 10 is the last chance to become airborne if started on the ground.",
+            "Pressing B at a rate of 7.5 presses/second will break even in height."
+        ],
+        "Total" : "79",
+        "URL" : "a2wt1"
+    },
+    "dsmash" : {
+        "Charge" : "3",
+        "Hits" : "5-6, 14-15",
+        "SAF" : "38",
+        "Total" : "37",
+        "URL" : "piafy"
+    },
+    "dtilt" : {
+        "Hits" : "5-8",
+        "SAF" : "35",
+        "Total" : "34",
+        "URL" : "YUBwF"
+    },
+    "fair" : {
+        "AC" : "<2 44>",
+        "Hits" : "18-22",
+        "Landlag" : "25",
+        "SAF" : "60",
+        "Total" : "74",
+        "URL" : "HMjYu"
+    },
+    "fsmash" : {
+        "Charge" : "5",
+        "Hits" : "12-16",
+        "SAF" : "42",
+        "Total" : "41",
+        "URL" : "ur4mT"
+    },
+    "ftilt" : {
+        "Hits" : "4-8",
+        "SAF" : "30",
+        "Total" : "29",
+        "URL" : "Cq11b"
+    },
+    "grab" : {
+        "dash" : {
+            "Hits" : "11-12",
+            "Total" : "40",
+            "URL" : "x1KsG"
+        },
+        "standing" : {
+            "Hits" : "7-8",
+            "Total" : "30",
+            "URL" : "VClSh"
+        }
+    },
+    "jab" : {
+        "jab1" : {
+            "Hits" : "2-3",
+            "Jab2Start" : "14",
+            "NextWindow" : "3-25",
+            "SAF" : "26",
+            "Total" : "15",
+            "URL" : "CAGzy"
+        },
+        "jab2" : {
+            "Hits" : "3-4",
+            "Jab3Start" : "17",
+            "NextWindow" : "2-25",
+            "SAF" : "26",
+            "Total" : "18",
+            "URL" : "tEZFW"
+        },
+        "jab3" : {
+            "Hits" : "5-9",
+            "SAF" : "23",
+            "Total" : "22",
+            "URL" : "QFzoT"
+        }
+    },
+    "nair" : {
+        "AC" : "<2 36>",
+        "Hits" : "3-31",
+        "Landlag" : "18",
+        "SAF" : "46",
+        "Total" : "45",
+        "URL" : "GEVwq"
+    },
+    "sideb" : {
+        "Hits" : "12-14",
+        "Reflect" : "6-33",
+        "Total" : "35",
+        "URL" : "mwBEg"
+    },
+    "stats" : {
+        "AirborneOn" : "5",
+        "DashBecomesRunOn" : "11",
+        "FHFFOn" : "27",
+        "FHFFTotal" : "40",
+        "FHTotal" : "52",
+        "SHFFOn" : "17",
+        "SHFFTotal" : "22",
+        "SHTotal" : "32"
+    },
+    "uair" : {
+        "AC" : "16>",
+        "Hits" : "4-9",
+        "Landlag" : "18",
+        "SAF" : "34",
+        "Total" : "33",
+        "URL" : "hxukD"
+    },
+    "upb" : {
+        "Hits" : "3-21",
+        "Landlag" : "30",
+        "Notes" : [
+            "Fully invincible frame 3.",
+            "Doc can up-b cancel so that the hitbox comes out but Doc doesn't move (see SSBM Tutorials)."
+        ],
+        "SoonestLedgeGrab" : "?",
+        "SpecialFallLag" : "30",
+        "Total" : "37",
+        "URL" : "yUm7Z"
+    },
+    "usmash" : {
+        "Charge" : "7",
+        "Hits" : "9-11",
+        "Notes" : [
+            "Head invincible 9-11."
+        ],
+        "SAF" : "40",
+        "Total" : "39",
+        "URL" : "0p7SS"
+    },
+    "utilt" : {
+        "Hits" : "4-13",
+        "SAF" : "30",
+        "Total" : "30",
+        "URL" : "D4JHp"
     }
-  },
-  "ftilt": {
-    "Total": "29",
-    "Hits": "4-8",
-    "SAF": "30"
-  },
-  "dtilt": {
-    "Total": "34",
-    "Hits": "5-8",
-    "SAF": "35"
-  },
-  "utilt": {
-    "Total": "30",
-    "Hits": "4-13",
-    "SAF": "30"
-  },
-  "da": {
-    "Total": "43",
-    "Hits": "6-25",
-    "SAF": "38"
-  },
-  "fsmash": {
-    "Total": "41",
-    "Hits": "12-16",
-    "SAF": "42",
-    "Charge": "5"
-  },
-  "dsmash": {
-    "Total": "37",
-    "Hits": "5-6, 14-15",
-    "SAF": "38",
-    "Charge": "3"
-  },
-  "usmash": {
-    "Total": "39",
-    "Hits": "9-11",
-    "SAF": "40",
-    "Charge": "7",
-    "Notes": [
-      "Head invincible 9-11."
-    ]
-  },
-  "nair": {
-    "Total": "45",
-    "Hits": "3-31",
-    "SAF": "46",
-    "AC": "<2 36>",
-    "Landlag": "18"
-  },
-  "fair": {
-    "Total": "74",
-    "Hits": "18-22",
-    "SAF": "60",
-    "AC": "<2 44>",
-    "Landlag": "25"
-  },
-  "bair": {
-    "Total": "28",
-    "Hits": "6-16",
-    "SAF": "32",
-    "AC": "<5 19>",
-    "Landlag": "18"
-  },
-  "dair": {
-    "Total": "38",
-    "Hits": "10-11, 13-14, 16-17, 19-20, 22-23, 25-26, 28-29",
-    "SAF": "38",
-    "AC": "<5 33>",
-    "Landlag": "24"
-  },
-  "uair": {
-    "Total": "33",
-    "Hits": "4-9",
-    "SAF": "34",
-    "AC": "16>",
-    "Landlag": "18"
-  },
-  "grab": {
-    "standing": {
-      "Total": "30",
-      "Hits": "7-8"
-    },
-    "dash": {
-      "Total": "40",
-      "Hits": "11-12"
-    }
-  },
-  "b": {
-    "Total": "43",
-    "Hits": "14-89",
-    "Notes": [
-      "Can fastfall at any time."
-    ]
-  },
-  "sideb": {
-    "Total": "35",
-    "Hits": "12-14",
-    "Reflect": "6-33"
-  },
-  "downb": {
-    "Total": "79",
-    "Hits": "8, 14, 21, 28-29, 38-39",
-    "Notes": [
-      "Mash B to gain height.",
-      "Frame 10 is the last chance to become airborne if started on the ground.",
-      "Pressing B at a rate of 7.5 presses/second will break even in height."
-    ]
-  },
-  "upb": {
-    "Total": "37",
-    "SoonestLedgeGrab": "?",
-    "Hits": "3-21",
-    "Landlag": "30",
-    "SpecialFallLag": "30",
-    "Notes": [
-      "Fully invincible frame 3.",
-      "Doc can up-b cancel so that the hitbox comes out but Doc doesn't move (see SSBM Tutorials)."
-    ]
-  },
-  "dodge": {
-    "airdodge": {
-      "Total": "48",
-      "Intangible": "4-29"
-    },
-    "rollBack": {
-      "Total": "31",
-      "Intangible": "4-19",
-      "URL": "6zY61"
-    },
-    "rollForward": {
-      "Total": "31",
-      "Intangible": "4-19"
-    },
-    "spotdodge": {
-      "Total": "22",
-      "Intangible": "2-15"
-    }
-  }
 }

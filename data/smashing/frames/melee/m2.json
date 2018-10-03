@@ -1,167 +1,192 @@
 {
-  "stats": {
-    "AirborneOn": "6",
-    "FHTotal": "60",
-    "FHFFOn": "30",
-    "FHFFTotal": "44",
-    "SHTotal": "35",
-    "SHFFOn": "19",
-    "SHFFTotal": "24",
-    "DashBecomesRunOn": "18"
-  },
-  "jab": {
-    "jab1": {
-      "Total": "29",
-      "Hits": "8",
-      "NextWindow": "3-28",
-      "Jab2Start": "12"
+    "b" : {
+        "charging" : {
+            "Charge" : "18",
+            "Hits" : "18-19, 22-24, 27-29, 32-35, ...",
+            "Notes" : [
+                "This move can be charged indefinitely.",
+                "Full charge on frame 118.",
+                "8 frames of lag when cancelling charge with shield, but no lag with roll.",
+                "Shadow Ball spawns on frame 9 after B is pressed and lasts 69 frames.",
+                "Shot animation lasts 24 frames."
+            ],
+            "Total" : "119",
+            "URL" : "2cKaU0s"
+        },
+        "fullcharge" : {
+            "Hits" : "26-95",
+            "Total" : "41",
+            "URL" : "zFtTP2f"
+        }
     },
-    "rapidjab": {
-      "Total": "79",
-      "Hits": "13, 20, 27, 34, 41, 48, 55, 65"
+    "bair" : {
+        "AC" : "<3 30>",
+        "Hits" : "12-15",
+        "Landlag" : "28",
+        "SAF" : "32",
+        "Total" : "31",
+        "URL" : "e7GBn"
+    },
+    "da" : {
+        "Hits" : "10-29",
+        "SAF" : "50",
+        "Total" : "49",
+        "URL" : "AJhKy"
+    },
+    "dair" : {
+        "AC" : "<6 45>",
+        "Hits" : "18-21",
+        "Landlag" : "28",
+        "SAF" : "58",
+        "Total" : "57",
+        "URL" : "fcucg"
+    },
+    "dodge" : {
+        "airdodge" : {
+            "Intangible" : "4-30",
+            "Total" : "39",
+            "URL" : "LPRzG"
+        },
+        "back" : {
+            "Intangible" : "4-20",
+            "Total" : "37",
+            "URL" : "LF6K9"
+        },
+        "forward" : {
+            "Intangible" : "4-20",
+            "Total" : "37",
+            "URL" : "MQMkI"
+        },
+        "spotdodge" : {
+            "Intangible" : "2-21",
+            "Total" : "37",
+            "URL" : "ZoR2K"
+        }
+    },
+    "downb" : {
+        "Hits" : "15-21",
+        "Notes" : [
+            "This move can only hit opponents facing Mewtwo."
+        ],
+        "Total" : "41",
+        "URL" : "poVFG"
+    },
+    "dsmash" : {
+        "Charge" : "17",
+        "Hits" : "20-21",
+        "SAF" : "60",
+        "Total" : "59",
+        "URL" : "Sp2yw"
+    },
+    "dtilt" : {
+        "Hits" : "5-7",
+        "SAF" : "?",
+        "Total" : "29",
+        "URL" : "QiwaT"
+    },
+    "fair" : {
+        "AC" : "<1 35>",
+        "Hits" : "6-8",
+        "Landlag" : "25",
+        "SAF" : "40",
+        "Total" : "39",
+        "URL" : "Ee0ci"
+    },
+    "fsmash" : {
+        "Charge" : "14",
+        "Hits" : "18-19",
+        "SAF" : "60",
+        "Total" : "59",
+        "URL" : "kGIKq"
+    },
+    "ftilt" : {
+        "Hits" : "6-8",
+        "SAF" : "29",
+        "Total" : "31",
+        "URL" : "nSLnW"
+    },
+    "grab" : {
+        "dash" : {
+            "Hits" : "8-9",
+            "Total" : "39",
+            "URL" : "UDyqm"
+        },
+        "standing" : {
+            "Hits" : "7-8",
+            "Total" : "31",
+            "URL" : "Whavr"
+        }
+    },
+    "jab" : {
+        "jab1" : {
+            "Hits" : "8",
+            "Jab2Start" : "12",
+            "NextWindow" : "3-28",
+            "Total" : "29",
+            "URL" : "yRNCB"
+        },
+        "rapidjab" : {
+            "Hits" : "13, 20, 27, 34, 41, 48, 55, 65",
+            "Total" : "79",
+            "URL" : "GE2OI"
+        }
+    },
+    "nair" : {
+        "AC" : "<5 37>",
+        "Hits" : "5-6, 9-10, 13-14, 17-18, 21-22, 25-26, 29-30, 33-34, 37-38",
+        "Landlag" : "17",
+        "SAF" : "55",
+        "Total" : "54",
+        "URL" : "Vsf4w"
+    },
+    "sideb" : {
+        "Grabs" : "2-15",
+        "Notes" : [
+            "Reflected projectiles remain owned by the character that threw them (i.e. Fox's reflected lasers will not hit Fox)."
+        ],
+        "Reflects" : "12-27",
+        "Total" : "55",
+        "URL" : "abKGg"
+    },
+    "stats" : {
+        "AirborneOn" : "6",
+        "DashBecomesRunOn" : "18",
+        "FHFFOn" : "30",
+        "FHFFTotal" : "44",
+        "FHTotal" : "60",
+        "SHFFOn" : "19",
+        "SHFFTotal" : "24",
+        "SHTotal" : "35"
+    },
+    "uair" : {
+        "AC" : "<4 33>",
+        "Hits" : "9-11",
+        "Landlag" : "20",
+        "SAF" : "38",
+        "Total" : "37",
+        "URL" : "JSrXw"
+    },
+    "upb" : {
+        "Landlag" : "30",
+        "Notes" : [
+            "If teleport puts Mewtwo in the air, it only lasts 32 frames total.",
+            "Fully invincible 8-17."
+        ],
+        "SpecialFallLag" : "4",
+        "Total" : "46",
+        "URL" : "hQI1KtE"
+    },
+    "usmash" : {
+        "Charge" : "2",
+        "Hits" : "9-10, 13-14, 17-18, 21-22, 25-26, 29-30, 33-34",
+        "SAF" : "52",
+        "Total" : "79",
+        "URL" : "g4K0l"
+    },
+    "utilt" : {
+        "Hits" : "6-11",
+        "SAF" : "?",
+        "Total" : "31",
+        "URL" : "7re0R"
     }
-  },
-  "ftilt": {
-    "Total": "31",
-    "Hits": "6-8",
-    "SAF": "29"
-  },
-  "dtilt": {
-    "Total": "29",
-    "Hits": "5-7",
-    "SAF": "?"
-  },
-  "utilt": {
-    "Total": "31",
-    "Hits": "6-11",
-    "SAF": "?"
-  },
-  "fsmash": {
-    "Total": "59",
-    "Hits": "18-19",
-    "SAF": "60",
-    "Charge": "14"
-  },
-  "dsmash": {
-    "Total": "59",
-    "Hits": "20-21",
-    "SAF": "60",
-    "Charge": "17"
-  },
-  "usmash": {
-    "Total": "79",
-    "Hits": "9-10, 13-14, 17-18, 21-22, 25-26, 29-30, 33-34",
-    "SAF": "52",
-    "Charge": "2"
-  },
-  "nair": {
-    "Total": "54",
-    "Hits": "5-6, 9-10, 13-14, 17-18, 21-22, 25-26, 29-30, 33-34, 37-38",
-    "SAF": "55",
-    "AC": "<5 37>",
-    "Landlag": "17"
-  },
-  "fair": {
-    "Total": "39",
-    "Hits": "6-8",
-    "SAF": "40",
-    "AC": "<1 35>",
-    "Landlag": "25"
-  },
-  "bair": {
-    "Total": "31",
-    "Hits": "12-15",
-    "SAF": "32",
-    "AC": "<3 30>",
-    "Landlag": "28"
-  },
-  "dair": {
-    "Total": "57",
-    "Hits": "18-21",
-    "AC": "<6 45>",
-    "SAF": "58",
-    "Landlag": "28"
-  },
-  "uair": {
-    "Total": "37",
-    "Hits": "9-11",
-    "SAF": "38",
-    "AC": "<4 33>",
-    "Landlag": "20"
-  },
-  "da": {
-    "Total": "49",
-    "Hits": "10-29",
-    "SAF": "50"
-  },
-  "grab": {
-    "standing": {
-      "Total": "31",
-      "Hits": "7-8"
-    },
-    "dash": {
-      "Total": "39",
-      "Hits": "8-9"
-    }
-  },
-  "b": {
-    "charging": {
-      "Total": "119",
-      "Hits": "18-19, 22-24, 27-29, 32-35, ...",
-      "Charge": "18",
-      "Notes": [
-        "This move can be charged indefinitely.",
-        "Full charge on frame 118.",
-        "8 frames of lag when cancelling charge with shield, but no lag with roll.",
-        "Shadow Ball spawns on frame 9 after B is pressed and lasts 69 frames.",
-        "Shot animation lasts 24 frames."
-      ]
-    },
-    "fullcharge": {
-      "Total": "41",
-      "Hits": "26-95"
-    }
-  },
-  "sideb": {
-    "Total": "55",
-    "Grabs": "2-15",
-    "Reflects": "12-27",
-    "Notes": [
-      "Reflected projectiles remain owned by the character that threw them (i.e. Fox's reflected lasers will not hit Fox)."
-    ]
-  },
-  "downb": {
-    "Total": "41",
-    "Hits": "15-21",
-    "Notes": [
-      "This move can only hit opponents facing Mewtwo."
-    ]
-  },
-  "upb": {
-    "Total": "46",
-    "Landlag": "30",
-    "SpecialFallLag": "4",
-    "Notes": [
-      "If teleport puts Mewtwo in the air, it only lasts 32 frames total.",
-      "Fully invincible 8-17."
-    ]
-  },
-  "dodge": {
-    "airdodge": {
-      "Total": "39",
-      "Intangible": "4-30"
-    },
-    "rollBack": {
-      "Total": "37",
-      "Intangible": "4-20"
-    },
-    "rollForward": {
-      "Total": "37",
-      "Intangible": "4-20"
-    },
-    "spotdodge": {
-      "Total": "37",
-      "Intangible": "2-21"
-    }
-  }
 }

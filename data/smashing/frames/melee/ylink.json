@@ -197,11 +197,11 @@
       "Total": "49",
       "Intangible": "4-29"
     },
-    "rollBack": {
+    "back": {
       "Total": "4-19",
       "Intangible": "37"
     },
-    "rollForward": {
+    "forward": {
       "Total": "4-19",
       "Intangible": "37"
     },
