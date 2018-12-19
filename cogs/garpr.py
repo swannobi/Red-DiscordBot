@@ -124,7 +124,7 @@ class GarPR:
         #  which would make this a pvp stats query.
         if any(delim in player.lower() for delim in [" vs ", " vs. ", " versus "]):
             # Grab the two players' names
-            p1,p2 = re.sub(r"( vs\. | VS\. | VS )", " vs ", player).split(" vs ")
+            p1,p2 = re.sub(r"( vs\. | VS\. | VS | Vs\. | Vs )", " vs ", player).split(" vs ")
             try: 
                 p1_info = self._get_playerid( p1 )
                 p1_matches = await self._get_player_stats( p1_info["id"] )
