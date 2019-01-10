@@ -1,213 +1,242 @@
 {
-  "stats": {
-    "AirborneOn": "5",
-    "FHTotal": "51",
-    "FHFFOn": "26",
-    "FHFFTotal": "41",
-    "SHTotal": "31",
-    "SHFFOn": "16",
-    "SHFFTotal": "21",
-    "DashBecomesRunOn": "13"
-  },
-  "jab": {
-    "jab1": {
-      "Total": "23",
-      "Hits": "6-8",
-      "SAF": "20",
-      "NextWindow": "3-25",
-      "Jab2Start": "10",
-      "Notes": [
-        "Cannot interrupt with shield."
-      ]
+    "b" : {
+        "Charge" : "14-46",
+        "Hits" : "14-69",
+        "Notes" : [
+            "Arrow lasts 55 frames in the air.",
+            "Arrow stays stuck in ground 50 frames.",
+            "Fully charged arrow can be shot on frame 46.",
+            "25 frames of lag when B is released."
+        ],
+        "Total" : "38",
+        "URL" : "lYyvW"
     },
-    "jab2": {
-      "Total": "22",
-      "Hits": "7-8",
-      "SAF": "18",
-      "NextWindow": "3-25",
-      "Jab3Start": "11",
-      "Notes": [
-        "Cannot interrupt with shield.",
-        "Window for rapidjab is 1-10.",
-        "Rapidjab starts frame 11."
-      ]
+    "bair" : {
+        "AC" : "29>",
+        "Hits" : "6-9, 18-23",
+        "Landlag" : "15",
+        "SAF" : "30",
+        "Total" : "39",
+        "URL" : "WanMO"
     },
-    "jab3": {
-      "Total": "50",
-      "Hits": "7-11",
-      "SAF": "33"
+    "da" : {
+        "Hits" : "7-12",
+        "SAF" : "40",
+        "Total" : "53",
+        "URL" : "ez3sj"
     },
-    "rapidjab": {
-      "Total": "57",
-      "Hits": "10-11, 17-18, 24-25, 31-32, 38-39, 45-46",
-      "SAF": "58"
+    "dair" : {
+        "AC" : "<12 65>",
+        "Hits" : "13-64",
+        "Landlag" : "50",
+        "SAF" : "80",
+        "Total" : "89",
+        "URL" : "w4UhF"
+    },
+    "dodge" : {
+        "airdodge" : {
+            "Intangible" : "4-29",
+            "Total" : "49",
+            "URL" : "WOAPM"
+        },
+        "back" : {
+            "Intangible" : "37",
+            "Total" : "4-19",
+            "URL" : "MEPo1"
+        },
+        "forward" : {
+            "Intangible" : "37",
+            "Total" : "4-19",
+            "URL" : "9mpox"
+        },
+        "spotdodge" : {
+            "Intangible" : "2-15",
+            "Total" : "22",
+            "URL" : "qH7WE"
+        }
+    },
+    "downb" : {
+        "Hits" : "2, 5, 8",
+        "Notes" : [
+            "Bomb lasts 277 frames after it is pulled (explodes on 278)."
+        ],
+        "Total" : "39",
+        "URL" : "dfo3Z"
+    },
+    "dsmash" : {
+        "Charge" : "4",
+        "Hits" : "9-11, 21-23",
+        "SAF" : "42",
+        "Total" : "49",
+        "URL" : "8JAnH"
+    },
+    "dtilt" : {
+        "Hits" : "14-16",
+        "Notes" : [
+            "Cannot interrupt with shield.",
+            "Meteor hitbox only on tipper."
+        ],
+        "SAF" : "32",
+        "Total" : "39",
+        "URL" : "5udgG"
+    },
+    "fair" : {
+        "AC" : "47>",
+        "Hits" : "14-33",
+        "Landlag" : "15",
+        "SAF" : "57",
+        "Total" : "55",
+        "URL" : "7jkd6"
+    },
+    "fsmash" : {
+        "fsmash1" : {
+            "Charge" : "10",
+            "Hits" : "15-18",
+            "NextWindow" : "20-49",
+            "SAF" : "50",
+            "Total" : "49",
+            "URL" : "Vc9F5"
+        },
+        "fsmash2" : {
+            "Hits" : "10-13",
+            "SAF" : "40",
+            "Total" : "39",
+            "URL" : "Z5BwO"
+        }
+    },
+    "ftilt" : {
+        "Hits" : "11-13",
+        "SAF" : "40",
+        "Total" : "33",
+        "URL" : "Vcq6D"
+    },
+    "grab" : {
+        "dash" : {
+            "Hits" : "14-17",
+            "Total" : "95",
+            "URL" : "rYHWW"
+        },
+        "standing" : {
+            "Hits" : "11-14",
+            "Total" : "85",
+            "URL" : "ynfRS"
+        }
+    },
+    "jab" : {
+        "jab1" : {
+            "Hits" : "6-8",
+            "Jab2Start" : "10",
+            "NextWindow" : "3-25",
+            "Notes" : [
+                "Cannot interrupt with shield."
+            ],
+            "SAF" : "20",
+            "Total" : "23",
+            "URL" : "F0Jbl"
+        },
+        "jab2" : {
+            "Hits" : "7-8",
+            "Jab3Start" : "11",
+            "NextWindow" : "3-25",
+            "Notes" : [
+                "Cannot interrupt with shield.",
+                "Window for rapidjab is 1-10.",
+                "Rapidjab starts frame 11."
+            ],
+            "SAF" : "18",
+            "Total" : "22",
+            "URL" : "vTa14"
+        },
+        "jab3" : {
+            "Hits" : "7-11",
+            "SAF" : "33",
+            "Total" : "50",
+            "URL" : "dAzMY"
+        },
+        "rapidjab" : {
+            "Hits" : "10-11, 17-18, 24-25, 31-32, 38-39, 45-46",
+            "SAF" : "58",
+            "Total" : "57",
+            "URL" : "iUmHm"
+        }
+    },
+    "nair" : {
+        "AC" : "<3 32>",
+        "Hits" : "4-27",
+        "Landlag" : "15",
+        "SAF" : "36",
+        "Total" : "39",
+        "URL" : "0xPLp"
+    },
+    "sideb" : {
+        "Hits" : "27-210",
+        "Notes" : [
+            "Boomerang comes out frame 27.",
+            "Boomerang can be aimed 1-27.",
+            "Boomerang lasts 141-181 frames.",
+            "Boomerang catch animation is 20 frames."
+        ],
+        "Total" : "45",
+        "URL" : "tSa4j"
+    },
+    "stats" : {
+        "AirborneOn" : "5",
+        "DashBecomesRunOn" : "13",
+        "FHFFOn" : "26",
+        "FHFFTotal" : "41",
+        "FHTotal" : "51",
+        "SHFFOn" : "16",
+        "SHFFTotal" : "21",
+        "SHTotal" : "31"
+    },
+    "uair" : {
+        "AC" : "<4 56>",
+        "Hits" : "5-49",
+        "Landlag" : "30",
+        "SAF" : "60",
+        "Total" : "69",
+        "URL" : "tpdbe"
+    },
+    "upb" : {
+        "air" : {
+            "Hits" : "8-13, 16-20, 22-27, 31-37, 46-50",
+            "Landlag" : "24",
+            "Notes" : [
+                "Grabs ledges from either side."
+            ],
+            "SoonestLedgeGrab" : "42",
+            "SpecialFallLag" : "24",
+            "Total" : "79",
+            "URL" : "9eIYh"
+        },
+        "ground" : {
+            "Hits" : "8-44",
+            "Total" : "79",
+            "URL" : "wejdZ"
+        }
+    },
+    "usmash" : {
+        "Charge" : "4",
+        "Hits" : "11-14, 26-28, 40-44",
+        "SAF" : "52",
+        "Total" : "60",
+        "URL" : "FiWVn"
+    },
+    "utilt" : {
+        "Hits" : "9-15",
+        "SAF" : "30",
+        "Total" : "29",
+        "URL" : "F2G0H"
+    },
+    "zair" : {
+        "Hits" : "9-18",
+        "Hooks" : "11-19",
+        "Landlag" : "30",
+        "Notes" : [
+            "Tether-jump duration is 36 frames."
+        ],
+        "SpecialFallLag" : "4",
+        "Total" : "60",
+        "URL" : "qacZy"
     }
-  },
-  "ftilt": {
-    "Total": "33",
-    "Hits": "11-13",
-    "SAF": "40"
-  },
-  "dtilt": {
-    "Total": "39",
-    "Hits": "14-16",
-    "SAF": "32",
-    "Notes": [
-      "Cannot interrupt with shield.",
-      "Meteor hitbox only on tipper."
-    ]
-  },
-  "utilt": {
-    "Total": "29",
-    "Hits": "9-15",
-    "SAF": "30"
-  },
-  "fsmash": {
-    "fsmash1": {
-      "Total": "49",
-      "Hits": "15-18",
-      "SAF" : "50",
-      "Charge": "10",
-      "NextWindow": "20-49"
-    },
-    "fsmash2": {
-      "Total": "39",
-      "Hits": "10-13",
-      "SAF": "40"
-    }
-  },
-  "dsmash": {
-    "Total": "49",
-    "Hits": "9-11, 21-23",
-    "SAF": "42",
-    "Charge": "4"
-  },
-  "usmash": {
-    "Total": "60",
-    "Hits": "11-14, 26-28, 40-44",
-    "SAF": "52",
-    "Charge": "4"
-  },
-  "nair": {
-    "Total": "39",
-    "Hits": "4-27",
-    "SAF": "36",
-    "AC": "<3 32>",
-    "Landlag": "15"
-  },
-  "fair": {
-    "Total": "55",
-    "Hits": "14-33",
-    "SAF": "57",
-    "AC": "47>",
-    "Landlag": "15"
-  },
-  "bair": {
-    "Total": "39",
-    "Hits": "6-9, 18-23",
-    "SAF": "30",
-    "AC": "29>",
-    "Landlag": "15"
-  },
-  "dair": {
-    "Total": "89",
-    "Hits": "13-64",
-    "AC": "<12 65>",
-    "SAF": "80",
-    "Landlag": "50"
-  },
-  "uair": {
-    "Total": "69",
-    "Hits": "5-49",
-    "SAF": "60",
-    "AC": "<4 56>",
-    "Landlag": "30"
-  },
-  "da": {
-    "Total": "53",
-    "Hits": "7-12",
-    "SAF": "40"
-  },
-  "zair": {
-    "Total": "60",
-    "Hits": "9-18",
-    "Hooks": "11-19",
-    "Landlag": "30",
-    "SpecialFallLag": "4",
-    "Notes": [
-      "Tether-jump duration is 36 frames."
-    ]
-  },
-  "grab": {
-    "standing": {
-      "Total": "85",
-      "Hits": "11-14"
-    },
-    "dash": {
-      "Total": "95",
-      "Hits": "14-17"
-    }
-  },
-  "b": {
-    "Total": "38",
-    "Hits": "14-69",
-    "Charge": "14-46",
-    "Notes": [
-      "Arrow lasts 55 frames in the air.",
-      "Arrow stays stuck in ground 50 frames.",
-      "Fully charged arrow can be shot on frame 46.",
-      "25 frames of lag when B is released."
-    ]
-  },
-  "sideb": {
-    "Total": "45",
-    "Hits": "27-210",
-    "Notes": [
-      "Boomerang comes out frame 27.",
-      "Boomerang can be aimed 1-27.",
-      "Boomerang lasts 141-181 frames.",
-      "Boomerang catch animation is 20 frames."
-    ]
-  },
-  "downb": {
-    "Total": "39",
-    "Hits": "2, 5, 8",
-    "Notes": [
-      "Bomb lasts 277 frames after it is pulled (explodes on 278)."
-    ]
-  },
-  "upb": {
-    "ground": {
-      "Total": "79",
-      "Hits": "8-44"
-    },
-    "air": {
-      "Total": "79",
-      "Hits": "8-13, 16-20, 22-27, 31-37, 46-50",
-      "SoonestLedgeGrab": "42",
-      "Landlag": "24",
-      "SpecialFallLag": "24",
-      "Notes" : [
-          "Grabs ledges from either side."
-      ]
-    }
-  },
-  "dodge": {
-    "airdodge": {
-      "Total": "49",
-      "Intangible": "4-29"
-    },
-    "back": {
-      "Total": "4-19",
-      "Intangible": "37"
-    },
-    "forward": {
-      "Total": "4-19",
-      "Intangible": "37"
-    },
-    "spotdodge": {
-      "Total": "22",
-      "Intangible": "2-15"
-    }
-  }
 }

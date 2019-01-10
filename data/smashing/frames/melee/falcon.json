@@ -1,41 +1,49 @@
 {
     "b" : {
         "Hits" : "52-56",
-        "Total" : "99"
+        "Total" : "99",
+        "URL" : "e57zKyv"
     },
     "bair" : {
         "AC" : "<6 21>",
         "Hits" : "10-17",
         "Landlag" : "18",
-        "Total" : "35"
+        "Total" : "35",
+        "URL" : "aGTb1Gf"
     },
     "da" : {
         "Hits" : "7-16",
         "SAF" : "38",
-        "Total" : "39"
+        "Total" : "39",
+        "URL" : "GgT2TWU"
     },
     "dair" : {
         "AC" : "<3 36>",
         "Hits" : "16-20",
         "Landlag" : "24",
-        "Total" : "44"
+        "Total" : "44",
+        "URL" : "A2pT969"
     },
     "dodge" : {
         "airdodge" : {
             "Intangible" : "3-20",
-            "Total" : "32"
+            "Total" : "32",
+            "URL" : "WZlmcpj"
         },
-        "rollL" : {
+        "back" : {
             "Intangible" : "4-19",
-            "Total" : "31"
+            "Total" : "31",
+            "URL" : "umCSdoc"
         },
-        "rollR" : {
+        "forward" : {
             "Intangible" : "4-19",
-            "Total" : "31"
+            "Total" : "31",
+            "URL" : "A1XtqtU"
         },
         "spotdodge" : {
             "Intangible" : "3-20",
-            "Total" : "32"
+            "Total" : "32",
+            "URL" : "COXf0Ws"
         }
     },
     "downb" : {
@@ -44,47 +52,53 @@
             "GroundedHitLag" : "45",
             "Hits" : "15-29",
             "Total" : "57",
+            "URL" : "82cCTvC",
             "WallHitLag" : "60"
         },
         "ground" : {
             "Hits" : "14-32",
-            "Total" : "61"
+            "Total" : "61",
+            "URL" : "LUFohh9"
         }
     },
     "dsmash" : {
         "Charge" : "14",
         "Hits" : "19-22, 29-32",
         "SAF" : "45",
-        "Total" : "49"
+        "Total" : "49",
+        "URL" : "F4zYrSx"
     },
     "dtilt" : {
         "Hits" : "10-15",
         "SAF" : "35",
-        "Total" : "35"
+        "Total" : "35",
+        "URL" : "FkEPdg99"
     },
     "fair" : {
         "AC" : "<6 35>",
         "Hits" : "14-30",
         "Landlag" : "19",
         "Total" : "39",
-        "URL" : "Z14yBwI"
+        "URL" : "D6rpYZg"
     },
     "fsmash" : {
         "Charge" : "10",
         "Hits" : "18-21",
         "SAF" : "60",
-        "Total" : "64"
+        "Total" : "64",
+        "URL" : "lU6OK8w"
     },
     "ftilt" : {
         "Hits" : "9-11",
         "SAF" : "30",
-        "Total" : "29"
+        "Total" : "29",
+        "URL" : "Fk8eeq0x"
     },
     "grab" : {
         "dash" : {
             "Hits" : "11-12",
             "Total" : "40",
-            "URL" : "79HoUcw"
+            "URL" : "Sdu0Yvv"
         },
         "standing" : {
             "Hits" : "7-8",
@@ -98,33 +112,38 @@
             "Jab2Start" : "9",
             "NextWindow" : "3-25",
             "SAF" : "22",
-            "Total" : "21"
+            "Total" : "21",
+            "URL" : "vAvXVRk"
         },
         "jab2" : {
             "Hits" : "5-7",
             "Jab3Start" : "8",
             "NextWindow" : "2-25",
             "SAF" : "21",
-            "Total" : "20"
+            "Total" : "20",
+            "URL" : "ncYdCDy"
         },
         "jab3" : {
             "Hits" : "6-12",
             "NextWindow" : "13",
             "RapidJabsStart" : "13",
             "SAF" : "23",
-            "Total" : "32"
+            "Total" : "32",
+            "URL" : "LyAAUi4"
         },
         "rapidjab" : {
             "Hits" : "5-6, 13-14, 21-22, 29-30, 36-37, 45-46",
             "SAF" : "61",
-            "Total" : "60"
+            "Total" : "60",
+            "URL" : "zlKpbXH"
         }
     },
     "nair" : {
         "AC" : "<3 34>",
         "Hits" : "7-12, 20-29",
         "Landlag" : "15",
-        "Total" : "44"
+        "Total" : "44",
+        "URL" : "B4nRJIX"
     },
     "sideb" : {
         "air" : {
@@ -139,7 +158,8 @@
             "Activates" : "15-34",
             "HitLag" : "25",
             "Hits" : "4-8",
-            "Total" : "79"
+            "Total" : "79",
+            "URL" : "ZGJ0Eq3"
         }
     },
     "stats" : {
@@ -156,7 +176,8 @@
         "AC" : "22>",
         "Hits" : "6-13",
         "Landlag" : "15",
-        "Total" : "33"
+        "Total" : "33",
+        "URL" : "8pKFzhJ"
     },
     "upb" : {
         "Activates" : "13-33",
@@ -168,17 +189,20 @@
         ],
         "SoonestLedgeGrab" : "38",
         "SpecialFallLag" : "30",
-        "Total" : "64"
+        "Total" : "64",
+        "URL" : "HBGHmLn"
     },
     "usmash" : {
         "Charge" : "8",
         "Hits" : "21-22, 27-28",
         "SAF" : "40",
-        "Total" : "54"
+        "Total" : "54",
+        "URL" : "ZXvagys"
     },
     "utilt" : {
         "Hits" : "17-21",
         "SAF" : "38",
-        "Total" : "39"
+        "Total" : "39",
+        "URL" : "zjph93X"
     }
 }

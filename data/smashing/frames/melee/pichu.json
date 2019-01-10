@@ -1,161 +1,184 @@
 {
-  "stats" : {
-    "AirborneOn": "4",
-    "FHTotal": "50",
-    "FHFFOn": "26",
-    "FHFFTotal": "38",
-    "SHTotal": "33",
-    "SHFFOn": "18",
-    "SHFFTotal": "23",
-    "DashBecomesRunOn": "14"
-  },
-  "jab": {
-    "Total": "21",
-    "Hits": "2-3",
-    "Notes": [
-      "Consecutive jabs start as early as frame 5."
-    ]
-  },
-  "ftilt": {
-    "Total": "29",
-    "Hits": "7-9",
-    "SAF": "19"
-  },
-  "dtilt": {
-    "Total": "21",
-    "Hits": "7-9",
-    "SAF": "19"
-  },
-  "utilt": {
-    "Total": "23",
-    "Hits": "7-14",
-    "SAF": "24"
-  },
-  "fsmash": {
-    "Total": "49",
-    "Hits": "16-33",
-    "SAF": "50",
-    "Charge": "14"
-  },
-  "dsmash": {
-    "Total": "54",
-    "Hits": "7-13",
-    "SAF": "51",
-    "Charge": "5",
-    "Notes": [
-      "Fully invincible 7-10"
-    ]
-  },
-  "usmash": {
-    "Total": "43",
-    "Hits": "9-11",
-    "SAF": "41",
-    "Charge": "8"
-  },
-  "nair": {
-    "Total": "39",
-    "Hits": "3-28",
-    "SAF": "40",
-    "AC": "<2 35>",
-    "Landlag": "12"
-  },
-  "fair": {
-    "Total": "39",
-    "Hits": "10-12, 14-16, 18-20, 22-24",
-    "SAF": "40",
-    "AC": "<9 34>",
-    "Landlag": "15"
-  },
-  "bair": {
-    "Total": "59",
-    "Hits": "4-37",
-    "SAF": "36",
-    "AC": "<9 25>",
-    "Landlag": "18"
-  },
-  "dair": {
-    "Total": "57",
-    "Hits": "14-26",
-    "SAF": "48",
-    "AC": "39>",
-    "Landlag": "26",
-    "Notes": [
-      "Landing hit on frame 1."
-    ]
-  },
-  "uair": {
-    "Total": "27",
-    "Hits": "4-9",
-    "SAF": "28",
-    "AC": "<3 18>",
-    "Landlag": "18"
-  },
-  "da": {
-    "Total": "49",
-    "Hits": "5-16",
-    "SAF": "50"
-  },
-  "grab": {
-    "standing": {
-      "Total": "30",
-      "Hits": "7-8"
+    "b" : {
+        "Hits" : "18-117",
+        "Notes" : [
+            "Fastfall this move at any time."
+        ],
+        "Total" : "57",
+        "URL" : "jnDwLQ8"
     },
-    "dash": {
-      "Total": "49",
-      "Hits": "11-12"
+    "bair" : {
+        "AC" : "<9 25>",
+        "Hits" : "4-37",
+        "Landlag" : "18",
+        "SAF" : "36",
+        "Total" : "59",
+        "URL" : "I8bXQpp"
+    },
+    "da" : {
+        "Hits" : "5-16",
+        "SAF" : "50",
+        "Total" : "49",
+        "URL" : "xs1Aiy6"
+    },
+    "dair" : {
+        "AC" : "39>",
+        "Hits" : "14-26",
+        "Landlag" : "26",
+        "Notes" : [
+            "Landing hit on frame 1."
+        ],
+        "SAF" : "48",
+        "Total" : "57",
+        "URL" : "M85yaHg"
+    },
+    "dodge" : {
+        "airdodge" : {
+            "Intangible" : "4-29",
+            "Total" : "49",
+            "URL" : "Z5qre8V"
+        },
+        "back" : {
+            "Intangible" : "4-19",
+            "Total" : "31",
+            "URL" : "E096OGS"
+        },
+        "forward" : {
+            "Intangible" : "4-19",
+            "Total" : "31",
+            "URL" : "9nOIN0o"
+        },
+        "spotdodge" : {
+            "Intangible" : "2-15",
+            "Total" : "22",
+            "URL" : "HI4yhqj"
+        }
+    },
+    "downb" : {
+        "Hits" : "40-48",
+        "Notes" : [
+            "Thunder hitboxes are active 20-60, 28-68, 36-76, 44-84.",
+            "Strong hit is 53-62 if Pichu is falling."
+        ],
+        "Total" : "78",
+        "URL" : "jpxYdGN"
+    },
+    "dsmash" : {
+        "Charge" : "5",
+        "Hits" : "7-13",
+        "Notes" : [
+            "Fully invincible 7-10"
+        ],
+        "SAF" : "51",
+        "Total" : "54",
+        "URL" : "1YorvVz"
+    },
+    "dtilt" : {
+        "Hits" : "7-9",
+        "SAF" : "19",
+        "Total" : "21",
+        "URL" : "GGrCZfz"
+    },
+    "fair" : {
+        "AC" : "<9 34>",
+        "Hits" : "10-12, 14-16, 18-20, 22-24",
+        "Landlag" : "15",
+        "SAF" : "40",
+        "Total" : "39",
+        "URL" : "ZP5bqiX"
+    },
+    "fsmash" : {
+        "Charge" : "14",
+        "Hits" : "16-33",
+        "SAF" : "50",
+        "Total" : "49",
+        "URL" : "pn64MF9"
+    },
+    "ftilt" : {
+        "Hits" : "7-9",
+        "SAF" : "19",
+        "Total" : "29",
+        "URL" : "zXkEJ0i"
+    },
+    "grab" : {
+        "dash" : {
+            "Hits" : "11-12",
+            "Total" : "49",
+            "URL" : "sbb9u1h"
+        },
+        "standing" : {
+            "Hits" : "7-8",
+            "Total" : "30",
+            "URL" : "MkQs2zl"
+        }
+    },
+    "jab" : {
+        "Hits" : "2-3",
+        "Notes" : [
+            "Consecutive jabs start as early as frame 5."
+        ],
+        "Total" : "21",
+        "URL" : "FeyRBxI"
+    },
+    "nair" : {
+        "AC" : "<2 35>",
+        "Hits" : "3-28",
+        "Landlag" : "12",
+        "SAF" : "40",
+        "Total" : "39",
+        "URL" : "fTfnuOj"
+    },
+    "sideb" : {
+        "Charge" : "14",
+        "Hits" : "20-55",
+        "Notes" : [
+            "Max charge time is 161 frames.",
+            "34 frames of recovery on hit.",
+            "If Pichu lands before the air recovery is finished, a 30 frame ground recovery animation is played."
+        ],
+        "Total" : "84",
+        "URL" : "O5II3j6"
+    },
+    "stats" : {
+        "AirborneOn" : "4",
+        "DashBecomesRunOn" : "14",
+        "FHFFOn" : "26",
+        "FHFFTotal" : "38",
+        "FHTotal" : "50",
+        "SHFFOn" : "18",
+        "SHFFTotal" : "23",
+        "SHTotal" : "33"
+    },
+    "uair" : {
+        "AC" : "<3 18>",
+        "Hits" : "4-9",
+        "Landlag" : "18",
+        "SAF" : "28",
+        "Total" : "27",
+        "URL" : "KVUuAqG"
+    },
+    "upb" : {
+        "Landlag" : "12",
+        "Notes" : [
+            "87 total frames if Pichu jumps twice.",
+            "1st jump is aimed on frame 13.",
+            "2nd jump is aimed on frame 29."
+        ],
+        "SpecialFallLag" : "1",
+        "Total" : "71",
+        "URL" : "BfJxCq7"
+    },
+    "usmash" : {
+        "Charge" : "8",
+        "Hits" : "9-11",
+        "SAF" : "41",
+        "Total" : "43",
+        "URL" : "Ez8sMVr"
+    },
+    "utilt" : {
+        "Hits" : "7-14",
+        "SAF" : "24",
+        "Total" : "23",
+        "URL" : "Q2BrlVq"
     }
-  },
-  "b": {
-    "Total": "57",
-    "Hits": "18-117",
-    "Notes": [
-      "Fastfall this move at any time."
-    ]
-  },
-  "sideb": {
-    "Total": "84",
-    "Hits": "20-55",
-    "Charge": "14",
-    "Notes": [
-      "Max charge time is 161 frames.",
-      "34 frames of recovery on hit.",
-      "If Pichu lands before the air recovery is finished, a 30 frame ground recovery animation is played."
-    ]
-  },
-  "downb": {
-    "Total": "78",
-    "Hits": "40-48",
-    "Notes": [
-      "Thunder hitboxes are active 20-60, 28-68, 36-76, 44-84.",
-      "Strong hit is 53-62 if Pichu is falling."
-    ]
-  },
-  "upb": {
-    "Total": "71",
-    "Landlag": "12",
-    "SpecialFallLag": "1",
-    "Notes": [
-      "87 total frames if Pichu jumps twice.",
-      "1st jump is aimed on frame 13.",
-      "2nd jump is aimed on frame 29."
-    ]
-  },
-  "dodge": {
-    "airdodge": {
-      "Total": "49",
-      "Intangible": "4-29"
-    },
-    "back": {
-      "Total": "31",
-      "Intangible": "4-19"
-    },
-    "forward": {
-      "Total": "31",
-      "Intangible": "4-19"
-    },
-    "spotdodge": {
-      "Total": "22",
-      "Intangible": "2-15"
-    }
-  }
 }

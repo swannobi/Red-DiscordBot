@@ -158,11 +158,17 @@
             "Release" : "14",
             "Total" : "40"
         },
-        "claw" : {
+        "grounded claw" : {
             "Grabs" : "16-18",
             "Hits" : "16-18",
             "Total" : "59",
             "URL" : "mr9Q8HP"
+        },
+        "aerial claw" : {
+            "Grabs" : "16-18",
+            "Hits" : "16-18",
+            "Total" : "59",
+            "URL" : "JpT2Myo"
         },
         "fthrow" : {
             "Hits" : "18-22",
