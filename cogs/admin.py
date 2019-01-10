@@ -237,23 +237,33 @@ class Admin:
             return ctx.message.channel.id == "260141615971041281"
         return commands.check(predicate)
     
-    @commands.command(pass_context=True)
+    @commands.group(pass_context=True)
     @is_mm()
     async def mm(self, ctx):
-        role = self._role_from_string(ctx.message.server, "mm", roles=ctx.message.author.roles) 
-        if(role):
-            try:
-                await self.bot.remove_roles(ctx.message.author, role)
-                await self.bot.say("No longer receiving match requests.")
-            except BaseException as e:
-                print(e)
-        else:
-            try:
-                role = self._role_from_string(ctx.message.server, "mm", roles=None) 
-                await self.bot.add_roles(ctx.message.author, role)
-                await self.bot.say("You will now be notified.")
-            except BaseException as e:
-                print(e)
+        if ctx.invoked_subcommand is None:
+            role = self._role_from_string(ctx.message.server, "mm", roles=ctx.message.author.roles) 
+            if(role):
+                try:
+                    await self.bot.remove_roles(ctx.message.author, role)
+                    await self.bot.say("No longer receiving match requests.")
+                except BaseException as e:
+                    print(e)
+            else:
+                try:
+                    role = self._role_from_string(ctx.message.server, "mm", roles=None) 
+                    await self.bot.add_roles(ctx.message.author, role)
+                    await self.bot.say("You will now be notified.")
+                except BaseException as e:
+                    print(e)
+
+    @mm.command(pass_context=True)
+    async def list(self, ctx):
+        players = []
+        for member in ctx.message.server.members:
+            for role in member.roles:
+                if "mm" == role.name:
+                    players.append(str(member))
+        await self.bot.say(', '.join(players))
 
     @commands.group(no_pm=True, pass_context=True, invoke_without_command=True, aliases=["main"])
     async def selfrole(self, ctx, *, rolename):
