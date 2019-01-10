@@ -286,6 +286,7 @@ class Streams:
                            "channel.")
 
     @commands.group(pass_context=True)
+    @checks.admin_or_permissions()
     async def streamset(self, ctx):
         """Stream settings"""
         if ctx.invoked_subcommand is None:
