@@ -184,7 +184,7 @@ class Helper:
                 return
             print(e)
         # Check for multi-faceted moves
-        if "Total" not in atk_data:
+        if "Total" not in atk_data and move != 'stats':
             embeds = []
             for state in atk_data:
                 embeds.append(self._form_frame_data_embed(atk_data[state], char, move, state))
@@ -195,8 +195,38 @@ class Helper:
             data=self._form_frame_data_embed(atk_data, char, move)
             await self.bot.say(embed=data)
 
-    @smash.command(pass_context=True, no_pm=False)
-    @commands.has_role("tester")
+    # Deactivated commands - useful for populating data but do not need to be "live"
+    #@commands.command(pass_context=True)
+    async def whatsleft(self, ctx, character : str):
+        """Useful for finding out if there are any moves that lack GIFs"""
+        try:
+            char = self._get_character_name( character )
+            char_data = self._get_character_data( char )
+        except KeyError as e:
+            print(e)
+            return
+        whatsleft = []
+        for key, value in char_data.items():
+            if key == 'stats':
+                continue
+            if "Total" not in list(value.keys()):
+                for k, v in value.items():
+                    print("checking {} :: {}".format(str(k), str(v)))
+                    if self.has_url_field(v) is False:
+                        whatsleft.append(str(key)+" "+str(k))
+                continue
+            elif self.has_url_field(value) is False:
+                whatsleft.append(str(key))
+        await self.bot.say(whatsleft)
+    
+    def has_url_field(self, d):
+        if "URL" in list(d.keys()):
+            return True
+        return False
+
+    # Helper method to set the GIFs for frame data embeds
+    #@smash.command(pass_context=True, no_pm=False)
+    #@commands.has_role("tester")
     async def editurl(self, ctx, character : str, move : str, URL : str):
         """Please use the Imgur target as \"URL\". For example, in the 
            url https://i.imgur.com/2FFTv9.gif, the full command is
