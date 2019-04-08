@@ -7,7 +7,6 @@ from cogs.utils.dataIO import dataIO
 from copy import deepcopy
 from .utils import checks
 from __main__ import send_cmd_help
-from .utils.sync import Route
 import urllib
 from types import SimpleNamespace
 

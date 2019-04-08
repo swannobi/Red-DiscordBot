@@ -1,13 +1,11 @@
 import discord
 from discord.ext import commands
-import aiohttp
 import requests
 import os
 import re
 from datetime import datetime
 from datetime import timedelta
 from random import randint
-from discord.ext import commands
 from cogs.utils.dataIO import dataIO
 from __main__ import send_cmd_help
 from .utils import checks
@@ -17,7 +15,6 @@ OAUTH = "https://www.smashladder.com/oauth/token"
 MELEE_ID = 2
 US_ID = 225
 DISCORD_REGISTRATION_CHANNEL = "8799399"
-REFRESH = "🔄"
 
 RESOURCES = "data/smashing/ladder/"
 
@@ -134,9 +131,9 @@ class Smashladder:
         # Call the API, get the player profile
         profile = self._player_profile(player)
         # Ensure we have data
-        if 'success' in profile.keys() and 'user' in profile.keys(): 
+        if profile.get('success') and profile.get('user'): 
             # Ensure we have Melee data
-            if str(MELEE_ID) not in profile['user']['ladder_information'].keys():
+            if not profile['user']['ladder_information'].get(str(MELEE_ID)):
                 await self.bot.say(embed=self._create_embed(profile['user'], "unranked in the current season", color))
                 return
             league = profile['user']['ladder_information'][str(MELEE_ID)]['league']
@@ -255,29 +252,29 @@ class Smashladder:
                 'grant_type':'client_credentials',
                 'client_id':'AB39D899E871GFD4589D1G3A',
                 'client_secret':'BCc1gA6cDBf908eDD34C5057A3d48aF0F2c8'
-            }).json()['access_token']
+            }, timeout=1).json()['access_token']
         self.token_issued = datetime.now()
         return token
 
     def _chat_messages(self, chat_room_id : str):
         """API call - chat messages"""
         self.ensure_token()
-        return requests.get(BASE+"chat/messages?chat_room_id="+chat_room_id, headers=self.headers).json()
+        return requests.get(BASE+"chat/messages?chat_room_id="+chat_room_id, headers=self.headers, timeout=1).json()
 
     def _ladders_ladders(self):
         """API call - ladder info"""
         self.ensure_token()
-        return requests.get(BASE+"ladders/ladders", headers=self.headers).json()
+        return requests.get(BASE+"ladders/ladders", headers=self.headers, timeout=1).json()
 
     def _player_profile(self, player : str):
         """API call - player profile"""
         self.ensure_token()
-        return requests.get(BASE+"player/profile?username="+player, headers=self.headers).json()
+        return requests.get(BASE+"player/profile?username="+player, headers=self.headers, timeout=1).json()
     
     def _matchmaking_visible_searches(self):
         """API call - matchmaking visible_searches"""
         self.ensure_token()
-        return requests.get(BASE+"matchmaking/visible_searches", headers=self.headers).json()
+        return requests.get(BASE+"matchmaking/visible_searches", headers=self.headers, timeout=1).json()
 
 def check_folders():
     if not os.path.exists(RESOURCES):
