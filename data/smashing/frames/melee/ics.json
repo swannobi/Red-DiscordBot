@@ -1,0 +1,194 @@
+{
+    "b" : {
+        "Hits" : "15-20",
+        "Ice" : "17-78",
+        "Total" : "59",
+        "URL" : "ZOjFBVk"
+    },
+    "bair" : {
+        "AC" : "<7 19>",
+        "Hits" : "8-11",
+        "Landlag" : "20",
+        "SAF" : "36",
+        "Total" : "39",
+        "URL" : "FBpYGro"
+    },
+    "da" : {
+        "Hits" : "11-12",
+        "SAF" : "38",
+        "Total" : "41",
+        "URL" : "g0aoWWH"
+    },
+    "dair" : {
+        "AC" : "<2 58>",
+        "Hits" : "3-52",
+        "Landlag" : "25",
+        "SAF" : "66",
+        "Total" : "65",
+        "URL" : "kCFlEOc"
+    },
+    "dodge" : {
+        "airdodge" : {
+            "Intangible" : "4-29",
+            "Total" : "48",
+            "URL" : "iAy5cWC"
+        },
+        "rollBack" : {
+            "Intangible" : "4-19",
+            "Total" : "31",
+            "URL" : "OHbJv2w"
+        },
+        "rollForward" : {
+            "Intangible" : "4-19",
+            "Total" : "31",
+            "URL" : "cGVLU84"
+        },
+        "spotdodge" : {
+            "Intangible" : "2-18",
+            "Total" : "27",
+            "URL" : "g6yUnca"
+        }
+    },
+    "downb" : {
+        "Hits" : "16-66",
+        "Notes" : [
+            "Hitboxes appear every 5 frames from 16-56 and last 11 frames each."
+        ],
+        "Total" : "79",
+        "URL" : "1m8UIzm"
+    },
+    "dsmash" : {
+        "Charge" : "2",
+        "Hits" : "6-11",
+        "SAF" : "36",
+        "Total" : "39",
+        "URL" : "meJEjSV"
+    },
+    "dtilt" : {
+        "Hits" : "8-11",
+        "SAF" : "29",
+        "Total" : "34",
+        "URL" : "HhqKVOd"
+    },
+    "fair" : {
+        "AC" : "<2 55>",
+        "Hits" : "19-22",
+        "Landlag" : "20",
+        "SAF" : "55",
+        "Total" : "59",
+        "URL" : "2eAHIFd"
+    },
+    "fsmash" : {
+        "Charge" : "7",
+        "Hits" : "13-14",
+        "SAF" : "47",
+        "Total" : "47",
+        "URL" : "oU1ioPr"
+    },
+    "ftilt" : {
+        "Hits" : "6-9",
+        "SAF" : "28",
+        "Total" : "31",
+        "URL" : "Sedinsu"
+    },
+    "grab" : {
+        "dash" : {
+            "Hits" : "7-8",
+            "Total" : "40",
+            "URL" : "HvUnLqJ"
+        },
+        "standing" : {
+            "Hits" : "7-8",
+            "Total" : "30",
+            "URL" : "ZwJZAEl"
+        }
+    },
+    "jab" : {
+        "jab1" : {
+            "Hits" : "4-7",
+            "Jab2Start" : "14",
+            "NextWindow" : "3-29",
+            "SAF" : "16",
+            "Total" : "29",
+            "URL" : "J7x6Sck"
+        },
+        "jab2" : {
+            "Hits" : "5-7",
+            "SAF" : "18",
+            "Total" : "29",
+            "URL" : "wuaaHeV"
+        }
+    },
+    "nair" : {
+        "AC" : "<5 30>",
+        "Hits" : "6-23",
+        "Landlag" : "20",
+        "SAF" : "46",
+        "Total" : "49",
+        "URL" : "geD8Pyo"
+    },
+    "sideb" : {
+        "sopo" : {
+            "Hits" : "23-62",
+            "Landlag" : "41",
+            "Notes" : [
+                "Mashing B will gain height when this move is performed in the air."
+            ],
+            "Total" : "74",
+            "URL" : "pVGLczB"
+        },
+        "synced" : {
+            "Hits" : "12, 14, 17, 20, 23, 27, 31, 35, 41, 47, 55",
+            "Notes" : [
+                "Mashing B will gain height when this move is performed in the air."
+            ],
+            "SpecialFallLag" : "4",
+            "Total" : "89",
+            "URL" : "uUf7XNv"
+        }
+    },
+    "stats" : {
+        "AirborneOn" : "4",
+        "DashBecomesRunOn" : "14",
+        "FHFFOn" : "29",
+        "FHFFTotal" : "46",
+        "FHTotal" : "58",
+        "SHFFOn" : "16",
+        "SHFFTotal" : "21",
+        "SHTotal" : "30"
+    },
+    "uair" : {
+        "AC" : "<5 27>",
+        "Hits" : "6-23",
+        "Landlag" : "32",
+        "SAF" : "30",
+        "Total" : "39",
+        "URL" : "w3YrsOd"
+    },
+    "upb" : {
+        "Hits" : "17-59",
+        "Landlag" : "40",
+        "Notes" : [
+            "Nana invincible 5-59.",
+            "Hitbox is attached to Nana.",
+            "Sopo version is 42 frames."
+        ],
+        "SoonestLedgeGrab" : "27",
+        "SpecialFallLag" : "25",
+        "Total" : "89",
+        "URL" : "hmC87QK"
+    },
+    "usmash" : {
+        "Charge" : "8",
+        "Hits" : "14-18",
+        "SAF" : "44",
+        "Total" : "49",
+        "URL" : "LYeH7hO"
+    },
+    "utilt" : {
+        "Hits" : "8-9, 11-12, 14-15, 17-18, 20-21, 23-24, 26",
+        "SAF" : "42",
+        "Total" : "49",
+        "URL" : "mm7mljt"
+    }
+}

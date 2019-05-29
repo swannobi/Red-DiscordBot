@@ -1,0 +1,170 @@
+{
+  "stats": {
+    "AirborneOn": "5",
+    "FHTotal": "52",
+    "FHFFOn": "27",
+    "FHFFTotal": "40",
+    "SHTotal": "32",
+    "SHFFOn": "17",
+    "SHFFTotal": "22",
+    "DashBecomesRunOn": "11"
+  },
+  "jab": {
+    "jab1": {
+      "Total": "15",
+      "Hits": "2-3",
+      "SAF": "26",
+      "NextWindow": "3-25",
+      "Jab2Start": "14"
+    },
+    "jab2": {
+      "Total": "18",
+      "Hits": "3-4",
+      "SAF": "26",
+      "NextWindow": "2-25",
+      "Jab3Start": "17"
+    },
+    "jab3": {
+      "Total": "22",
+      "Hits": "5-9",
+      "SAF": "23"
+    }
+  },
+  "ftilt": {
+    "Total": "29",
+    "Hits": "4-8",
+    "SAF": "30"
+  },
+  "dtilt": {
+    "Total": "34",
+    "Hits": "5-8",
+    "SAF": "35"
+  },
+  "utilt": {
+    "Total": "30",
+    "Hits": "4-13",
+    "SAF": "30"
+  },
+  "da": {
+    "Total": "43",
+    "Hits": "6-25",
+    "SAF": "38"
+  },
+  "fsmash": {
+    "Total": "41",
+    "Hits": "12-16",
+    "SAF": "42",
+    "Charge": "5"
+  },
+  "dsmash": {
+    "Total": "37",
+    "Hits": "5-6, 14-15",
+    "SAF": "38",
+    "Charge": "3"
+  },
+  "usmash": {
+    "Total": "39",
+    "Hits": "9-11",
+    "SAF": "40",
+    "Charge": "7",
+    "Notes": [
+      "Head invincible 9-11."
+    ]
+  },
+  "nair": {
+    "Total": "45",
+    "Hits": "3-31",
+    "SAF": "46",
+    "AC": "<2 36>",
+    "Landlag": "18"
+  },
+  "fair": {
+    "Total": "74",
+    "Hits": "18-22",
+    "SAF": "60",
+    "AC": "<2 44>",
+    "Landlag": "25"
+  },
+  "bair": {
+    "Total": "28",
+    "Hits": "6-16",
+    "SAF": "32",
+    "AC": "<5 19>",
+    "Landlag": "18"
+  },
+  "dair": {
+    "Total": "38",
+    "Hits": "10-11, 13-14, 16-17, 19-20, 22-23, 25-26, 28-29",
+    "SAF": "38",
+    "AC": "<5 33>",
+    "Landlag": "24"
+  },
+  "uair": {
+    "Total": "33",
+    "Hits": "4-9",
+    "SAF": "34",
+    "AC": "16>",
+    "Landlag": "18"
+  },
+  "grab": {
+    "standing": {
+      "Total": "30",
+      "Hits": "7-8"
+    },
+    "dash": {
+      "Total": "40",
+      "Hits": "11-12"
+    }
+  },
+  "b": {
+    "Total": "43",
+    "Hits": "14-89",
+    "Notes": [
+      "Can fastfall at any time."
+    ]
+  },
+  "sideb": {
+    "Total": "35",
+    "Hits": "12-14",
+    "Reflect": "6-33"
+  },
+  "downb": {
+    "Total": "79",
+    "Hits": "8, 14, 21, 28-29, 38-39",
+    "Notes": [
+      "Mash B to gain height.",
+      "Frame 10 is the last chance to become airborne if started on the ground.",
+      "Pressing B at a rate of 7.5 presses/second will break even in height."
+    ]
+  },
+  "upb": {
+    "Total": "37",
+    "SoonestLedgeGrab": "?",
+    "Hits": "3-21",
+    "Landlag": "30",
+    "SpecialFallLag": "30",
+    "Notes": [
+      "Fully invincible frame 3.",
+      "Doc can up-b cancel so that the hitbox comes out but Doc doesn't move (see SSBM Tutorials)."
+    ]
+  },
+  "dodge": {
+    "airdodge": {
+      "Total": "48",
+      "Intangible": "4-29"
+    },
+    "rollBack": {
+      "Total": "31",
+      "Intangible": "4-19",
+      "URL": "6zY61"
+    },
+    "rollForward": {
+      "Total": "31",
+      "Intangible": "4-19"
+    },
+    "spotdodge": {
+      "Total": "22",
+      "Intangible": "2-15"
+    }
+  }
+}

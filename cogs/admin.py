@@ -255,7 +255,7 @@ class Admin:
             except BaseException as e:
                 print(e)
 
-    @commands.group(no_pm=True, pass_context=True, invoke_without_command=True, aliases=["region", "main"])
+    @commands.group(no_pm=True, pass_context=True, invoke_without_command=True, aliases=["main"])
     async def selfrole(self, ctx, *, rolename):
         """Allows users to set their own role.
 
@@ -287,6 +287,12 @@ class Admin:
             log.debug("Role {} added to {} on {}".format(rolename, author.name,
                                                          server.id))
             await self.bot.say("Role added.")
+            try:
+                if(ctx.message.channel.id == '410207361647771648' or ctx.message.channel.id == '327119302379700224'):
+                    role_to_remove = self._role_from_string(server, "new-member")
+                    await self.bot.remove_roles(author, role_to_remove)
+            except BaseException as e:
+                print(e)
 
     @selfrole.command(no_pm=True, pass_context=True, name="remove")
     async def selfrole_remove(self, ctx, *, rolename):
@@ -321,6 +327,10 @@ class Admin:
                                                              author.name,
                                                              server.id))
             await self.bot.say("Role removed.")
+            real_roles = [role for role in ctx.message.server.roles if role.color != discord.Color.default()]
+            user_real_roles = [role for role in ctx.message.author.roles if role in real_roles]
+            if not user_real_roles:
+                await self.bot.add_roles(author, self._role_from_string(server, "new-member"))
 
     @selfrole.command(no_pm=True, pass_context=True, name="list")
     async def selfrole_list(self, ctx):

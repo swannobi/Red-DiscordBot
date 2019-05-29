@@ -1,0 +1,181 @@
+{
+  "stats": {
+    "AirborneOn": "5",
+    "FHTotal": "49",
+    "FHFFOn": "26",
+    "FHFFTotal": "36",
+    "SHTotal": "31",
+    "SHFFOn": "17",
+    "SHFFTotal": "20",
+    "DashBecomesRunOn": "16"
+  },
+  "jab": {
+    "jab1": {
+      "Total": "21",
+      "Hits": "3-5",
+      "SAF": "22",
+      "NextWindow": "3-25",
+      "Jab2Start": "9"
+    },
+    "jab2": {
+      "Total": "20",
+      "Hits": "5-7",
+      "SAF": "21",
+      "NextWindow": "2-25",
+      "Jab3Start": "8"
+    },
+    "jab3": {
+      "Total": "32",
+      "Hits": "6-12",
+      "SAF": "23",
+      "NextWindow": "13",
+      "RapidJabsStart": "13"
+    },
+    "rapidjab": {
+      "Total": "60",
+      "Hits": "5-6, 13-14, 21-22, 29-30, 36-37, 45-46",
+      "SAF": "61"
+    }
+  },
+  "ftilt": {
+    "Total": "29",
+    "Hits": "9-11",
+    "SAF": "30"
+  },
+  "dtilt": {
+    "Total": "35",
+    "Hits": "10-15",
+    "SAF": "35"
+  },
+  "utilt": {
+    "Total": "39",
+    "Hits": "17-21",
+    "SAF": "38"
+  },
+  "fsmash": {
+    "Total": "64",
+    "Hits": "18-21",
+    "SAF": "60",
+    "Charge": "10"
+  },
+  "dsmash": {
+    "Total": "49",
+    "Hits": "19-22, 29-32",
+    "SAF": "45",
+    "Charge": "14"
+  },
+  "usmash": {
+    "Total": "54",
+    "Hits": "21-22, 27-28",
+    "SAF": "40",
+    "Charge": "8"
+  },
+  "nair": {
+    "Total": "44",
+    "Hits": "7-12, 20-29",
+    "AC": "<3 34>",
+    "Landlag": "15"
+  },
+  "fair": {
+    "Total": "39",
+    "Hits": "14-30",
+    "AC": "<6 35>",
+    "Landlag": "19"
+  },
+  "bair": {
+    "Total": "35",
+    "Hits": "10-17",
+    "AC": "<6 21>",
+    "Landlag": "18"
+  },
+  "dair": {
+    "Total": "44",
+    "Hits": "16-20",
+    "AC": "<3 36>",
+    "Landlag": "24"
+  },
+  "uair": {
+    "Total": "33",
+    "Hits": "6-13",
+    "AC": "22>",
+    "Landlag": "15"
+  },
+  "da": {
+    "Total": "39",
+    "Hits": "7-16",
+    "SAF": "38"
+  },
+  "grab": {
+    "standing": {
+      "Total": "30",
+      "Hits": "7-8"
+    },
+    "dash": {
+      "Total": "40",
+      "Hits": "11-12"
+    }
+  },
+  "b": {
+    "Total": "99",
+    "Hits": "52-56"
+  },
+  "sideb": {
+    "ground": {
+      "Total": "79",
+      "Activates": "15-34",
+      "Hits": "4-8",
+      "HitLag": "25"
+    },
+    "air": {
+      "Total": "79",
+      "Activates": "17-34",
+      "Hits": "4-8",
+      "HitLag": "45",
+      "Landlag": "20",
+      "SpecialFallLag": "20"
+    }
+  },
+  "downb": {
+    "ground": {
+      "Total": "61",
+      "Hits": "14-32"
+    },
+    "air": {
+      "Total": "57",
+      "Hits": "15-29",
+      "GroundedHit": "1-2",
+      "GroundedHitLag": "45",
+      "WallHitLag": "60"
+    }
+  },
+  "upb": {
+    "Total": "64",
+    "Activates": "13-33",
+    "SoonestLedgeGrab": "38",
+    "Hits": "2-6",
+    "SpecialFallLag": "30",
+    "Notes": [
+      "Grabs ledge from both sides.",
+      "Grab lasts 79 frames total.",
+      "Grab sends opponent away on frame 20."
+    ]
+  },
+  "dodge": {
+    "airdodge": {
+      "Total": "32",
+      "Intangible": "3-20"
+    },
+    "rollL": {
+      "Total": "31",
+      "Intangible": "4-19"
+    },
+    "rollR": {
+      "Total": "31",
+      "Intangible": "4-19"
+    },
+    "spotdodge": {
+      "Total": "32",
+      "Intangible": "3-20"
+    }
+  }
+}

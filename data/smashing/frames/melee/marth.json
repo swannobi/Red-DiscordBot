@@ -1,0 +1,217 @@
+{
+    "b" : {
+        "Charge" : "11-121",
+        "Hits" : "5-10",
+        "Notes" : [
+            "Hit begins 5 frames after B is released."
+        ],
+        "Total" : "131",
+        "URL" : "d98Jfdb"
+    },
+    "bair" : {
+        "Autocancel" : "32>",
+        "Hits" : "7-11",
+        "Landlag" : "24",
+        "Total" : "39",
+        "URL" : "BqoOoZz"
+    },
+    "dair" : {
+        "Autocancel" : "<5 48>",
+        "Hits" : "6-9",
+        "Landlag" : "32",
+        "Total" : "59",
+        "URL" : "gdUCwKA"
+    },
+    "dodge" : {
+        "airdodge" : {
+            "Intangible" : "4-29",
+            "Total" : "49",
+            "URL" : "wnMbeCC"
+        },
+        "backroll" : {
+            "Intangible" : "4-23",
+            "Total" : "35",
+            "URL" : "DwCYRTC"
+        },
+        "forwardroll" : {
+            "Intangible" : "4-19",
+            "Total" : "35",
+            "URL" : "W4NZvl2"
+        },
+        "spotdodge" : {
+            "Intangible" : "2-18",
+            "Total" : "27",
+            "URL" : "nk7kdeD"
+        }
+    },
+    "downb" : {
+        "Counters" : "5-29",
+        "Hits" : "14-20",
+        "Notes" : [
+            "Hit begins 14 frames after activation.",
+            "Fully invincible 1-16 when activated."
+        ],
+        "Total" : "59",
+        "URL" : "5pVT5Vv"
+    },
+    "dsmash" : {
+        "Charge" : "3",
+        "Hits" : "5-7, 20-22",
+        "SAF" : "62",
+        "Total" : "64",
+        "URL" : "N2KJkTF"
+    },
+    "dtilt" : {
+        "Hits" : "7-9",
+        "Notes" : [
+            "Cannot interrupt with shield."
+        ],
+        "SAF" : "20",
+        "Total" : "49",
+        "URL" : "APguhfv"
+    },
+    "fair" : {
+        "Autocancel" : "27>",
+        "Hits" : "4-7",
+        "Landlag" : "15",
+        "Total" : "33",
+        "URL" : "eP2wVv9"
+    },
+    "fsmash" : {
+        "Charge" : "3",
+        "Hits" : "10-13",
+        "SAF" : "48",
+        "Total" : "49",
+        "URL" : "hpbQ5E4"
+    },
+    "ftilt" : {
+        "Hits" : "7-10",
+        "SAF" : "36",
+        "Total" : "35",
+        "URL" : "72yvBCW"
+    },
+    "grab" : {
+        "dash" : {
+            "Hits" : "10-11",
+            "Total" : "40",
+            "URL" : "IrK8X9V"
+        },
+        "standing" : {
+            "Hits" : "7-8",
+            "Total" : "30",
+            "URL" : "PAyXPgI"
+        }
+    },
+    "jab" : {
+        "jab1" : {
+            "Hits" : "4-7",
+            "NextStarts" : "20",
+            "NextWindow" : "3-27",
+            "SAF" : "26",
+            "Total" : "27",
+            "URL" : "zWvy6Df"
+        },
+        "jab2" : {
+            "Hits" : "5-9",
+            "SAF" : "27",
+            "Total" : "28",
+            "URL" : "y15ZcGD"
+        }
+    },
+    "nair" : {
+        "Autocancel" : "<5 25>",
+        "Hits" : "10-13",
+        "Landlag" : "15",
+        "Total" : "49",
+        "URL" : "icLxLk0"
+    },
+    "sideb" : {
+        "1-side" : {
+            "Hits" : "6-8",
+            "NextWindow" : "9-26",
+            "Total" : "29",
+            "URL" : "9mdALu9"
+        },
+        "2-side" : {
+            "Hits" : "14-16",
+            "NextWindow" : "17-33",
+            "Total" : "40",
+            "URL" : "XkmS3E1"
+        },
+        "2-up" : {
+            "Hits" : "12-15",
+            "NextWindow" : "17-32",
+            "Total" : "40",
+            "URL" : "uUu49lp"
+        },
+        "3-down" : {
+            "Hits" : "15-18",
+            "NextWindow" : "19-35",
+            "Total" : "46",
+            "URL" : "E3U6l2o"
+        },
+        "3-side" : {
+            "Hits" : "11-14",
+            "NextWindow" : "16-37",
+            "Total" : "46",
+            "URL" : "CP7gd7T"
+        },
+        "3-up" : {
+            "Hits" : "13-17",
+            "NextWindow" : "18-38",
+            "Total" : "46"
+        },
+        "4-down" : {
+            "Hits" : "13-15, 19-21, 25-27, 31-33, 37-38",
+            "Total" : "60",
+            "URL" : "gtsUo5T"
+        },
+        "4-side" : {
+            "Hits" : "23-26",
+            "Total" : "50",
+            "URL" : "TTYhsXu"
+        },
+        "4-up" : {
+            "Hits" : "20-25",
+            "Total" : "50",
+            "URL" : "QTxE9yp"
+        }
+    },
+    "stats" : {
+        "AirborneOn" : "5",
+        "DashBecomesRunOn" : "16",
+        "FHAirTime" : "59",
+        "FHFFAirTime" : "45",
+        "SHAirTime" : "38",
+        "SHFFAirTime" : "26"
+    },
+    "uair" : {
+        "Autocancel" : "<4 27>",
+        "Hits" : "5-8",
+        "Landlag" : "15",
+        "Total" : "45",
+        "URL" : "ifbNJW9"
+    },
+    "upb" : {
+        "Hits" : "5-10",
+        "Notes" : [
+            "Fully invincible frame 5."
+        ],
+        "SpecialFallLag" : "34",
+        "Total" : "39",
+        "URL" : "JSeyIaK"
+    },
+    "usmash" : {
+        "Charge" : "7",
+        "Hits" : "13-16",
+        "SAF" : "46",
+        "Total" : "54",
+        "URL" : "zgmngTC"
+    },
+    "utilt" : {
+        "Hits" : "6-12",
+        "SAF" : "32",
+        "Total" : "39",
+        "URL" : "aRPMqwP"
+    }
+}

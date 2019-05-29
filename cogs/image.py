@@ -124,7 +124,7 @@ class Image:
             await self.bot.send_cmd_help(ctx)
             return
 
-        url = ("http://api.giphy.com/v1/gifs/search?&api_key={}&q={}"
+        url = ("http://api.giphy.com/v1/gifs/search?&api_key={}&q={}&rating=pg"
                "".format(GIPHY_API_KEY, keywords))
 
         async with aiohttp.get(url) as r:

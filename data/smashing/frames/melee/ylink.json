@@ -1,0 +1,213 @@
+{
+  "stats": {
+    "AirborneOn": "5",
+    "FHTotal": "51",
+    "FHFFOn": "26",
+    "FHFFTotal": "41",
+    "SHTotal": "31",
+    "SHFFOn": "16",
+    "SHFFTotal": "21",
+    "DashBecomesRunOn": "13"
+  },
+  "jab": {
+    "jab1": {
+      "Total": "23",
+      "Hits": "6-8",
+      "SAF": "20",
+      "NextWindow": "3-25",
+      "Jab2Start": "10",
+      "Notes": [
+        "Cannot interrupt with shield."
+      ]
+    },
+    "jab2": {
+      "Total": "22",
+      "Hits": "7-8",
+      "SAF": "18",
+      "NextWindow": "3-25",
+      "Jab3Start": "11",
+      "Notes": [
+        "Cannot interrupt with shield.",
+        "Window for rapidjab is 1-10.",
+        "Rapidjab starts frame 11."
+      ]
+    },
+    "jab3": {
+      "Total": "50",
+      "Hits": "7-11",
+      "SAF": "33"
+    },
+    "rapidjab": {
+      "Total": "57",
+      "Hits": "10-11, 17-18, 24-25, 31-32, 38-39, 45-46",
+      "SAF": "58"
+    }
+  },
+  "ftilt": {
+    "Total": "33",
+    "Hits": "11-13",
+    "SAF": "40"
+  },
+  "dtilt": {
+    "Total": "39",
+    "Hits": "14-16",
+    "SAF": "32",
+    "Notes": [
+      "Cannot interrupt with shield.",
+      "Meteor hitbox only on tipper."
+    ]
+  },
+  "utilt": {
+    "Total": "29",
+    "Hits": "9-15",
+    "SAF": "30"
+  },
+  "fsmash": {
+    "fsmash1": {
+      "Total": "49",
+      "Hits": "15-18",
+      "SAF" : "50",
+      "Charge": "10",
+      "NextWindow": "20-49"
+    },
+    "fsmash2": {
+      "Total": "39",
+      "Hits": "10-13",
+      "SAF": "40"
+    }
+  },
+  "dsmash": {
+    "Total": "49",
+    "Hits": "9-11, 21-23",
+    "SAF": "42",
+    "Charge": "4"
+  },
+  "usmash": {
+    "Total": "60",
+    "Hits": "11-14, 26-28, 40-44",
+    "SAF": "52",
+    "Charge": "4"
+  },
+  "nair": {
+    "Total": "39",
+    "Hits": "4-27",
+    "SAF": "36",
+    "AC": "<3 32>",
+    "Landlag": "15"
+  },
+  "fair": {
+    "Total": "55",
+    "Hits": "14-33",
+    "SAF": "57",
+    "AC": "47>",
+    "Landlag": "15"
+  },
+  "bair": {
+    "Total": "39",
+    "Hits": "6-9, 18-23",
+    "SAF": "30",
+    "AC": "29>",
+    "Landlag": "15"
+  },
+  "dair": {
+    "Total": "89",
+    "Hits": "13-64",
+    "AC": "<12 65>",
+    "SAF": "80",
+    "Landlag": "50"
+  },
+  "uair": {
+    "Total": "69",
+    "Hits": "5-49",
+    "SAF": "60",
+    "AC": "<4 56>",
+    "Landlag": "30"
+  },
+  "da": {
+    "Total": "53",
+    "Hits": "7-12",
+    "SAF": "40"
+  },
+  "zair": {
+    "Total": "60",
+    "Hits": "9-18",
+    "Hooks": "11-19",
+    "Landlag": "30",
+    "SpecialFallLag": "4",
+    "Notes": [
+      "Tether-jump duration is 36 frames."
+    ]
+  },
+  "grab": {
+    "standing": {
+      "Total": "85",
+      "Hits": "11-14"
+    },
+    "dash": {
+      "Total": "95",
+      "Hits": "14-17"
+    }
+  },
+  "b": {
+    "Total": "38",
+    "Hits": "14-69",
+    "Charge": "14-46",
+    "Notes": [
+      "Arrow lasts 55 frames in the air.",
+      "Arrow stays stuck in ground 50 frames.",
+      "Fully charged arrow can be shot on frame 46.",
+      "25 frames of lag when B is released."
+    ]
+  },
+  "sideb": {
+    "Total": "45",
+    "Hits": "27-210",
+    "Notes": [
+      "Boomerang comes out frame 27.",
+      "Boomerang can be aimed 1-27.",
+      "Boomerang lasts 141-181 frames.",
+      "Boomerang catch animation is 20 frames."
+    ]
+  },
+  "downb": {
+    "Total": "39",
+    "Hits": "2, 5, 8",
+    "Notes": [
+      "Bomb lasts 277 frames after it is pulled (explodes on 278)."
+    ]
+  },
+  "upb": {
+    "ground": {
+      "Total": "79",
+      "Hits": "8-44"
+    },
+    "air": {
+      "Total": "79",
+      "Hits": "8-13, 16-20, 22-27, 31-37, 46-50",
+      "SoonestLedgeGrab": "42",
+      "Landlag": "24",
+      "SpecialFallLag": "24",
+      "Notes" : [
+          "Grabs ledges from either side."
+      ]
+    }
+  },
+  "dodge": {
+    "airdodge": {
+      "Total": "49",
+      "Intangible": "4-29"
+    },
+    "rollBack": {
+      "Total": "4-19",
+      "Intangible": "37"
+    },
+    "rollForward": {
+      "Total": "4-19",
+      "Intangible": "37"
+    },
+    "spotdodge": {
+      "Total": "22",
+      "Intangible": "2-15"
+    }
+  }
+}
