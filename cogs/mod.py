@@ -300,7 +300,7 @@ class Mod:
         dataIO.save_json("data/mod/settings.json", self.settings)
 
     @commands.command(no_pm=True, pass_context=True)
-    @checks.admin_or_permissions(kick_members=True)
+    @checks.mod_or_permissions(kick_members=True)
     async def kick(self, ctx, user: discord.Member, *, reason: str = None):
         """Kicks user."""
         author = ctx.message.author
@@ -332,7 +332,7 @@ class Mod:
             print(e)
 
     @commands.command(no_pm=True, pass_context=True)
-    @checks.admin_or_permissions(ban_members=True)
+    @checks.mod_or_permissions(ban_members=True)
     async def ban(self, ctx, user: discord.Member, *, reason: str = None):
         """Bans user by adding him to the banned role.
 
@@ -359,7 +359,7 @@ class Mod:
             print(e)
 
     @commands.command(no_pm=True, pass_context=True)
-    @checks.admin_or_permissions(ban_members=True)
+    @checks.mod_or_permissions(ban_members=True)
     async def hardban(self, ctx, user: discord.Member, days: str = None, *, reason: str = None):
         """Bans user and deletes last X days worth of messages.
 
@@ -454,7 +454,7 @@ class Mod:
                                "server.")
 
     @commands.command(no_pm=True, pass_context=True)
-    @checks.admin_or_permissions(ban_members=True)
+    @checks.mod_or_permissions(ban_members=True)
     async def softban(self, ctx, user: discord.Member, *, reason: str = None):
         """Kicks the user, deleting 1 day worth of messages."""
         server = ctx.message.server
@@ -507,7 +507,7 @@ class Mod:
             await self.bot.say("I'm not allowed to do that.")
 
     @commands.command(no_pm=True, pass_context=True)
-    @checks.admin_or_permissions(manage_nicknames=True)
+    @checks.mod_or_permissions(manage_nicknames=True)
     async def rename(self, ctx, user : discord.Member, *, nickname=""):
         """Changes user's nickname
 
