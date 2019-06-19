@@ -1,4 +1,6 @@
 import discord
+import requests
+import random
 from discord.ext import commands
 
 class Memes:
@@ -6,6 +8,19 @@ class Memes:
 
     def __init__(self, bot):
         self.bot = bot
+        self.headers = {'Authorization': 'Client-ID your_client_id_here'} 
+
+    @commands.command()
+    async def viper(self):
+        """Posts a viper meme"""
+        resp = requests.get("https://api.imgur.com/3/album/wM1Tq/images", headers=self.headers, timeout=2).json()
+        await self.bot.say(random.choice(resp['data'])['link'])
+
+    @commands.command()
+    async def pup(self):
+        """Posts an NC Melee pup"""
+        resp = requests.get("https://api.imgur.com/3/album/fvccvKG/images", headers=self.headers, timeout=3).json()
+        await self.bot.say(random.choice(resp['data'])['link'])
 
     @commands.command(pass_context=True)
     async def hornet(self, ctx):
@@ -25,6 +40,12 @@ class Memes:
         with open('data/memes/lex.png', 'rb') as f:
             await self.bot.send_file(ctx.message.channel, f)
 
+    @commands.command(name="king", pass_context=True)
+    async def king(self, ctx):
+        """Keyblade master"""
+        with open('data/memes/wills.png', 'rb') as f:
+            await self.bot.send_file(ctx.message.channel, f)
+    
     @commands.command(pass_context=True)
     async def collin(self, ctx):
         """F this"""
