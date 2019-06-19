@@ -183,7 +183,7 @@ class Helper:
                 return
             print(e)
         # Check for multi-faceted moves
-        if "Total" not in atk_data and move != 'stats':
+        if "Total" not in atk_data and atk != 'stats':
             embeds = []
             for state in atk_data:
                 embeds.append(self._form_frame_data_embed(atk_data[state], char, move, state))
