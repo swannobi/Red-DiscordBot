@@ -48,7 +48,7 @@ class Smashladder:
             print(e)
             await self.bot.say("Something went wrong... make sure you @ the right member")
 
-    @ladder.command(pass_context=True, no_pm=False)
+    @ladder.command(pass_context=True, no_pm=False, aliases=["link"])
     async def register(self, ctx, tag : str):
         """Use this method to register a player profile on Anther's Ladder with a Member of this server."""
         # Check if player is asking for a tag that someone else has registered
