@@ -89,10 +89,13 @@
     },
     "fsmash" : {
         "Charge" : "14",
-        "Hits" : "16-33",
+        "Hits" : "16-18, 19-21, 22-24, 25-27, 28-30, 31-33, 34-36",
         "SAF" : "50",
         "Total" : "49",
-        "URL" : "pn64MF9"
+        "URL" : "pn64MF9",
+        "Notes" : [
+            "Last hitbox (34-36) is the strong hit"
+        ]
     },
     "ftilt" : {
         "Hits" : "7-9",

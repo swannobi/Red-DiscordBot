@@ -78,7 +78,7 @@
     },
     "fair" : {
         "AC" : "<2 28>",
-        "Hits" : "18-11",
+        "Hits" : "18-22",
         "Landlag" : "21",
         "SAF" : "60",
         "Total" : "74",
@@ -165,7 +165,8 @@
     "upb" : {
         "Hits" : "3-24",
         "Notes" : [
-            "Fully invincible 3-6."
+            "Fully invincible 3-6.",
+            "It is possible to walljump out of this move (check online for more info)"
         ],
         "SoonestLedgeGrab" : "?",
         "SpecialFallLag" : "30",

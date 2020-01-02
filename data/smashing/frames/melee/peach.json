@@ -210,7 +210,9 @@
         "Landlag" : "30",
         "Notes" : [
             "Fully invincible frame 3.",
-            "Only 4 frames of lag when landing with parasol closed."
+            "Only 4 frames of lag when landing with parasol closed.",
+            "Closing parasol is frame 1.",
+            "Opening parasol decreases fall speed instantly, but the hitbox does not reappear until frame 10."
         ],
         "SoonestLedgeGrab" : "34",
         "Total" : "65",

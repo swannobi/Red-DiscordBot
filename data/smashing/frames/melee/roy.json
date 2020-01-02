@@ -183,11 +183,11 @@
     "stats" : {
         "AirborneOn" : "6",
         "DashBecomesRunOn" : "16",
-        "FHAirTime" : "48",
-        "FHFFAirTime" : "35",
+        "FHTotal" : "48",
+        "FHFFTotal" : "35",
         "FHFFOn" : "25",
-        "SHAirTime" : "29",
-        "SHFFAirTime" : "19",
+        "SHTotal" : "29",
+        "SHFFTotal" : "19",
         "SHFFOn" : "16"
     },
     "uair" : {

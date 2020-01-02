@@ -178,11 +178,12 @@
         "URL" : "5RUlB"
     },
     "upb" : {
-        "Hits" : "36-42",
+        "Hits" : "36-42, 43-48",
         "LandLag" : "30",
         "Notes" : [
             "Invincible 18-55.",
-            "Aim on 35."
+            "Aim on 35.",
+            "Second, smaller hitbox does not appear in hitbox visualization."
         ],
         "SpecialFallLag" : "4",
         "Total" : "94",

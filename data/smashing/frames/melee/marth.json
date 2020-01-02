@@ -187,10 +187,12 @@
     "stats" : {
         "AirborneOn" : "5",
         "DashBecomesRunOn" : "16",
-        "FHAirTime" : "59",
-        "FHFFAirTime" : "45",
-        "SHAirTime" : "38",
-        "SHFFAirTime" : "26"
+        "FHFFOn" : "31",
+        "FHTotal" : "59",
+        "FHFFTotal" : "45",
+        "SHFFOn" : "26",
+        "SHTotal" : "38",
+        "SHFFTotal" : "26"
     },
     "uair" : {
         "Autocancel" : "<4 27>",
