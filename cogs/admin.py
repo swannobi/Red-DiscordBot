@@ -265,7 +265,7 @@ class Admin:
                     players.append(str(member))
         await self.bot.say(', '.join(players))
 
-    @commands.group(no_pm=True, pass_context=True, invoke_without_command=True, aliases=["main"])
+    @commands.group(no_pm=True, pass_context=True, invoke_without_command=True)
     async def selfrole(self, ctx, *, rolename):
         """Allows users to set their own role.
 
