@@ -282,7 +282,7 @@ def check_folders():
         os.makedirs(RESOURCES)
 
 def check_files():
-    files = [RESOURCES+"aliases.json"]
+    files = [RESOURCES+"aliases.json", RESOURCES+"char_icons.json", RESOURCES+"melee_chars.json"]
     for path in files:
         if not dataIO.is_valid_json(path):
             print("Creating empty "+str(path)+"...")
