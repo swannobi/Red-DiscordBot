@@ -22,6 +22,12 @@ class Memes:
         resp = requests.get("https://api.imgur.com/3/album/fvccvKG/images", headers=self.headers, timeout=3).json()
         await self.bot.say(random.choice(resp['data'])['link'])
 
+    @commands.command()
+    async def kitty(self):
+        """Posts an NC Melee kitty"""
+        resp = requests.get("https://api.imgur.com/3/album/jT36sBx/images", headers=self.headers, timeout=3).json()
+        await self.bot.say(random.choice(resp['data'])['link'])
+
     @commands.command(pass_context=True)
     async def hornet(self, ctx):
         """GIT GUD"""
