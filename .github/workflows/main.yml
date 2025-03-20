@@ -12,6 +12,6 @@ jobs:
     steps:
       - name: find commit and filter with jq
         run: |
-          gh search commits --repo:swannobi/Red-DiscordBot --hash:1cd5f7247711437844fe234e2c94a090dab8aa82 --jq '.files[].filename'
+          gh search commits --repo 'swannobi/Red-DiscordBot' --hash '1cd5f7247711437844fe234e2c94a090dab8aa82' --jq '.files[].filename'
 env:
   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }} #Required by the GitHub CLI
