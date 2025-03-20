@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - 'master' # 'main' for RPL
+  workflow_dispatch: #allow manual runs
 jobs:
   check-commits:
     name: Checking files touched in all commits pushed
