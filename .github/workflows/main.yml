@@ -1,0 +1,16 @@
+name: block commits touching certain files
+on: 
+  push:
+    branches:
+      - 'master' # 'main' for RPL
+jobs:
+  check-commits:
+    name: Checking files touched in all commits pushed
+    runs-on: ubuntu-latest
+    #runs-on: [ P-10BLD03-V ] #Ask someone in devops or maybe Scott if this is correct. Ripped from ORION22-R3/.github/workflows/Do Build.yml
+    steps:
+      - name: find commit and filter with jq
+        run: |
+          gh search commits --repo:swannobi/Red-DiscordBot --hash:1cd5f7247711437844fe234e2c94a090dab8aa82 --jq '.files[].filename'
+env:
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }} #Required by the GitHub CLI
