@@ -76,7 +76,7 @@ jobs:
 
           for changed in "${changed_files_array[@]}"; do
             for pci_file in "${sensitive_files_array[@]}"; do
-              if grep -q "${pci_file}" "${changed}"; then 
+              if [[ "${pci_file}" =~ "${changed}" ]]; then 
                 file_is_present=1
                 echo "found!"
                 break
