@@ -61,15 +61,22 @@ jobs:
           echo "before = $before"
           echo "after = $after"
           file_is_present=0
-          echo "reading multiline strings into arrays..."
-          readarray -t <<< "$changed_files"
-          changed_files="${MAPFILE[@]}" #switch from multiline string to array of strings
-          readarray -t <<< "$SENSITIVE_FILES"
-          SENSITIVE_FILES="${MAPFILE[@]}" #switch from multiline string to array of strings
           
-          for changed in "${changed_files[@]}"; do
+          declare -a changed_files_array
+          declare -a sensitive_files_array
+
+          echo "reading multiline strings into arrays..."
+          while read -r line; do
+            sensitive_files_array+=("$line")
+          done <<< "$SENSITIVE_FILES"
+          
+          while read -r line; do
+            changed_files_array+=("$line")
+          done <<< "$changed_files"
+
+          for changed in "${changed_files_array[@]}"; do
             echo "${changed}"
-            for pci_file in "${SENSITIVE_FILES[@]}"; do
+            for pci_file in "${sensitive_files_array[@]}"; do
               echo "step 2"
               echo "${pci_file}"
             done
