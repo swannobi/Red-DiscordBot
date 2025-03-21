@@ -49,9 +49,9 @@ jobs:
             main.yml
             doesntexist.py
           changed_files: ${{ needs.check-commits.outputs.changed_files }}
-          before: ${{ needs.check-commits.outputs.ref_before }}
-          after: ${{ needs.check-commits.outputs.ref_after }}
         run: |
+          echo "inputs:"
+          echo "changed_files = $changed_files"
           file_is_present=0
           declare -a changed_files_array
           declare -a sensitive_files_array
@@ -64,6 +64,8 @@ jobs:
             changed_files_array+=("$line")
           done < <(printf '%s' "$changed_files")
 
+          echo "$changed_files_array"
+          echo ""
           for changed in "${changed_files_array[@]}"; do
             for pci_file in "${sensitive_files_array[@]}"; do
               echo "DEBUG: ${pci_file} in ${changed}?"
