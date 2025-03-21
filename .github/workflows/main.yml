@@ -32,7 +32,7 @@ jobs:
 #          git log --pretty=oneline "$ref_before_push...$ref_after_push" | wc -l
       - id: step3
         run: | #echo multiline string into $GITHUB_OUTPUT
-          echo "api_respose=$(gh api /repos/swannobi/Red-DiscordBot/commits/1cd5f7247711437844fe234e2c94a090dab8aa82 --jq .files[].filename)"
+          echo "api_response=$(gh api /repos/swannobi/Red-DiscordBot/commits/1cd5f7247711437844fe234e2c94a090dab8aa82 --jq .files[].filename)"
           echo "got from API: $api_response"
           echo "changed_files=$api_response" >> $GITHUB_OUTPUT
   check-files-against-blocklist:
