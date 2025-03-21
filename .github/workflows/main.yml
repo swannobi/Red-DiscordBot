@@ -48,12 +48,6 @@ jobs:
             notpresent.py
             main.yml
             doesntexist.py
-          testing_single: .github/workflows/main.yml
-          testing_multi: |
-            admin.py
-            garpr.py
-            helper.py
-            main.yml
           changed_files: ${{ needs.check-commits.outputs.changed_files }}
         run: |
           file_is_present=0
@@ -69,15 +63,12 @@ jobs:
           done < <(printf '%s' "$changed_files")
 
           if [ -z ${changed_files_array} ]; then
-            echo "DEBUG: single-line strings don't cause unix read to evaluate true. Weird"
+            # single-line string input doesnt't cause while read{} to evaluate true. Weird!
             changed_files_array="$changed_files"
           fi
 
-          echo "$changed_files_array"
-          echo ""
           for changed in "${changed_files_array[@]}"; do
             for pci_file in "${sensitive_files_array[@]}"; do
-              echo "DEBUG: ${pci_file} in ${changed}?"
               if [[ ${changed} =~ ${pci_file} ]]; then 
                 file_is_present=1
                 break
