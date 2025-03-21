@@ -22,17 +22,17 @@ jobs:
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: |
-          echo "$GITHUB_CONTEXT" | jq .
-          echo "$GITHUB_CONTEXT" | jq .event
-          echo "$GITHUB_CONTEXT" | jq .event.commits
-          echo "$GITHUB_CONTEXT" | jq .event.commits[0].before
           echo "finding refs..."
-          before=$(echo "$GITHUB_CONTEXT" | jq -r '.event.commits[0].before')
-          after=$(echo "$GITHUB_CONTEXT" | jq -r '.event.commits[0].after')
+          before=$(echo "$GITHUB_CONTEXT" | jq -r '.event.before')
+          after=$(echo "$GITHUB_CONTEXT" | jq -r '.event.after')
           echo "$before, $after"
           echo "trying to set outputs..."
-          echo "ref_before=$before" >> $GITHUB_OUTPUT
-          echo "ref_after=$after" >> $GITHUB_OUTPUT
+          echo 'ref_before<<EOF' >> $GITHUB_OUTPUT
+          echo "$before" >> $GITHUB_OUTPUT
+          echo 'EOF' >> $GITHUB_OUTPUT
+          echo 'ref_after<<EOF' >> $GITHUB_OUTPUT
+          echo "$after" >> $GITHUB_OUTPUT
+          echo 'EOF' >> $GITHUB_OUTPUT
 #      - id: step2
 #        run: |
 #          echo "ref_before_push=$(jq -r '.event.before')"
