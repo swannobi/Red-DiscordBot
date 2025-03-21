@@ -23,6 +23,9 @@ jobs:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: |
           echo "$GITHUB_CONTEXT" | jq .
+          echo "$GITHUB_CONTEXT" | jq .event
+          echo "$GITHUB_CONTEXT" | jq .event.commits
+          echo "$GITHUB_CONTEXT" | jq .event.commits[0].before
           echo "finding refs..."
           before=$(echo "$GITHUB_CONTEXT" | jq -r '.event.commits[0].before')
           after=$(echo "$GITHUB_CONTEXT" | jq -r '.event.commits[0].after')
