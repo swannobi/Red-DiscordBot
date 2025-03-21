@@ -62,13 +62,13 @@ jobs:
           echo "after = $after"
           file_is_present=0
           echo "reading multiline strings into arrays..."
-          readarray <<< $changed_files
+          readarray <<< "$changed_files"
           changed_files="${MAPFILE[@]}" #switch from multiline string to array of strings
-          readarray <<< $SENSITIVE_FILES
+          readarray <<< "$SENSITIVE_FILES"
           SENSITIVE_FILES="${MAPFILE[@]}" #switch from multiline string to array of strings
-          for line in "$changed_files"; do
+          for line in "${changed_files[@]}"; do
             echo "checking changed file: $line"
-            for pci_file in "$SENSITIVE_FILES"; do
+            for pci_file in "${SENSITIVE_FILES[@]}"; do
               echo "checking if $pci_file is present..."
               if grep -q "$pci_file" "$line"; then 
                 file_is_present=1
