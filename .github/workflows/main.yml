@@ -22,9 +22,13 @@ jobs:
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: |
-          echo "$GITHUB_CONTEXT"
-          echo "ref_before=$(echo $GITHUB_CONTEXT | jq -r '.commits[0].before')" >> $GITHUB_OUTPUT
-          echo "ref_after=$(echo $GITHUB_CONTEXT | jq -r '.commits[0].after')" >> $GITHUB_OUTPUT
+          echo "finding refs..."
+          before=$(echo $GITHUB_CONTEXT | jq -r '.commits[0].before')
+          after=$(echo $GITHUB_CONTEXT | jq -r '.commits[0].after')
+          echo "$before, $after"
+          echo "trying to set outputs..."
+          echo "ref_before=$before" >> $GITHUB_OUTPUT
+          echo "ref_after=$after" >> $GITHUB_OUTPUT
 #      - id: step2
 #        run: |
 #          echo "ref_before_push=$(jq -r '.event.before')"
@@ -32,7 +36,7 @@ jobs:
 #          git log --pretty=oneline "$ref_before_push...$ref_after_push" | wc -l
       - id: step3
         run: | #echo multiline string into $GITHUB_OUTPUT
-          echo "api_response=$(gh api /repos/swannobi/Red-DiscordBot/commits/1cd5f7247711437844fe234e2c94a090dab8aa82 --jq .files[].filename)"
+          api_response=$(gh api /repos/swannobi/Red-DiscordBot/commits/1cd5f7247711437844fe234e2c94a090dab8aa82 --jq .files[].filename)
           echo "got from API: $api_response"
           echo "changed_files=$api_response" >> $GITHUB_OUTPUT
   check-files-against-blocklist:
