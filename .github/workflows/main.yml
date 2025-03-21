@@ -34,12 +34,8 @@ jobs:
         run: |
           echo "DEBUG: ${{ steps.step1.outputs.ref_before }}"
           echo "DEBUG: ${{ steps.step1.outputs.ref_after }}"
-          api_uri="/repos/swannobi/Red-DiscordBot/compare/${ref_before}...${ref_after}"
-          echo "api_uri is $api_uri"
-          throwaway=`gh api $api_uri --jq .files[].filename`
-          #new_api_response="$(gh api /repos/swannobi/Red-DiscordBot/compare/${ref_before}...${ref_after} --jq .files[].filename)"
-          echo "(NEW) got from API: $new_api_response"
-          api_response="$(gh api /repos/swannobi/Red-DiscordBot/commits/1cd5f7247711437844fe234e2c94a090dab8aa82 --jq .files[].filename)"
+          api_response="$(gh api /repos/swannobi/Red-DiscordBot/compare/${{ steps.step1.outputs.ref_before }}...${{ steps.step1.outputs.ref_after }} --jq .files[].filename)"
+          #api_response="$(gh api /repos/swannobi/Red-DiscordBot/commits/1cd5f7247711437844fe234e2c94a090dab8aa82 --jq .files[].filename)"
           echo "got from API: $api_response"
           # properly store multiline string into $GITHUB_OUTPUT
           echo 'changed_files<<EOF' >> $GITHUB_OUTPUT
