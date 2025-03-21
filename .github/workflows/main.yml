@@ -2,17 +2,53 @@ name: block commits touching certain files
 on: 
   push:
     branches:
-      - 'master' # 'main' for RPL
-  workflow_dispatch: #allow manual runs
+      - 'test-workflow' 
+      - 'develop' # 'main' for RPL
+  workflow_dispatch: #allow manual run
+
 jobs:
   check-commits:
-    name: Checking files touched in all commits pushed
+    name: List files touched this commit
     runs-on: ubuntu-latest
     #runs-on: [ P-10BLD03-V ] #Ask someone in devops or maybe Scott if this is correct. Ripped from ORION22-R3/.github/workflows/Do Build.yml
+    outputs:
+      changed_files: ${{ steps.step3.outputs.changed_files }}
     steps:
-      - name: find commit and filter with jq
+      - id: step1
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
+#      - id: step2
+#        run: |
+#          echo "ref_before_push=$(jq -r '.event.before')"
+#          echo "ref_after_push=$(jq -r '.event.after')"
+#          git log --pretty=oneline "$ref_before_push...$ref_after_push" | wc -l
+      - id: step3
+        run: echo "changed_files=$(gh api /repos/swannobi/Red-DiscordBot/commits/1cd5f7247711437844fe234e2c94a090dab8aa82 --jq .files[].filename)" >> $GITHUB_OUTPUT
+  check-files-against-blocklist:
+    name: Check if any files are sensitive
+    runs-on: ubuntu-latest
+    #runs-on: [ P-10BLD03-V ] #Ask someone in devops or maybe Scott if this is correct. Ripped from ORION22-R3/.github/workflows/Do Build.yml
+    needs: check-commits
+    steps:
+      - id: step1
+        env:
+          SENSITIVE_FILES: |
+            admin.py
+            garpr.py
         run: |
-          gh api /repos/swannobi/Red-DiscordBot/commits/1cd5f7247711437844fe234e2c94a090dab8aa82 --jq .files[].filename
-        # --jq '.files[].filename'
+          file_is_present=0
+          for $line in ${{needs.check-commits.ouputs.changed_files}}; do
+            for $file in ${{SENSITIVE_FILES}}; do
+              echo "$line :: is $file present?\n"
+              if grep -q "$file" "$line"; then file_is_present=0; fi;
+            done
+          done
+          echo "file_is_present = $file_is_present"
+          if [ $file_is_present -eq 1]; then
+            echo "do something based on file being present"
+          else
+            echo "do something (or nothing) based on file not being present"
+          fi
 env:
   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }} #Required by the GitHub CLI
