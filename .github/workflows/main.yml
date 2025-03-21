@@ -26,7 +26,7 @@ jobs:
       - id: step3
         run: | #echo multiline string into $GITHUB_OUTPUT
           echo "changed_files=$(gh api /repos/swannobi/Red-DiscordBot/commits/1cd5f7247711437844fe234e2c94a090dab8aa82 --jq .files[].filename)"
-          echo "$changed_files" >> $GITHUB_OUTPUT
+          echo "$changed_files" >> "$GITHUB_OUTPUT"
   check-files-against-blocklist:
     name: Check if any files are sensitive
     runs-on: ubuntu-latest
@@ -40,6 +40,7 @@ jobs:
             garpr.py
           changed_files: ${{ needs.check-commits.outputs.changed_files }}
         run: |
+          echo "$changed_files"
           file_is_present=0
           for $line in "$changed_files"; do
             for $file in "$SENSITIVE_FILES"; do
