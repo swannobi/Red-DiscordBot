@@ -62,26 +62,30 @@ jobs:
           echo "after = $after"
           file_is_present=0
           echo "reading multiline strings into arrays..."
-          readarray <<< "$changed_files"
+          readarray -t <<< "$changed_files"
           changed_files="${MAPFILE[@]}" #switch from multiline string to array of strings
-          readarray <<< "$SENSITIVE_FILES"
+          readarray -t <<< "$SENSITIVE_FILES"
           SENSITIVE_FILES="${MAPFILE[@]}" #switch from multiline string to array of strings
-          for line in "${changed_files[@]}"; do
-            echo "checking changed file: $line"
+          
+          for changed in "${changed_files[@]}"; do
+            echo "${changed}"
             for pci_file in "${SENSITIVE_FILES[@]}"; do
-              echo "checking if $pci_file is present..."
-              if grep -q "$pci_file" "$line"; then 
-                file_is_present=1
-                break
-              fi
+              echo "step 2"
+              echo "${pci_file}"
             done
-            if [ $file_is_present -eq 1 ]; then break; fi;
           done
-          echo "Loops finished. file_is_present = $file_is_present"
-          if [ $file_is_present -eq 1 ]; then
-            echo "do something based on file being present"
-          else
-            echo "do something (or nothing) based on file not being present"
-          fi
+#              if grep -q "$pci_file" "$line"; then 
+#                file_is_present=1
+#                break
+#              fi
+#            done
+#            if [ $file_is_present -eq 1 ]; then break; fi;
+#          done
+#          echo "Loops finished. file_is_present = $file_is_present"
+#          if [ $file_is_present -eq 1 ]; then
+#            echo "do something based on file being present"
+#          else
+#            echo "do something (or nothing) based on file not being present"
+#          fi
 env:
   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }} #Required by the GitHub CLI
