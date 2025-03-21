@@ -34,8 +34,8 @@ jobs:
         name: For push events with multiple commits, gather all commits
         run: |
           echo "Try to get the commits in-between"
-          ref_before_push=$(jq -r '.event.before')"
-          ref_after_push=$(jq -r '.event.after')"
+          ref_before_push=$(echo "$GITHUB_CONTEXT" | jq -r '.event.before')"
+          ref_after_push=$(echo "$GITHUB_CONTEXT" | jq -r '.event.after')"
           git diff --name-only "$ref_before_push" "$ref_after_push" #might not work
       - id: step3
         name: Store a list of all files touched in all commits involved in this push event
