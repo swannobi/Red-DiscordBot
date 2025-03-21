@@ -2,16 +2,16 @@ name: block commits touching certain files
 on: 
   push:
     branches:
-      - 'test-workflow' 
+      - 'test-workflow' # just for debugging this workflow in this repo
       - 'develop' # 'main' for RPL
-  workflow_dispatch: #allow manual run
-  workflow_call:
 
 jobs:
   check-commits:
     name: List files touched this commit
     runs-on: ubuntu-latest
-    #runs-on: [ P-10BLD03-V ] #Ask someone in devops or maybe Scott if this is correct. Ripped from ORION22-R3/.github/workflows/Do Build.yml
+    #runs-on: [ P-10BLD03-V ] #Ask someone in devops (or maybe Scott) if this is correct. Ripped from ORION22-R3/.github/workflows/Do Build.yml
+    # one issue with the box above is that I think it runs Windows? Personally I'm much more comfortable with unix bash than Windows PowerShell,
+    # so I wrote this in bash
     outputs:
       ref_before: ${{ steps.step1.outputs.ref_before }}
       ref_after: ${{ steps.step1.outputs.ref_after }}
@@ -22,20 +22,16 @@ jobs:
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: |
-          echo "finding refs..."
-          before=$(echo "$GITHUB_CONTEXT" | jq -r '.event.before')
-          after=$(echo "$GITHUB_CONTEXT" | jq -r '.event.after')
-          echo "$before, $after"
-          echo "trying to set outputs..."
-          echo "ref_before=$before" >> $GITHUB_OUTPUT
-          echo "ref_after=$after" >> $GITHUB_OUTPUT
+          echo "ref_before=$(echo $GITHUB_CONTEXT | jq -r '.event.before')" >> $GITHUB_OUTPUT
+          echo "ref_after=$(echo $GITHUB_CONTEXT | jq -r '.event.after')" >> $GITHUB_OUTPUT
+          #echo "ref_before=$before" >> $GITHUB_OUTPUT
+          #echo "ref_after=$after" >> $GITHUB_OUTPUT
       - id: step2
         name: Store a list of all files touched in all commits involved in this push event
         run: |
           echo "DEBUG: ${{ steps.step1.outputs.ref_before }}"
           echo "DEBUG: ${{ steps.step1.outputs.ref_after }}"
           api_response="$(gh api /repos/swannobi/Red-DiscordBot/compare/${{ steps.step1.outputs.ref_before }}...${{ steps.step1.outputs.ref_after }} --jq .files[].filename)"
-          #api_response="$(gh api /repos/swannobi/Red-DiscordBot/commits/1cd5f7247711437844fe234e2c94a090dab8aa82 --jq .files[].filename)"
           echo "got from API: $api_response"
           # properly store multiline string into $GITHUB_OUTPUT
           echo 'changed_files<<EOF' >> $GITHUB_OUTPUT
