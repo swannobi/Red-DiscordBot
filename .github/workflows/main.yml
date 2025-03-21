@@ -65,14 +65,14 @@ jobs:
           declare -a changed_files_array
           declare -a sensitive_files_array
 
-          echo "reading multiline strings into arrays..."
+          echo "reading multiline strings into arrays..." #use process substitution < <(...) instead of a here-string <<< to avoid extra newline
           while read -r line; do
             sensitive_files_array+=("$line")
-          done <<< "$SENSITIVE_FILES"
+          done < <(printf '%s' "$SENSITIVE_FILES")
           
           while read -r line; do
             changed_files_array+=("$line")
-          done <<< "$changed_files"
+          done < <(printf '%s' "$changed_files")
 
           for changed in "${changed_files_array[@]}"; do
             for pci_file in "${sensitive_files_array[@]}"; do
