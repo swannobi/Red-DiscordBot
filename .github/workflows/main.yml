@@ -50,8 +50,9 @@ jobs:
       - id: step1
         env:
           SENSITIVE_FILES: |
-            admin.py
-            garpr.py
+            notpresent.py
+            nope.py
+            doesntexist.py
           changed_files: ${{ needs.check-commits.outputs.changed_files }}
           before: ${{ needs.check-commits.outputs.ref_before }}
           after: ${{ needs.check-commits.outputs.ref_after }}
