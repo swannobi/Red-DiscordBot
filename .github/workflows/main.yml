@@ -66,7 +66,7 @@ jobs:
 
           for changed in "${changed_files_array[@]}"; do
             for pci_file in "${sensitive_files_array[@]}"; do
-              #echo "DEBUG: ${pci_file} in ${changed}?"
+              echo "DEBUG: ${pci_file} in ${changed}?"
               if [[ ${changed} =~ ${pci_file} ]]; then 
                 file_is_present=1
                 break
