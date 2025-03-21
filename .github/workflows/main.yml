@@ -39,7 +39,7 @@ jobs:
         run: |
           file_is_present=0
           for $line in ${{needs.check-commits.ouputs.changed_files}}; do
-            for $file in ${{SENSITIVE_FILES}}; do
+            for $file in "$SENSITIVE_FILES"; do
               echo "$line :: is $file present?\n"
               if grep -q "$file" "$line"; then file_is_present=0; fi;
             done
