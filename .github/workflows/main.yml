@@ -19,6 +19,7 @@ jobs:
       changed_files: ${{ steps.step3.outputs.changed_files }}
     steps:
       - id: step1
+        name: Set before and after refs
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: |
@@ -29,12 +30,15 @@ jobs:
           echo "trying to set outputs..."
           echo "ref_before=$before" >> $GITHUB_OUTPUT
           echo "ref_after=$after" >> $GITHUB_OUTPUT
-#      - id: step2
-#        run: |
-#          echo "ref_before_push=$(jq -r '.event.before')"
-#          echo "ref_after_push=$(jq -r '.event.after')"
-#          git log --pretty=oneline "$ref_before_push...$ref_after_push" | wc -l
+      - id: step2
+        name: For push events with multiple commits, gather all commits
+        run: |
+          echo "Try to get the commits in-between"
+          ref_before_push=$(jq -r '.event.before')"
+          ref_after_push=$(jq -r '.event.after')"
+          git diff --name-only "$ref_before_push" "$ref_after_push" #might not work
       - id: step3
+        name: Store a list of all files touched in all commits involved in this push event
         run: | #echo multiline string into $GITHUB_OUTPUT
           api_response=$(gh api /repos/swannobi/Red-DiscordBot/commits/1cd5f7247711437844fe234e2c94a090dab8aa82 --jq .files[].filename)
           echo "got from API: $api_response"
@@ -66,6 +70,7 @@ jobs:
           declare -a changed_files_array
           declare -a sensitive_files_array
 
+          echo ""
           echo "reading multiline strings into arrays..." #use process substitution < <(...) instead of a here-string <<< to avoid extra newline
           while read -r line; do
             sensitive_files_array+=("$line")
@@ -77,10 +82,10 @@ jobs:
 
           for changed in "${changed_files_array[@]}"; do
             for pci_file in "${sensitive_files_array[@]}"; do
-              echo "${pci_file} in ${changed} ?\n"
+              echo "DEBUG: ${pci_file} in ${changed} ?"
               if [[ ${changed} =~ ${pci_file} ]]; then 
                 file_is_present=1
-                echo "found!"
+                echo "DEBUG: found!"
                 break
               fi
             done
