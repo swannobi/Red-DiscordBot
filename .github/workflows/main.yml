@@ -45,11 +45,12 @@ jobs:
           for line in "$changed_files"; do
             for file in "$SENSITIVE_FILES"; do
               echo "$line :: is $file present?\n"
-              if grep -q "$file" "$line"; then file_is_present=0; fi;
+              if grep -q "$file" "$line"; then file_is_present=1 && break; fi;
             done
+            if [ $file_is_present -eq 1 ]; then break; fi;
           done
           echo "file_is_present = $file_is_present"
-          if [ $file_is_present -eq 1]; then
+          if [ $file_is_present -eq 1 ]; then
             echo "do something based on file being present"
           else
             echo "do something (or nothing) based on file not being present"
