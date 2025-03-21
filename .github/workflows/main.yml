@@ -27,12 +27,8 @@ jobs:
           after=$(echo "$GITHUB_CONTEXT" | jq -r '.event.after')
           echo "$before, $after"
           echo "trying to set outputs..."
-          echo 'ref_before<<EOF' >> $GITHUB_OUTPUT
-          echo "$before" >> $GITHUB_OUTPUT
-          echo 'EOF' >> $GITHUB_OUTPUT
-          echo 'ref_after<<EOF' >> $GITHUB_OUTPUT
-          echo "$after" >> $GITHUB_OUTPUT
-          echo 'EOF' >> $GITHUB_OUTPUT
+          echo "ref_before=$before" >> $GITHUB_OUTPUT
+          echo "ref_after=$after" >> $GITHUB_OUTPUT
 #      - id: step2
 #        run: |
 #          echo "ref_before_push=$(jq -r '.event.before')"
@@ -42,7 +38,9 @@ jobs:
         run: | #echo multiline string into $GITHUB_OUTPUT
           api_response=$(gh api /repos/swannobi/Red-DiscordBot/commits/1cd5f7247711437844fe234e2c94a090dab8aa82 --jq .files[].filename)
           echo "got from API: $api_response"
-          echo "changed_files=$api_response" >> $GITHUB_OUTPUT
+          echo 'changed_files<<EOF' >> $GITHUB_OUTPUT
+          echo "$api_response" >> $GITHUB_OUTPUT
+          echo 'EOF' >> $GITHUB_OUTPUT
   check-files-against-blocklist:
     name: Check if any files are sensitive
     runs-on: ubuntu-latest
