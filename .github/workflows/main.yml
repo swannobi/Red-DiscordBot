@@ -38,9 +38,10 @@ jobs:
           SENSITIVE_FILES: |
             admin.py
             garpr.py
+          changed_files: ${{ needs.check-commits.outputs.changed_files }}
         run: |
           file_is_present=0
-          for $line in ${{needs.check-commits.ouputs.changed_files}}; do
+          for $line in "$changed_files"; do
             for $file in "$SENSITIVE_FILES"; do
               echo "$line :: is $file present?\n"
               if grep -q "$file" "$line"; then file_is_present=0; fi;
