@@ -18,21 +18,18 @@ jobs:
       changed_files: ${{ steps.step2.outputs.changed_files }}
     steps:
       - id: step1
-        name: Set before and after refs, includes all commits within this push event
+        name: Set before and after refs, including all commits within this push event
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: |
           echo "ref_before=$(echo $GITHUB_CONTEXT | jq -r '.event.before')" >> $GITHUB_OUTPUT
           echo "ref_after=$(echo $GITHUB_CONTEXT | jq -r '.event.after')" >> $GITHUB_OUTPUT
-          #echo "ref_before=$before" >> $GITHUB_OUTPUT
-          #echo "ref_after=$after" >> $GITHUB_OUTPUT
       - id: step2
         name: Store a list of all files touched in all commits involved in this push event
         run: |
-          echo "DEBUG: ${{ steps.step1.outputs.ref_before }}"
-          echo "DEBUG: ${{ steps.step1.outputs.ref_after }}"
           api_response="$(gh api /repos/swannobi/Red-DiscordBot/compare/${{ steps.step1.outputs.ref_before }}...${{ steps.step1.outputs.ref_after }} --jq .files[].filename)"
-          echo "got from API: $api_response"
+          echo "GitHub API reports changes to the following files: $api_response"
+          
           # properly store multiline string into $GITHUB_OUTPUT
           echo 'changed_files<<EOF' >> $GITHUB_OUTPUT
           echo "$api_response" >> $GITHUB_OUTPUT
@@ -40,11 +37,13 @@ jobs:
   check-files-against-blocklist:
     name: Check if any files are sensitive
     runs-on: ubuntu-latest
-    #runs-on: [ P-10BLD03-V ] #Ask someone in devops or maybe Scott if this is correct. Ripped from ORION22-R3/.github/workflows/Do Build.yml
     needs: check-commits
     steps:
       - id: step1
         env:
+          # Define a list of files to check for. We can store this in an environment config somewhere if necessary 
+          # For example, we can use a existing Actions flow like https://github.com/marketplace/actions/simple-dotenv to load from a .env file
+          # See also: https://docs.github.com/en/organizations/managing-organization-settings/managing-custom-properties-for-repositories-in-your-organization
           SENSITIVE_FILES: |
             notpresent.py
             nope.py
@@ -53,20 +52,13 @@ jobs:
           before: ${{ needs.check-commits.outputs.ref_before }}
           after: ${{ needs.check-commits.outputs.ref_after }}
         run: |
-          echo "inputs:"
-          echo "$changed_files"
-          echo "before = $before"
-          echo "after = $after"
           file_is_present=0
-          
           declare -a changed_files_array
           declare -a sensitive_files_array
 
-          echo ""
-          echo "reading multiline strings into arrays..." #use process substitution < <(...) instead of a here-string <<< to avoid extra newline
           while read -r line; do
             sensitive_files_array+=("$line")
-          done < <(printf '%s' "$SENSITIVE_FILES")
+          done < <(printf '%s' "$SENSITIVE_FILES") # use process substitution < <(...) instead of a here-string <<< to avoid extra newline
           
           while read -r line; do
             changed_files_array+=("$line")
@@ -74,19 +66,20 @@ jobs:
 
           for changed in "${changed_files_array[@]}"; do
             for pci_file in "${sensitive_files_array[@]}"; do
-              echo "DEBUG: ${pci_file} in ${changed} ?"
+              #echo "DEBUG: ${pci_file} in ${changed}?"
               if [[ ${changed} =~ ${pci_file} ]]; then 
                 file_is_present=1
-                echo "DEBUG: found!"
                 break
               fi
             done
+            # short circuit to save a little compute time on the VM
+            # alternatively, keep track of the list of sensitive files "mentioned" in these commits
             if [ $file_is_present -eq 1 ]; then break; fi;
           done
           if [ $file_is_present -eq 1 ]; then
-            echo "do something based on file being present"
+            echo "do something based on one or more files being present in this push event"
           else
-            echo "do something (or nothing) based on file not being present"
+            echo "do something (or nothing), there were no changes detected to any sensitive files"
           fi
 env:
   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }} #Required by the GitHub CLI
