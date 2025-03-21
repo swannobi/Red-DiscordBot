@@ -60,14 +60,14 @@ jobs:
           while read -r line; do
             echo "testing a single line input to read"
             echo $line
-          done < <(printf '%s' $testing_single)
+          done < <(printf '%s' "$testing_single")
 
           while read -r line; do
             echo "testing a multiline input to read"
             echo $line
-          done < <(printf '%s' $testing_multi)
+          done < <(printf '%s' "$testing_multi")
 
-
+          exit 0
 
           echo "inputs:"
           echo "changed_files = $changed_files"
