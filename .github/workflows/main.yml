@@ -32,8 +32,8 @@ jobs:
       - id: step2
         name: Store a list of all files touched in all commits involved in this push event
         run: |
-          echo "DEBUG: ${{ steps.vars.outputs.ref_before }}"
-          echo "DEBUG: ${{ needs.check-commits.outputs.ref_after }}"
+          echo "DEBUG: ${{ steps.step1.outputs.ref_before }}"
+          echo "DEBUG: ${{ steps.step1.outputs.ref_after }}"
           # api_response="$(gh api /repos/swannobi/Red-DiscordBot/compare/${ref_before}...${ref_after} --jq .files[].filename)"
           api_response="$(gh api /repos/swannobi/Red-DiscordBot/commits/1cd5f7247711437844fe234e2c94a090dab8aa82 --jq .files[].filename)"
           echo "got from API: $api_response"
