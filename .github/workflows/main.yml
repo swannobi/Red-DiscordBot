@@ -42,8 +42,8 @@ jobs:
         run: |
           echo "$changed_files"
           file_is_present=0
-          for $line in "$changed_files"; do
-            for $file in "$SENSITIVE_FILES"; do
+          for line in "$changed_files"; do
+            for file in "$SENSITIVE_FILES"; do
               echo "$line :: is $file present?\n"
               if grep -q "$file" "$line"; then file_is_present=0; fi;
             done
