@@ -46,7 +46,7 @@ jobs:
           # See also: https://docs.github.com/en/organizations/managing-organization-settings/managing-custom-properties-for-repositories-in-your-organization
           SENSITIVE_FILES: |
             notpresent.py
-            nope.py
+            main.yml
             doesntexist.py
           changed_files: ${{ needs.check-commits.outputs.changed_files }}
           before: ${{ needs.check-commits.outputs.ref_before }}
@@ -77,7 +77,7 @@ jobs:
             if [ $file_is_present -eq 1 ]; then break; fi;
           done
           if [ $file_is_present -eq 1 ]; then
-            echo "do something based on one or more files being present in this push event"
+            echo "do something based on one or more sensitive files being present in this push event!"
           else
             echo "do something (or nothing), there were no changes detected to any sensitive files"
           fi
